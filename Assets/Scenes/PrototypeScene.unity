@@ -2006,9 +2006,9 @@ GameObject:
   m_Component:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
-  - component: {fileID: 519420029}
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
+  - component: {fileID: 519420029}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2016,14 +2016,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &519420029
-AudioListener:
+--- !u!114 &519420029
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: -1
 --- !u!114 &519420030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5820,11 +5825,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1709643462}
+  - component: {fileID: 1709643459}
   - component: {fileID: 1709643461}
   - component: {fileID: 1709643460}
-  - component: {fileID: 1709643459}
   m_Layer: 0
-  m_Name: MusicTriggerIntro (1)
+  m_Name: MusicTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5865,9 +5870,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 1709643458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378c4637bd938524599d1188838e7734, type: 3}
+  m_Script: {fileID: 11500000, guid: 744a208c85da6d04c861d81b992e4ead, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CollisionTag: Player
+  Emitters:
+  - Target: {fileID: 1709643461}
+    Params:
+    - Name: JumpTo
+      Value: 1
+  TriggerEvent: 6
 --- !u!114 &1709643461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5887,7 +5899,9 @@ MonoBehaviour:
   AllowFadeout: 1
   TriggerOnce: 1
   Preload: 0
-  Params: []
+  Params:
+  - Name: JumpTo
+    Value: 0
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
@@ -5899,8 +5913,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709643458}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.35, y: 2.52, z: -10.725952}
-  m_LocalScale: {x: 18.896618, y: 6.742841, z: 1}
+  m_LocalPosition: {x: 12.67, y: 2.52, z: -10.725952}
+  m_LocalScale: {x: 39.02, y: 12.8, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 18
