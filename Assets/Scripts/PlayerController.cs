@@ -15,6 +15,12 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
 
     private Vector3 minSize = new Vector3(0.01f, 0.01f, 1);
+    private SpriteRenderer sr;
+
+    void Start()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -37,14 +43,20 @@ public class PlayerController : MonoBehaviour
         //transform.Translate(Vector2.right * horizontalInput * speed * Time.deltaTime);
 
         // flips the player sprite to face to the right direction
-        if (movement.x >= 0.01f)
+
+        if (movement.x != 0)
         {
-            transform.localScale = new Vector3(2.5f, 2.5f, 1f);
+            sr.flipX = movement.x > 0f ? true : false;
         }
-        else if (movement.x <= -0.01f)
-        {
-            transform.localScale = new Vector3(-2.5f, 2.5f, 1f);
-        }
+
+        //if (movement.x >= 0.01f)
+        //{
+        //    transform.localScale = new Vector3(2.5f, 2.5f, 1f);
+        //}
+        //else if (movement.x <= -0.01f)
+        //{
+        //    transform.localScale = new Vector3(-2.5f, 2.5f, 1f);
+        //}
 
     }
 
