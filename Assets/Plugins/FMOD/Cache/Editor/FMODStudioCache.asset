@@ -34,6 +34,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-9067437136971388006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/HubMusic/JumpTo
+  m_EditorClassIdentifier: 
+  Name: JumpTo
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-8848051651363975507
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,7 +292,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637187655466498297
+  lastModified: 637190020327747155
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -297,7 +314,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-4905587092191929539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -315,6 +332,24 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-4857205758340908694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637190020327747155
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-4656499641462920619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,7 +523,7 @@ MonoBehaviour:
   Path: event:/Propaganda
   guid: 1b4aa256e2aec145bdc60c0b3141094d
   Banks:
-  - {fileID: 1582768194495204673}
+  - {fileID: -4857205758340908694}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -665,18 +700,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: -5177960120591407532}
-  - {fileID: 1582768194495204673}
+  - {fileID: -4857205758340908694}
   EditorEvents:
   - {fileID: 4579481583062282126}
   - {fileID: -2400649695793171539}
   - {fileID: 3288218635234005718}
   EditorParameters:
-  - {fileID: 4178822055121438377}
+  - {fileID: 8321398467414914718}
   MasterBanks:
-  - {fileID: 1582768194495204673}
+  - {fileID: -4857205758340908694}
   StringsBanks:
   - {fileID: -5177960120591407532}
-  stringsBankWriteTime: 637187655466498297
+  stringsBankWriteTime: 637190020327747155
   cacheVersion: 3
 --- !u!114 &96386648956154773
 MonoBehaviour:
@@ -729,7 +764,7 @@ MonoBehaviour:
   lastModified: 637187655466443250
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &1690556213903881551
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -882,12 +917,12 @@ MonoBehaviour:
   Path: event:/HubMusic
   guid: c6541614f92dc143a99768b334653072
   Banks:
-  - {fileID: 1582768194495204673}
+  - {fileID: -4857205758340908694}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -5144952684676048611}
+  - {fileID: -9067437136971388006}
   MinDistance: 0
   MaxDistance: 0
   Length: 85055
@@ -941,7 +976,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &4452558391979308171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -974,7 +1009,7 @@ MonoBehaviour:
   Path: event:/Footsteps
   guid: 239a0be8420ff74b8761bf50db024890
   Banks:
-  - {fileID: 1582768194495204673}
+  - {fileID: -4857205758340908694}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1347,6 +1382,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &8321398467414914718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: A
+  m_EditorClassIdentifier: 
+  Name: A
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &8843594179503771428
 MonoBehaviour:
   m_ObjectHideFlags: 0
