@@ -16,11 +16,22 @@ public class PauseMenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) canvas.enabled = !canvas.enabled;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            canvas.enabled = !canvas.enabled;
+            Time.timeScale = canvas.enabled ? 0 : 1;
+        }
     }
 
     public void ResumeGame()
     {
         canvas.enabled = false;
+        Time.timeScale = 1;
+    }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quit game");
+        Application.Quit();
     }
 }
