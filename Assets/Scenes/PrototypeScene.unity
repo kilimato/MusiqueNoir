@@ -1431,6 +1431,7 @@ GameObject:
   - component: {fileID: 375841563}
   - component: {fileID: 375841564}
   - component: {fileID: 375841565}
+  - component: {fileID: 375841566}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -1746,6 +1747,22 @@ MonoBehaviour:
   - {x: 0.1510667, y: 0.059618063, z: 0}
   - {x: 2.0051458, y: -0.39435494, z: 0}
   - {x: 2.0051458, y: 0.4390516, z: 0}
+--- !u!114 &375841566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375841553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d9f5c90f00ca5242a2ddb25fb287497, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: Patrol
+  patrolMovementTime: 2
+  patrolTurnTime: 2
+  patrolSpeed: 2
 --- !u!1 &397105590
 GameObject:
   m_ObjectHideFlags: 0
@@ -7835,7 +7852,39 @@ MonoBehaviour:
     _MeshEdgeColor: {r: 0, g: 0, b: 0, a: 0.5}
     _AreaColors:
     - {r: 0, g: 0, b: 0, a: 0}
-  tagNames: []
+  tagNames:
+  - Basic Ground
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+  - 23
+  - 24
+  - 25
+  - 26
+  - 27
+  - 28
+  - 29
+  - 30
+  - 31
   heuristic: 2
   heuristicScale: 1
   threadCount: 1
