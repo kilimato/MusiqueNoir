@@ -59,28 +59,37 @@ public class ParticleScript : MonoBehaviour
         //psSizeOverLifetime.size = new ParticleSystem.MinMaxCurve(2f,5f);
     }
 
-    
-    /*private void OnParticleCollision(GameObject other)
-    {
-        if (other.gameObject.CompareTag("Player")) return;
-        ParticlePhysicsExtensions.GetCollisionEvents(particles, other, collisionEvents);
 
+    void OnParticleCollision(GameObject other)
+    {
+        Debug.Log("Particles collided");
+        /*
+        if (other.gameObject.CompareTag("Object"))
+        {
+            other.GetComponent<ResonatingObjectController>().HandleParticles();
+        }
+        */
+
+        ParticlePhysicsExtensions.GetCollisionEvents(particles, other, collisionEvents);
         for (int i = 0; i < collisionEvents.Count; i++)
         {
             Debug.Log("Collision events: " + collisionEvents[i].colliderComponent.gameObject.ToString());
             // when collision happens, we take every collision event and emit particle with wanted values to collision location
-            particlePool.ParticleHit(collisionEvents[i], particleColorGradient);
 
             EmitAtLocation(collisionEvents[i]);
-            Debug.Log("Will emit at location: " + collisionEvents[i].colliderComponent.transform.position.ToString());
+
+            /* particlePool.ParticleHit(collisionEvents[i], particleColorGradient);
+
+             Debug.Log("Will emit at location: " + collisionEvents[i].colliderComponent.transform.position.ToString());
+             */
         }
         /*
         if(!IsInvoking("EmitAtLocation"))
         { 
             InvokeRepeating("EmitAtLocation", 0, 1);
         }
-        
-    }*/
+        */
+    }
 
     private void EmitAtLocation(ParticleCollisionEvent collisionEvent)
     {

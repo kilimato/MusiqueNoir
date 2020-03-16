@@ -30,7 +30,17 @@ public class ResonatingObjectController : MonoBehaviour
     {
 
     }
-
+    /*
+    public void HandleParticles()
+    {
+        if (!IsInvoking("EmitParticles"))
+        {
+            InvokeRepeating("EmitParticles", 0, 0.5f);
+            timer++;
+        }
+    }
+    */
+    
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player") && (!IsInvoking("EmitParticles")))
@@ -39,7 +49,7 @@ public class ResonatingObjectController : MonoBehaviour
             timer ++;
         }
     }
-
+    
     private void OnCollisionStay2D(Collision2D collision)
     {
         timer++;
@@ -56,7 +66,7 @@ public class ResonatingObjectController : MonoBehaviour
         timer = 0;
     }
 
-    private void EmitParticles()
+    public void EmitParticles()
     {
         if (collisionExitTimer != 0) collisionExitTimer++;
         if (collisionExitTimer > timeAfterCollision)
