@@ -8,8 +8,6 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
 
-    public GameObject mainCircle;
-    public GameObject secondaryCircle;
     public ClimbLadder climbLadder;
 
     public Animator animator;
@@ -27,8 +25,6 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMoves();
         CanPlayerClimb();
-
-        IsMusicPlayed();
     }
 
     private void PlayerMoves()
@@ -72,26 +68,6 @@ public class PlayerController : MonoBehaviour
         else
         {
             GetComponent<Rigidbody2D>().gravityScale = 1;
-        }
-    }
-
-
-    public void IsMusicPlayed()
-    {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            mainCircle.transform.localScale += new Vector3(0.1f, 0.1f, 0) * Time.deltaTime;
-            secondaryCircle.transform.localScale += new Vector3(0.1f, 0.1f, 0) * Time.deltaTime;
-
-            animator.SetBool("IsPlayingMusic", true);
-        }
-
-        if (!Input.GetKey(KeyCode.Space) && (mainCircle.transform.localScale.x > 0.000001))
-        {
-            mainCircle.transform.localScale -= new Vector3(0.1f, 0.1f, 0) * Time.deltaTime;
-            secondaryCircle.transform.localScale -= new Vector3(0.1f, 0.1f, 0) * Time.deltaTime;
-
-            animator.SetBool("IsPlayingMusic", false);
         }
     }
 }
