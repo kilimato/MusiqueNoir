@@ -695,8 +695,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 382dade00816be447b39cad592c9df7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ringSize: 0.5
-  ringMaxSize: 5
+  ringSize: 2
+  ringMaxSize: 6
 --- !u!198 &136218275 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3866362800971905832, guid: ac445279ef553764c9fad653bca92aa5,
@@ -1849,8 +1849,8 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
-  ringSize: 0.5
-  ringMaxSize: 5
+  ringSize: 2
+  ringMaxSize: 6
 --- !u!1 &438425920
 GameObject:
   m_ObjectHideFlags: 0
@@ -7724,6 +7724,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 1559406069418083863, guid: ac445279ef553764c9fad653bca92aa5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6bb376b424034b049b4e369b7ee77f48, type: 2}
+    - target: {fileID: 1559406069418083863, guid: ac445279ef553764c9fad653bca92aa5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6bb376b424034b049b4e369b7ee77f48, type: 2}
     - target: {fileID: 2837345579478425144, guid: ac445279ef553764c9fad653bca92aa5,
         type: 3}
       propertyPath: m_Name
@@ -7777,7 +7787,7 @@ PrefabInstance:
     - target: {fileID: 3866362800971905832, guid: ac445279ef553764c9fad653bca92aa5,
         type: 3}
       propertyPath: CollisionModule.enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3866362800971905832, guid: ac445279ef553764c9fad653bca92aa5,
         type: 3}
