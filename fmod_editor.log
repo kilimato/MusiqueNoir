@@ -2,12 +2,13 @@
 [LOG] Manager::init                            : maxchannels = 256 studioflags = 00000006 flags 00000000 extradriverdata 0000000000000000.
 [LOG] SystemI::init                            : Initialize version=20007 (107206), maxchannels=256, flags=0x00020000
 [LOG] SystemI::setOutputInternal               : Setting output to 'FMOD WASAPI Output'
-[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=48000, nAvgBytesPerSec=384000, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
+[LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEX): wFormatTag=0xFFFE, nChannels=2, nSamplesPerSec=44100, nAvgBytesPerSec=352800, nBlockAlign=8, wBitsPerSample=32, cbSize=22.
 [LOG] OutputWASAPI::init                       : Mix Format (WAVEFORMATEXTENSIBLE): wValidBitsPerSample=32, dwChannelMask=0x00000003, SubFormat=00000003-0000-0010-8000-00AA00389B71.
-[LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
+[LOG] OutputWASAPI::init                       : Output buffer size: 3760 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
+[WRN] SystemI::init                            : Output requires a sample rate of 44100Hz, resampling will occur.
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 0000024A157F07A8 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 0000029E7BFB6EB8 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Priority: 0, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,3 +19,145 @@
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] Manager::readBank                        : fileversion = 125, compatVersion = 119 (oldest = 44, newest = 125)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSound                     : filename = FMOD\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] Thread::initThread                       : Init FMOD nonblocking thread (0). Priority: 1, Stack Size: 114688, Semaphore: Yes, Sleep Time: 0, Looping: Yes.
+[LOG] SystemI::createSound                     : setdata soundi = 0000029C61BE4668 : node = 0000029C68F45480
+[LOG] SystemI::createSound                     : add node to async list : head = 0000029C61BF0198.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000029C61BE4668
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1409568
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13248
+[LOG] SystemI::createSound                     :     filename = FMOD\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000029C68F45590
+[LOG] SystemI::createSound                     :     setdata soundi = 0000029E36A3C0F8 : node = 0000029C68F455C0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000029C61BF0198.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 5126
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='HubMusic Tenor Sax', format=2, channels=1, frequency=48000, lengthbytes=547008, lengthpcm=4328727, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.180878.
+[LOG] Thread::initThread                       :     Init FMOD file thread. Priority: 1, Stack Size: 49152, Semaphore: No, Sleep Time: 10, Looping: Yes.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000029C61BE4668
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000029E36A3C0F8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1409568
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13248
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000029C68F456D0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 5126
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='HubMusic Rhythm', format=2, channels=1, frequency=48000, lengthbytes=692768, lengthpcm=4328727, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.575073.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000029E36A3C0F8
+[LOG] SoundI::getSubSound                      : sound 0000029C61BE4668.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 0000029E36A3C0F8.  Subsound index 0 / 1
+[LOG] SystemI::createSound                     : filename = FMOD\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000029E7BBADD38 : node = 0000029E36645AD0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000029C61BF0198.  list count = 0
+[LOG] SystemI::createSound                     : filename = FMOD\Desktop/Master.bank : mode 02010082
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000029E7BBADD38
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     setdata soundi = 0000029E7BBACAA8 : node = 0000029E36645C10
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000029C61BF0198.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1409568
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13248
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000029E36645BE0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 83944
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='HubMusic Tenor Sax', format=2, channels=1, frequency=48000, lengthbytes=547008, lengthpcm=4328727, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.180878.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000029E7BBADD38
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000029E7BBACAA8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1409568
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13248
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000029E36645D20
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 83944
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='HubMusic Rhythm', format=2, channels=1, frequency=48000, lengthbytes=692768, lengthpcm=4328727, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.575073.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000029E7BBACAA8
+[LOG] SoundI::getSubSound                      : sound 0000029E7BBADD38.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 0000029E7BBACAA8.  Subsound index 0 / 1
+[LOG] SoundI::release                          : HubMusic Rhythm (0000029E36A3C0F8)
+[LOG] SoundI::release                          :     HubMusic Rhythm (0000029E31A24DE8)
+[LOG] SoundI::release                          :     HubMusic Rhythm (0000029E36A988F8)
+[LOG] SoundI::release                          : HubMusic Tenor Sax (0000029C61BE4668)
+[LOG] SoundI::release                          :     HubMusic Tenor Sax (0000029E31A216A8)
+[LOG] SoundI::release                          :     HubMusic Tenor Sax (0000029E36A3C458)
+[LOG] SoundI::release                          : HubMusic Rhythm (0000029E7BBACAA8)
+[LOG] SoundI::release                          :     HubMusic Rhythm (0000029C61BF2AE8)
+[LOG] SoundI::release                          :     HubMusic Rhythm (0000029E7BBAD678)
+[LOG] SoundI::release                          : HubMusic Tenor Sax (0000029E7BBADD38)
+[LOG] SoundI::release                          :     HubMusic Tenor Sax (0000029C61BF34A8)
+[LOG] SoundI::release                          :     HubMusic Tenor Sax (0000029E7BBAC748)
+[LOG] SystemI::createSound                     : filename = FMOD\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSound                     : setdata soundi = 0000029C61BE4668 : node = 0000029C68F450C0
+[LOG] SystemI::createSound                     : add node to async list : head = 0000029C61BF0198.  list count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000029C61BE4668
+[LOG] SystemI::createSound                     : filename = FMOD\Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSound                     :     FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSound                     :     setdata soundi = 0000029E36A3C0F8 : node = 0000029C68F45980
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1409568
+[LOG] SystemI::createSound                     :     add node to async list : head = 0000029C61BF0198.  list count = 0
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13248
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000029C68F451D0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 5126
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='HubMusic Tenor Sax', format=2, channels=1, frequency=48000, lengthbytes=547008, lengthpcm=4328727, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.180878.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000029C61BE4668
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000029E36A3C0F8
+[LOG] SystemI::createSoundInternal             :     Create name='FMOD\Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 1409568
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 13248
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 0000029C68F45A90
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekposition = 5126
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='HubMusic Rhythm', format=2, channels=1, frequency=48000, lengthbytes=692768, lengthpcm=4328727, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.575073.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000029E36A3C0F8
+[LOG] SoundI::getSubSound                      : sound 0000029C61BE4668.  Subsound index 0 / 1
+[LOG] SoundI::getSubSound                      : sound 0000029E36A3C0F8.  Subsound index 0 / 1
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000029E36A988F8
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000029E36A988F8
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 0000029E36A3C458
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 0000029E36A3C458
+[LOG] SoundI::release                          : HubMusic Rhythm (0000029E36A3C0F8)
+[LOG] SoundI::release                          :     HubMusic Rhythm (0000029C61BF2C88)
+[LOG] SoundI::release                          :     HubMusic Rhythm (0000029E36A988F8)
+[LOG] SoundI::release                          : HubMusic Tenor Sax (0000029C61BE4668)
+[LOG] SoundI::release                          :     HubMusic Tenor Sax (0000029C61BF2AE8)
+[LOG] SoundI::release                          :     HubMusic Tenor Sax (0000029E36A3C458)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
