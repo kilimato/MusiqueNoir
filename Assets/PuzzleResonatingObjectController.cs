@@ -2,18 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ResonatingObjectController : MonoBehaviour
+public class PuzzleResonatingObjectController : MonoBehaviour
 {
+    public GameObject puzzleUIPrefab;
     private ParticleSystem particles;
+
     ParticleSystem.MainModule psMain;
 
-    private float minExitTime = 3.0f;
-    private float maxExposureTime = 4.0f;
+    private float minExitTime = 1.5f;
+    private float maxExposureTime = 1.5f;
 
     public float exposureTimer = 0;
     public float exitTimer = 0;
+
     bool exposureTimerActive = false;
     bool exitCollisionTimerActive = false;
+    bool isPuzzleOpen = false;
 
     public float ringSize = 2f;
     public float ringMaxSize = 6f;
@@ -37,10 +41,6 @@ public class ResonatingObjectController : MonoBehaviour
         if (exposureTimerActive)
         {
             exposureTimer += Time.deltaTime;
-            if (exposureTimer > maxExposureTime)
-            {
-                Destroy(gameObject);
-            }
             Debug.Log(exposureTimer);
         }
 
@@ -72,10 +72,9 @@ public class ResonatingObjectController : MonoBehaviour
     {
         Debug.Log("Staying");
 
-        if (exposureTimer >= maxExposureTime)
+        if (exposureTimer >= maxExposureTime && !puzzleUIPrefab.GetComponent<Canvas>().enabled)
         {
-            // ei toimi, miksei mene tänne vaikka triggerstaytä kutsutaan joka framella?
-            Destroy(gameObject);
+            OpenPuzzle();
         }
     }
 
@@ -114,5 +113,22 @@ public class ResonatingObjectController : MonoBehaviour
             psMain.startSize = ringSize;
             particles.Emit(1);
         }
+    }
+
+    public void OpenPuzzle()
+    {
+        puzzleUIPrefab.GetComponent<Canvas>().enabled = true;
+    }
+
+    public void DisableObject()
+    {
+        transform.GetChild(0).gameObject.SetActive(false);
+        gameObject.GetComponent<PuzzleResonatingObjectController>().enabled = false;
+    }
+
+    public void ClosePuzzle()
+    {
+        Debug.Log("Closing puzzle");
+        puzzleUIPrefab.GetComponent<Canvas>().enabled = false;
     }
 }

@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerMoves();
-        CanPlayerClimb();
+        //CanPlayerClimb();
     }
 
     private void PlayerMoves()
