@@ -7,6 +7,8 @@ TagManager:
   - PlayerCircle
   - Platform
   - Ladder
+  - Object
+  - Resonator
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - FogOfWarSecondary
   - Objects
   - Platforms
-  - 
+  - Effects
   - 
   - 
   - 
