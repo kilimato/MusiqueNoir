@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -7190,6 +7190,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 970098190}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &970098192 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5604234211009581392, guid: df642b713cfa88f468583e0d13cf4338,
+    type: 3}
+  m_PrefabInstance: {fileID: 970098190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &970098193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 970098192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66e47a2e9209e4542aabca29e81d785f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VolumeEvent: event:/missionMusic
+  StartingVolume: 0
 --- !u!1 &1020244475
 GameObject:
   m_ObjectHideFlags: 0
