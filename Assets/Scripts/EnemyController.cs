@@ -7,11 +7,12 @@ public class EnemyController : MonoBehaviour
 
     public string state = "Patrol";
 
-    public float patrolMovementTime = 2f; //milliseconds
-    public float patrolTurnTime = 2f; //milliseconds
+    public float patrolMovementTime = 2f; 
+    public float patrolTurnTime = 2f;
     public float patrolSpeed = 2f;
+    public float patrolDirection = -1f;
 
-    readonly StateMachine stateMachine = new StateMachine();
+    StateMachine stateMachine = new StateMachine();
 
     // Start is called before the first frame update
     void Start()
