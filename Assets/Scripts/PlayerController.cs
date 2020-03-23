@@ -15,9 +15,13 @@ public class PlayerController : MonoBehaviour
     private Vector3 minSize = new Vector3(0.01f, 0.01f, 1);
     private SpriteRenderer sr;
 
+    public HidePlayer hideplayerScript;
+    private bool isHidden = false;
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
+        hideplayerScript = GetComponent<HidePlayer>();
     }
 
     // Update is called once per frame
@@ -25,13 +29,27 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMoves();
         //CanPlayerClimb();
+
+        CanPlayerHide();
+    }
+
+    private void CanPlayerHide()
+    {
+        if(isHidden && Input.GetKey(KeyCode.E))
+        {
+            sr.enabled = false;
+        }
+        else
+        {
+            sr.enabled = true;
+        }
     }
 
     private void PlayerMoves()
     {
         horizontalInput = Input.GetAxis("Horizontal");
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
-        
+
         verticalInput = Input.GetAxis("Vertical");
 
         Vector3 movement = new Vector3(horizontalInput, 0f, 0f) * speed * Time.deltaTime;
@@ -68,6 +86,22 @@ public class PlayerController : MonoBehaviour
         else
         {
             GetComponent<Rigidbody2D>().gravityScale = 1;
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("HidingPlace"))
+        {
+            isHidden = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("HidingPlace"))
+        {
+            isHidden = false;
         }
     }
 }

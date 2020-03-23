@@ -9,6 +9,7 @@ TagManager:
   - Ladder
   - Object
   - Resonator
+  - HidingPlace
   layers:
   - Default
   - TransparentFX
