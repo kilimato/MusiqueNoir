@@ -33,6 +33,18 @@ public class VolumeController : MonoBehaviour
         soundParameterId = volumeParameterDescription.id;
     }
 
+    void OnDestroy()
+    {
+        StopAllMusicEvents();
+        soundEvent.release();
+    }
+
+    void StopAllMusicEvents()
+    {
+        FMOD.Studio.Bus musicBus = FMODUnity.RuntimeManager.GetBus("bus:/");
+        musicBus.stopAllEvents(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+
     // Update is called once per frame
     void Update()
     {
