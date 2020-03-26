@@ -17,7 +17,7 @@ public class PuzzleResonatingObjectController : MonoBehaviour
 
     bool exposureTimerActive = false;
     bool exitCollisionTimerActive = false;
-    bool isPuzzleOpen = false;
+   // bool isPuzzleOpen = false;
 
     public float ringSize = 2f;
     public float ringMaxSize = 6f;
@@ -33,7 +33,6 @@ public class PuzzleResonatingObjectController : MonoBehaviour
     void Update()
     {
         /*
-         ei oo niin vaikeaa, oon vaan väsynyt
          eli meillä on timer, joka tsekkaa aikaa sekunneissa
          kun trigger -> timeri lähtee käyntiin, jos ylittää 4s, niin objekti tuhoutuu
          kun exitTrigger -> timeri nollaantuu, ja kun ylittää 3s, efekti loppuu
