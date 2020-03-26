@@ -14,4 +14,9 @@
         currentState?.Execute();
     }
 
+    public string GetCurrentState()
+    {
+        return currentState.GetType().Name;
+    }
+
 }

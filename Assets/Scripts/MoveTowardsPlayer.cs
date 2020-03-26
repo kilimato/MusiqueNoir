@@ -10,52 +10,50 @@ public class MoveTowardsPlayer : MonoBehaviour
     public AIDestinationSetter destSetter;
 
     public GameObject alertSign;
-    public GameObject target;
+    private GameObject target;
     public GameObject startingPos;
+
+    public StateMachine sm;
 
     public Animator animator;
 
     // Start is called before the first frame update
     void Start()
     {
+
+        target = GameObject.Find("Player");
         seeker = GetComponent<Seeker>();
         aiPath = GetComponent<AIPath>();
         destSetter = GetComponent<AIDestinationSetter>();
 
+        sm = GetComponent<EnemyController>().stateMachine;
+
         seeker.enabled = false;
         aiPath.enabled = false;
         destSetter.enabled = false;
+        destSetter.target = target.transform;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Vector2.Distance(transform.position, target.transform.position) > 10f)
-        {
-            /*
-            seeker.enabled = false;
-            aiPath.enabled = false;
-            destSetter.enabled = false;
-            */
-            alertSign.SetActive(false);
 
+        if (Vector2.Distance(transform.position, target.transform.position) > 10f)
+        {
+
+            if (sm.GetCurrentState() == "ChaseState") sm.ChangeState(new PatrolState(GetComponent<EnemyController>()));
             ReturnToStartPos();
         }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("PlayerCircle"))
+        if (other.gameObject.CompareTag("Player") && sm.GetCurrentState() == "PatrolState")
         {
-            alertSign.SetActive(true);
 
-            seeker.enabled = true;
-            aiPath.enabled = true;
-            destSetter.enabled = true;
+            sm.ChangeState(new ChaseState(GetComponent<EnemyController>()));
 
-            destSetter.target = target.transform;
-
-            animator.SetBool("Alerted", true);
         }
     }
 
@@ -70,7 +68,7 @@ public class MoveTowardsPlayer : MonoBehaviour
     // not working right now 
     private void ReturnToStartPos()
     {
-        destSetter.target = startingPos.transform;
+        //destSetter.target = startingPos.transform;
     }
 
 }

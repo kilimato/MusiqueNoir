@@ -5,24 +5,26 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
 
-    public string state = "Patrol";
+    [SerializeField]
+    private string state;
 
     public float patrolMovementTime = 2f; 
     public float patrolTurnTime = 2f;
     public float patrolSpeed = 2f;
-    public float patrolDirection = -1f;
 
-    StateMachine stateMachine = new StateMachine();
+    public StateMachine stateMachine = new StateMachine();
 
     // Start is called before the first frame update
     void Start()
     {
         stateMachine.ChangeState(new PatrolState(this));
+        state = stateMachine.GetCurrentState();
     }
 
     // Update is called once per frame
     void Update()
     {
+        state = stateMachine.GetCurrentState(); //Poista tää jossakin vaihees
 
         stateMachine.Update();
 
