@@ -30,7 +30,7 @@ public class ChaseState : IState
         aiPath = enemy.GetComponent<AIPath>();
         destSetter = enemy.GetComponent<AIDestinationSetter>();
 
-        target = PlayerController.FindObjectOfType<GameObject>();
+        target = GameObject.Find("Player");
 
         seeker.enabled = true;
         aiPath.enabled = true;
