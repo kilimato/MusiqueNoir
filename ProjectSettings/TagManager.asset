@@ -11,6 +11,7 @@ TagManager:
   - Resonator
   - HidingPlace
   - Stairs
+  - Through
   layers:
   - Default
   - TransparentFX
