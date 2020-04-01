@@ -8,8 +8,6 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
     private float verticalInput;
 
-    public ClimbLadder climbLadder;
-
     public Animator animator;
 
     private Vector3 minSize = new Vector3(0.01f, 0.01f, 1);
@@ -28,7 +26,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         PlayerMoves();
-        //CanPlayerClimb();
 
         CanPlayerHide();
     }
@@ -72,21 +69,6 @@ public class PlayerController : MonoBehaviour
         //    transform.localScale = new Vector3(-2.5f, 2.5f, 1f);
         //}
 
-    }
-
-
-    private void CanPlayerClimb()
-    {
-        if (climbLadder.CanPlayerClimb())
-        {
-            GetComponent<Rigidbody2D>().gravityScale = 0;
-            Vector3 movement = new Vector3(0f, verticalInput / 2, 0f) * speed * Time.deltaTime;
-            transform.position += movement;
-        }
-        else
-        {
-            GetComponent<Rigidbody2D>().gravityScale = 1;
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
