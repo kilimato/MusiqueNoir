@@ -10,6 +10,7 @@ TagManager:
   - Object
   - Resonator
   - HidingPlace
+  - Stairs
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Objects
   - Platforms
   - Effects
-  - 
+  - Floors
   - 
   - 
   - 
