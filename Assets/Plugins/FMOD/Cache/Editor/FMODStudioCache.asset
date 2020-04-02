@@ -349,12 +349,12 @@ MonoBehaviour:
   Path: event:/missionMusic
   guid: 1cb9efd4c5bad4429bc06461dd1969aa
   Banks:
-  - {fileID: 1908431674322349677}
+  - {fileID: 6450849569159098303}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -1095372605687636686}
+  - {fileID: -4144205883781256592}
   MinDistance: 0
   MaxDistance: 0
   Length: 93000
@@ -373,7 +373,7 @@ MonoBehaviour:
   Path: event:/Footsteps
   guid: 239a0be8420ff74b8761bf50db024890
   Banks:
-  - {fileID: 1908431674322349677}
+  - {fileID: 6450849569159098303}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -396,12 +396,12 @@ MonoBehaviour:
   Path: event:/hubMusic
   guid: c6541614f92dc143a99768b334653072
   Banks:
-  - {fileID: 1908431674322349677}
+  - {fileID: 6450849569159098303}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 4200270704643784576}
+  - {fileID: 4536898999231131655}
   MinDistance: 0
   MaxDistance: 0
   Length: 85055
@@ -785,6 +785,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &-4144205883781256592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/missionMusic/Volume
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &-4056979916610436672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1111,7 +1128,7 @@ MonoBehaviour:
   Path: event:/propaganda
   guid: 1b4aa256e2aec145bdc60c0b3141094d
   Banks:
-  - {fileID: 1908431674322349677}
+  - {fileID: 6450849569159098303}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -1237,7 +1254,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1089127983325022921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1478,19 +1495,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 6828508143646911579}
-  - {fileID: 1908431674322349677}
+  - {fileID: 6450849569159098303}
   EditorEvents:
   - {fileID: -6855069404899516747}
   - {fileID: -1519064390366593515}
   - {fileID: -6914027808843071411}
   - {fileID: -6484901383906015541}
   EditorParameters:
-  - {fileID: 4427790461974045823}
+  - {fileID: 2172430440007269436}
   MasterBanks:
-  - {fileID: 1908431674322349677}
+  - {fileID: 6450849569159098303}
   StringsBanks:
   - {fileID: 6828508143646911579}
-  stringsBankWriteTime: 637214380470669430
+  stringsBankWriteTime: 637214542768719109
   cacheVersion: 3
 --- !u!114 &94828488519339762
 MonoBehaviour:
@@ -1733,7 +1750,7 @@ MonoBehaviour:
   lastModified: 637214380470669430
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &1951503057282505475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1837,6 +1854,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &2172430440007269436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: A
+  m_EditorClassIdentifier: 
+  Name: A
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &2175373053906301331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2026,7 +2060,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &4318247424634087043
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2078,7 +2112,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &4487815462234355475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2096,6 +2130,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &4536898999231131655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/hubMusic/JumpTo
+  m_EditorClassIdentifier: 
+  Name: JumpTo
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &4772694241663468180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2354,6 +2405,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &6450849569159098303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637214542768605899
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &6528594255687868404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2420,7 +2489,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637214380470669430
+  lastModified: 637214542768719109
   LoadResult: 0
   FileSizes:
   - Name: 
