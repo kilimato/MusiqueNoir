@@ -30,7 +30,7 @@ public class ChaseState : IState
         aiPath = enemy.GetComponent<AIPath>();
         destSetter = enemy.GetComponent<AIDestinationSetter>();
 
-        target = GameObject.Find("Player");
+        target = GameObject.FindGameObjectWithTag("Player");
 
         seeker.enabled = true;
         aiPath.enabled = true;
@@ -54,6 +54,7 @@ public class ChaseState : IState
         seeker.enabled = false;
         aiPath.enabled = false;
         destSetter.enabled = false;
+        enemy.GetComponent<Animator>().SetBool("Alerted", false);
         //Debug.Log("Exiting Chase State");
 
     }

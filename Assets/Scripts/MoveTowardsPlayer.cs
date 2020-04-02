@@ -21,7 +21,7 @@ public class MoveTowardsPlayer : MonoBehaviour
     void Start()
     {
 
-        target = GameObject.Find("Player");
+        target = GameObject.FindGameObjectWithTag("Player");
         seeker = GetComponent<Seeker>();
         aiPath = GetComponent<AIPath>();
         destSetter = GetComponent<AIDestinationSetter>();
