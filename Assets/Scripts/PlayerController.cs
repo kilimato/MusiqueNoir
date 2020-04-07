@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sr;
 
     public HidePlayer hideplayerScript;
-    private bool isHidden = false;
+    private bool canHide = false;
+    private bool isVisible = true;
 
     void Start()
     {
@@ -30,20 +31,26 @@ public class PlayerController : MonoBehaviour
         CanPlayerHide();
     }
 
+    // eli: jos pelaaja on alueella (canHide = true) ja painanut E:tä -> muututaan näkymättömäksi, painaessaan uudestaan -> muuttuu näkyväksi
     private void CanPlayerHide()
     {
-        if(isHidden && Input.GetKey(KeyCode.E))
+        if (canHide && isVisible && Input.GetKeyDown(KeyCode.E))
         {
+            isVisible = !isVisible;
             sr.enabled = false;
         }
-        else
+        else if (!isVisible && Input.GetKeyDown(KeyCode.E))
         {
+            isVisible = !isVisible;
             sr.enabled = true;
         }
     }
 
     private void PlayerMoves()
     {
+        // player can't move if they're hiding
+        if (!isVisible) return;
+
         horizontalInput = Input.GetAxis("Horizontal");
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
 
@@ -75,7 +82,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("HidingPlace"))
         {
-            isHidden = true;
+            canHide = true;
         }
     }
 
@@ -83,7 +90,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("HidingPlace"))
         {
-            isHidden = false;
+            canHide = false;
         }
     }
 }
