@@ -7,8 +7,8 @@ public class ResonatingObjectController : MonoBehaviour
     private ParticleSystem particles;
     ParticleSystem.MainModule psMain;
 
-    private float minExitTime = 3.0f;
-    private float maxExposureTime = 4.0f;
+    private float minExitTime = 2.0f;
+    private float maxExposureTime = 2.5f;
 
     public float exposureTimer = 0;
     public float exitTimer = 0;
@@ -18,22 +18,27 @@ public class ResonatingObjectController : MonoBehaviour
     public float ringSize = 2f;
     public float ringMaxSize = 6f;
     private float ringStep = 1f;
+
+    private bool waves = false;
+
+    Renderer rend;
+    private Material mat;
+
+    float waveAmount = 0f;
     // Start is called before the first frame update
     void Start()
     {
         particles = GetComponentInChildren<ParticleSystem>();
         psMain = particles.main;
+
+        mat = GetComponent<Renderer>().material;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-         ei oo niin vaikeaa, oon vaan väsynyt
-         eli meillä on timer, joka tsekkaa aikaa sekunneissa
-         kun trigger -> timeri lähtee käyntiin, jos ylittää 4s, niin objekti tuhoutuu
-         kun exitTrigger -> timeri nollaantuu, ja kun ylittää 3s, efekti loppuu
-         */
+        UpdateMaterial();
+
         if (exposureTimerActive)
         {
             exposureTimer += Time.deltaTime;
@@ -51,6 +56,26 @@ public class ResonatingObjectController : MonoBehaviour
         }
     }
 
+    private void UpdateMaterial()
+    {
+        if (waves && waveAmount < 20)
+        {
+            waveAmount += 0.1f;
+            //mat.SetFloat("_RadialPush", testCount);
+            mat.SetFloat("_SineFrequency", waveAmount);
+            mat.SetFloat("_SineSpeed", waveAmount);
+            mat.SetFloat("_SineAmplitude", waveAmount);
+        }
+        if (!waves && waveAmount > 0)
+        {
+            waveAmount -= 0.1f;
+            //mat.SetFloat("_RadialPush", testCount);
+            mat.SetFloat("_SineFrequency", waveAmount);
+            mat.SetFloat("_SineSpeed", waveAmount);
+            mat.SetFloat("_SineAmplitude", waveAmount);
+        }
+    }
+
 
     /* Sent when another object enters a trigger collider attached to this object (2D physics only).
      * This message is sent to the trigger Collider2D and the Rigidbody2D (if any) that the trigger Collider2D belongs to, and to the Rigidbody2D (or the Collider2D if there is no Rigidbody2D) that touches the trigger.
@@ -65,6 +90,7 @@ public class ResonatingObjectController : MonoBehaviour
         if (other.gameObject.CompareTag("Resonator") && (!IsInvoking("EmitParticles")))
         {
             InvokeRepeating("EmitParticles", 0, 0.5f);
+            waves = true;
         }
     }
 
@@ -74,7 +100,6 @@ public class ResonatingObjectController : MonoBehaviour
 
         if (exposureTimer >= maxExposureTime)
         {
-            // ei toimi, miksei mene tänne vaikka triggerstaytä kutsutaan joka framella?
             Destroy(gameObject);
         }
     }
@@ -84,6 +109,7 @@ public class ResonatingObjectController : MonoBehaviour
         Debug.Log("Exiting");
         exposureTimerActive = false;
         exposureTimer = 0;
+        waves = false;
 
         exitCollisionTimerActive = true;
         exitTimer = 0;
