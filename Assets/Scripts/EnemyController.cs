@@ -18,6 +18,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         stateMachine.ChangeState(new PatrolState(this));
+        stateMachine.ChangeState(new PatrolState(this));
         state = stateMachine.GetCurrentState();
     }
 

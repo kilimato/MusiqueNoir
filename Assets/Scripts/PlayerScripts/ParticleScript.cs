@@ -12,7 +12,8 @@ public class ParticleScript : MonoBehaviour
 
     ParticleSystem.MainModule psMain;
 
-    public float ringSize = 0.5f;
+    private float ringMinSize = 1.5f;
+    public float ringSize = 1.5f;
     public float ringMaxSize = 5f;
     [SerializeField]
     private float ringStep = 0.5f;
@@ -40,6 +41,16 @@ public class ParticleScript : MonoBehaviour
         psMain = particles.main;
 
         UpdateColliderSize();
+
+        UpdateFadingCircle();
+    }
+
+    void UpdateFadingCircle()
+    {
+        if (ringSize <= ringMinSize && IsInvoking("EmitFadingParticles"))
+        {
+            CancelInvoke("EmitFadingParticles");
+        }
     }
 
     void UpdateColliderSize()
@@ -80,14 +91,20 @@ public class ParticleScript : MonoBehaviour
     {
         while (Input.GetKey(KeyCode.Space) && !IsInvoking("EmitParticles"))
         {
+            if (IsInvoking("EmitFadingParticles"))
+            {
+                CancelInvoke("EmitFadingParticles");
+            }
             isResonating = true;
-            InvokeRepeating("EmitParticles", 0, 0.5f);
+            InvokeRepeating("EmitParticles", 0, 0.4f);
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
             CancelInvoke("EmitParticles");
+
+            InvokeRepeating("EmitFadingParticles", 0, 0.4f);
+
             isResonating = false;
-            ringSize = 0;
         }
     }
 
@@ -101,6 +118,19 @@ public class ParticleScript : MonoBehaviour
         else
         {
             ringSize += ringStep;
+        }
+
+        psMain.startSize = ringSize;
+
+        particles.Emit(1);
+    }
+
+
+    private void EmitFadingParticles()
+    {
+        if (ringSize >= ringMinSize)
+        {
+            ringSize -= ringStep * 2;
         }
 
         psMain.startSize = ringSize;

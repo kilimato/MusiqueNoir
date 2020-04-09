@@ -11,13 +11,13 @@ public class PatrolState : IState
 
     public void Enter()
     {
-        Debug.Log("Enter Patrol State");
+        //Debug.Log("Enter Patrol State");
         patrolDirection = -enemy.transform.localScale.x / Mathf.Abs(enemy.transform.localScale.x);
     }
 
     public void Execute()
     {
-        Debug.Log("Executing Patrol State");
+       // Debug.Log("Executing Patrol State");
 
         if (enemy.patrolMovementTime <= 0f)
         {
@@ -47,6 +47,6 @@ public class PatrolState : IState
 
     public void Exit()
     {
-        Debug.Log("Exiting Patrol State");
+        //Debug.Log("Exiting Patrol State");
     }
 }

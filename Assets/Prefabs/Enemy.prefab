@@ -103,6 +103,7 @@ GameObject:
   - component: {fileID: 621849731775663932}
   - component: {fileID: 621849731775663933}
   - component: {fileID: 621849731775663934}
+  - component: {fileID: 2801499308318032290}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -239,7 +240,6 @@ MonoBehaviour:
   aiPath: {fileID: 621849731775663929}
   destSetter: {fileID: 621849731775663930}
   alertSign: {fileID: 621849731455966293}
-  target: {fileID: 0}
   startingPos: {fileID: 0}
   animator: {fileID: 621849731775663932}
 --- !u!61 &621849731775663927
@@ -434,4 +434,16 @@ MonoBehaviour:
   patrolMovementTime: 2
   patrolTurnTime: 2
   patrolSpeed: 2
-  patrolDirection: -1
+--- !u!114 &2801499308318032290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621849731775663921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 906d743fd4c21a54e83e2e96523495fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/footstepsEnemy
