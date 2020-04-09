@@ -9942,6 +9942,7 @@ GameObject:
   - component: {fileID: 865953812}
   - component: {fileID: 865953813}
   - component: {fileID: 865953814}
+  - component: {fileID: 865953815}
   m_Layer: 14
   m_Name: Player
   m_TagString: Player
@@ -10108,6 +10109,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ListenerNumber: -1
+--- !u!114 &865953815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865953807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 906d743fd4c21a54e83e2e96523495fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Event: event:/footstepsPlayer
 --- !u!1 &898099011
 GameObject:
   m_ObjectHideFlags: 0
