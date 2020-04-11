@@ -19,7 +19,7 @@ public class IntroTextController : MonoBehaviour
     void Update()
     {
 
-        if (Input.anyKey)
+        if (Input.anyKey && introCanvas.enabled == true)
         {
             introCanvas.enabled = false;
             Time.timeScale = 1;
