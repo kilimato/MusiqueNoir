@@ -1,184 +1,103 @@
 fileFormatVersion: 2
-guid: 625afb2ae5dbeaa4e8689f388e1c232d
+guid: da7fadb3f32bf664baea9e89dfd4d1b1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8239705592286425059
-    second: music_noir_echo_f64_sheet_0
+      213: -7087344797787228721
+    second: music_noir_rain-Sheet_0
   - first:
-      213: 5729432310496782343
-    second: music_noir_echo_f64_sheet_1
+      213: 69244940617860644
+    second: music_noir_rain-Sheet_1
   - first:
-      213: 2506944922004835667
-    second: music_noir_echo_f64_sheet_2
+      213: -5826366935654721812
+    second: music_noir_rain-Sheet_2
   - first:
-      213: -7466518336975866301
-    second: music_noir_echo_f64_sheet_3
+      213: -70879720481161226
+    second: music_noir_rain-Sheet_3
   - first:
-      213: -1973359972529076258
-    second: music_noir_echo_f64_sheet_4
+      213: 7731333580541592198
+    second: music_noir_rain-Sheet_4
   - first:
-      213: -3588212953387394129
-    second: music_noir_echo_f64_sheet_5
+      213: -1269422100102393603
+    second: music_noir_rain-Sheet_5
   - first:
-      213: 3234254808681928100
-    second: music_noir_echo_f64_sheet_6
+      213: 2270798051741615909
+    second: music_noir_rain-Sheet_6
   - first:
-      213: -3806132583974356507
-    second: music_noir_echo_f64_sheet_7
+      213: 3314641958754285978
+    second: music_noir_rain-Sheet_7
   - first:
-      213: 8096693691625434751
-    second: music_noir_echo_f64_sheet_8
+      213: 7870763877006607047
+    second: music_noir_rain-Sheet_8
   - first:
-      213: 6136218946856251730
-    second: music_noir_echo_f64_sheet_9
+      213: 4289116731924045689
+    second: music_noir_rain-Sheet_9
   - first:
-      213: -6181733766213205898
-    second: music_noir_echo_f64_sheet_10
+      213: -5620097671241733854
+    second: music_noir_rain-Sheet_10
   - first:
-      213: 531256957484360518
-    second: music_noir_echo_f64_sheet_11
+      213: 6293787620633450797
+    second: music_noir_rain-Sheet_11
   - first:
-      213: 2023830980136642837
-    second: music_noir_echo_f64_sheet_12
+      213: -6692132146079722199
+    second: music_noir_rain-Sheet_12
   - first:
-      213: 261766659290207323
-    second: music_noir_echo_f64_sheet_13
+      213: -7077535254720249558
+    second: music_noir_rain-Sheet_13
   - first:
-      213: -74972293366223531
-    second: music_noir_echo_f64_sheet_14
+      213: -4792848990760592853
+    second: music_noir_rain-Sheet_14
   - first:
-      213: -9131773200264218537
-    second: music_noir_echo_f64_sheet_15
+      213: 1917314815919960303
+    second: music_noir_rain-Sheet_15
   - first:
-      213: -2444360689723607536
-    second: music_noir_echo_f64_sheet_16
+      213: -3153580242443625859
+    second: music_noir_rain-Sheet_16
   - first:
-      213: 6138654005220822117
-    second: music_noir_echo_f64_sheet_17
+      213: -4498970640543397535
+    second: music_noir_rain-Sheet_17
   - first:
-      213: 7656729271782040205
-    second: music_noir_echo_f64_sheet_18
+      213: -2518405241270693748
+    second: music_noir_rain-Sheet_18
   - first:
-      213: 4703653750456769385
-    second: music_noir_echo_f64_sheet_19
+      213: 6849146142608177081
+    second: music_noir_rain-Sheet_19
   - first:
-      213: 6138115828775323871
-    second: music_noir_echo_f64_sheet_20
+      213: -3064364374076318841
+    second: music_noir_rain-Sheet_20
   - first:
-      213: 4186189751942157486
-    second: music_noir_echo_f64_sheet_21
+      213: -563106101224859199
+    second: music_noir_rain-Sheet_21
   - first:
-      213: 8306171156106932618
-    second: music_noir_echo_f64_sheet_22
+      213: -5621704517082803401
+    second: music_noir_rain-Sheet_22
   - first:
-      213: 4658588105663020811
-    second: music_noir_echo_f64_sheet_23
+      213: 8672164537667832054
+    second: music_noir_rain-Sheet_23
   - first:
-      213: -6884193729533715123
-    second: music_noir_echo_f64_sheet_0
+      213: -4631259883689922451
+    second: music_noir_rain-Sheet_24
   - first:
-      213: -4250932755905076300
-    second: music_noir_echo_f64_sheet_1
+      213: 3192551567755879588
+    second: music_noir_rain-Sheet_25
   - first:
-      213: 6849762087955997709
-    second: music_noir_echo_f64_sheet_2
+      213: -2608604921143130275
+    second: music_noir_rain-Sheet_26
   - first:
-      213: 3478721218629293991
-    second: music_noir_echo_f64_sheet_3
+      213: -4142270654738249983
+    second: music_noir_rain-Sheet_27
   - first:
-      213: 2745588333365673731
-    second: music_noir_echo_f64_sheet_4
+      213: -2929543217463213886
+    second: music_noir_rain-Sheet_28
   - first:
-      213: -6773640736140143754
-    second: music_noir_echo_f64_sheet_5
+      213: -3732500874314139824
+    second: music_noir_rain-Sheet_29
   - first:
-      213: -1466275077361630843
-    second: music_noir_echo_f64_sheet_6
+      213: 3283831738890801751
+    second: music_noir_rain-Sheet_30
   - first:
-      213: -7148685349234186472
-    second: music_noir_echo_f64_sheet_7
-  - first:
-      213: -8910381356755803297
-    second: music_noir_echo_f64_sheet_8
-  - first:
-      213: -8812514454161444193
-    second: music_noir_echo_f64_sheet_9
-  - first:
-      213: -8266063694595017042
-    second: music_noir_echo_f64_sheet_10
-  - first:
-      213: -3987147208783643788
-    second: music_noir_echo_f64_sheet_11
-  - first:
-      213: -2635350069353908338
-    second: music_noir_echo_f64_sheet_12
-  - first:
-      213: 6895588526222138230
-    second: music_noir_echo_f64_sheet_13
-  - first:
-      213: -9191073161158892822
-    second: music_noir_echo_f64_sheet_14
-  - first:
-      213: 2312239810103831268
-    second: music_noir_echo_f64_sheet_15
-  - first:
-      213: 6572511685092230956
-    second: music_noir_echo_f64_sheet_16
-  - first:
-      213: 270693400887765247
-    second: music_noir_echo_f64_sheet_17
-  - first:
-      213: -785168007726790423
-    second: music_noir_echo_f64_sheet_18
-  - first:
-      213: -3393510497624153521
-    second: music_noir_echo_f64_sheet_19
-  - first:
-      213: -5261642193340464329
-    second: music_noir_echo_f64_sheet_20
-  - first:
-      213: -8283894582472601745
-    second: music_noir_echo_f64_sheet_21
-  - first:
-      213: 4910712580966073534
-    second: music_noir_echo_f64_sheet_22
-  - first:
-      213: 6483681163241329036
-    second: music_noir_echo_f64_sheet_23
-  - first:
-      213: 7817994283075320336
-    second: music_noir_echo_f64_sheet_24
-  - first:
-      213: 7603808814418639665
-    second: music_noir_echo_f64_sheet_25
-  - first:
-      213: -794568969269681373
-    second: music_noir_echo_f64_sheet_26
-  - first:
-      213: 6735026286057157440
-    second: music_noir_echo_f64_sheet_27
-  - first:
-      213: -4823497766601285581
-    second: music_noir_echo_f64_sheet_28
-  - first:
-      213: 2364155546911620777
-    second: music_noir_echo_f64_sheet_29
-  - first:
-      213: 3606546223934874226
-    second: music_noir_echo_f64_sheet_30
-  - first:
-      213: -446434278589522534
-    second: music_noir_echo_f64_sheet_31
-  - first:
-      213: -1693171313011496164
-    second: music_noir_echo_f64_sheet_32
-  - first:
-      213: 3430189458311970481
-    second: music_noir_echo_f64_sheet_33
-  - first:
-      213: -5159922815680602800
-    second: music_noir_echo_f64_sheet_34
+      213: -3165112364071621999
+    second: music_noir_rain-Sheet_31
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -222,7 +141,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 64
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -263,13 +182,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_0
+      name: music_noir_rain-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 320
-        width: 64
-        height: 64
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -277,20 +196,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d4ddb2ae64e6670a0800000000000000
-      internalID: -6884193729533715123
+      spriteID: fc5fd2fe471b4ad90800000000000000
+      internalID: -7087344797787228721
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_1
+      name: music_noir_rain-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 426450818e106f000800000000000000
+      internalID: 69244940617860644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 320
-        width: 64
-        height: 64
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -298,20 +238,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4b3a4305e27a105c0800000000000000
-      internalID: -4250932755905076300
+      spriteID: ce618353426942fa0800000000000000
+      internalID: -5826366935654721812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_2
+      name: music_noir_rain-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fff0fe054f240ff0800000000000000
+      internalID: -70879720481161226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_4
       rect:
         serializedVersion: 2
         x: 128
-        y: 320
-        width: 64
-        height: 64
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -319,20 +280,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d042e80d35e3f0f50800000000000000
-      internalID: 6849762087955997709
+      spriteID: 6820b3cdde63b4b60800000000000000
+      internalID: 7731333580541592198
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_3
+      name: music_noir_rain-Sheet_5
       rect:
         serializedVersion: 2
-        x: 0
-        y: 256
-        width: 64
-        height: 64
+        x: 160
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -340,62 +301,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a7530d6486e64030800000000000000
-      internalID: 3478721218629293991
+      spriteID: df0dd5d535b126ee0800000000000000
+      internalID: -1269422100102393603
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30fb7bdda0a4a1620800000000000000
-      internalID: 2745588333365673731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_5
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 673504683a13ff1a0800000000000000
-      internalID: -6773640736140143754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_6
+      name: music_noir_rain-Sheet_6
       rect:
         serializedVersion: 2
         x: 192
-        y: 256
-        width: 64
-        height: 64
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -403,20 +322,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5810ad6f59eb6abe0800000000000000
-      internalID: -1466275077361630843
+      spriteID: 52745befbce738f10800000000000000
+      internalID: 2270798051741615909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_7
+      name: music_noir_rain-Sheet_7
       rect:
         serializedVersion: 2
-        x: 256
-        y: 256
-        width: 64
-        height: 64
+        x: 224
+        y: 96
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -424,356 +343,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8176bdbdc84cacc90800000000000000
-      internalID: -7148685349234186472
+      spriteID: a99772dbc49fffd20800000000000000
+      internalID: 3314641958754285978
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_8
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f53ae418d57f75480800000000000000
-      internalID: -8910381356755803297
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_9
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f9236bd6bc8a3b580800000000000000
-      internalID: -8812514454161444193
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_10
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea639e08dda094d80800000000000000
-      internalID: -8266063694595017042
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_11
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 47bb2490dbecaa8c0800000000000000
-      internalID: -3987147208783643788
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_12
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e87fb59131b5d6bd0800000000000000
-      internalID: -2635350069353908338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_13
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 67bdabeea3d02bf50800000000000000
-      internalID: 6895588526222138230
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_14
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae26f7408afb27080800000000000000
-      internalID: -9191073161158892822
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_15
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ea61c44bd9b61020800000000000000
-      internalID: 2312239810103831268
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_16
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c27c6001e80463b50800000000000000
-      internalID: 6572511685092230956
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_17
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ff825f2c632b1c300800000000000000
-      internalID: 270693400887765247
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_18
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e881726bd58a15f0800000000000000
-      internalID: -785168007726790423
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_19
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f42ad879e24d7e0d0800000000000000
-      internalID: -3393510497624153521
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_20
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7330cb27d44eaf6b0800000000000000
-      internalID: -5261642193340464329
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_21
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f6f00f664c1b90d80800000000000000
-      internalID: -8283894582472601745
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_22
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: eb44686031b562440800000000000000
-      internalID: 4910712580966073534
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_23
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c8114eb7aa9aaf950800000000000000
-      internalID: 6483681163241329036
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_24
+      name: music_noir_rain-Sheet_8
       rect:
         serializedVersion: 2
         x: 0
         y: 64
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -781,20 +364,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01a3db201681f7c60800000000000000
-      internalID: 7817994283075320336
+      spriteID: 7c284f78b029a3d60800000000000000
+      internalID: 7870763877006607047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_25
+      name: music_noir_rain-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f548661f0068b30800000000000000
+      internalID: 4289116731924045689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_10
       rect:
         serializedVersion: 2
         x: 64
         y: 64
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -802,20 +406,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13b386b74d7268960800000000000000
-      internalID: 7603808814418639665
+      spriteID: 229e2aec1f66102b0800000000000000
+      internalID: -5620097671241733854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_26
+      name: music_noir_rain-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d299b9bbe76085750800000000000000
+      internalID: 6293787620633450797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_12
       rect:
         serializedVersion: 2
         x: 128
         y: 64
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -823,20 +448,251 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 323e1257bbf19f4f0800000000000000
-      internalID: -794568969269681373
+      spriteID: 92512f20545c023a0800000000000000
+      internalID: -6692132146079722199
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_27
+      name: music_noir_rain-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2188192f2b87cd90800000000000000
+      internalID: -7077535254720249558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2a10ab8c316c7db0800000000000000
+      internalID: -4792848990760592853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe0b08daaabab9a10800000000000000
+      internalID: 1917314815919960303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a15765a7b3c34d0800000000000000
+      internalID: -3153580242443625859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 169cf7bf9027091c0800000000000000
+      internalID: -4498970640543397535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c801491b6c3dc0dd0800000000000000
+      internalID: -2518405241270693748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b7b5ecd02e0d0f50800000000000000
+      internalID: 6849146142608177081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b91d466d03975d0800000000000000
+      internalID: -3064364374076318841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c913a10cf17f28f0800000000000000
+      internalID: -563106101224859199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733121bd681bbf1b0800000000000000
+      internalID: -5621704517082803401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f84e6d23b7b95870800000000000000
+      internalID: 8672164537667832054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_24
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -844,20 +700,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 043fa5539be977d50800000000000000
-      internalID: 6735026286057157440
+      spriteID: d60352a5ca57abfb0800000000000000
+      internalID: -4631259883689922451
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_28
+      name: music_noir_rain-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a4a43b6cb83e4c20800000000000000
+      internalID: 3192551567755879588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_26
       rect:
         serializedVersion: 2
         x: 64
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -865,20 +742,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 33027d6565e7f0db0800000000000000
-      internalID: -4823497766601285581
+      spriteID: d578deb25af5ccbd0800000000000000
+      internalID: -2608604921143130275
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_29
+      name: music_noir_rain-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1074dc449c2b386c0800000000000000
+      internalID: -4142270654738249983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_28
       rect:
         serializedVersion: 2
         x: 128
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -886,20 +784,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9aebf6fa1fa2fc020800000000000000
-      internalID: 2364155546911620777
+      spriteID: 2c043f017fb2857d0800000000000000
+      internalID: -2929543217463213886
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_30
+      name: music_noir_rain-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057bbaefa3e733cc0800000000000000
+      internalID: -3732500874314139824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_rain-Sheet_30
       rect:
         serializedVersion: 2
         x: 192
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -907,20 +826,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2722aafaea60d0230800000000000000
-      internalID: 3606546223934874226
+      spriteID: 7525dba6193829d20800000000000000
+      internalID: 3283831738890801751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_31
+      name: music_noir_rain-Sheet_31
       rect:
         serializedVersion: 2
-        x: 256
+        x: 224
         y: 0
-        width: 64
-        height: 64
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -928,71 +847,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9d1d119362fdc9f0800000000000000
-      internalID: -446434278589522534
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_32
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1b611069a5a088e0800000000000000
-      internalID: -1693171313011496164
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_33
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1be79fe632b7a9f20800000000000000
-      internalID: 3430189458311970481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_echo_f64_sheet_34
-      rect:
-        serializedVersion: 2
-        x: 448
-        y: 0
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05d9cee99854468b0800000000000000
-      internalID: -5159922815680602800
+      spriteID: 19a605903134314d0800000000000000
+      internalID: -3165112364071621999
       vertices: []
       indices: 
       edges: []

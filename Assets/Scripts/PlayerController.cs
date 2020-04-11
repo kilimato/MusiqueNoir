@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
     {
         PlayerMoves();
 
+        IsPlayerUsingResonator();
+
         CanPlayerHide();
     }
 
@@ -46,10 +48,33 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //trigger for player resonator animation
+    private void IsPlayerUsingResonator()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetBool("IsPlayingMusic", true);
+        }
+        else if (Input.GetKeyUp(KeyCode.Space))
+        {
+            animator.SetBool("IsPlayingMusic", false);
+        }
+    }
+
     private void PlayerMoves()
     {
         // player can't move if they're hiding
         if (!isVisible) return;
+
+        // player run animation trigger
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            animator.SetBool("IsRunning", true);
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            animator.SetBool("IsRunning", false);
+        }
 
         horizontalInput = Input.GetAxis("Horizontal");
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
