@@ -1,7 +1,205 @@
 fileFormatVersion: 2
 guid: c2aa92c8651c24745b2f7dc6e2cd09a0
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 8609829353236233779
+    second: music_noir_elevator-Sheet_0
+  - first:
+      213: 232597053492959231
+    second: music_noir_elevator-Sheet_1
+  - first:
+      213: 8616157802898563994
+    second: music_noir_elevator-Sheet_2
+  - first:
+      213: -8476474837178537931
+    second: music_noir_elevator-Sheet_3
+  - first:
+      213: -1907792296126890406
+    second: music_noir_elevator-Sheet_4
+  - first:
+      213: -1615449212974794555
+    second: music_noir_elevator-Sheet_5
+  - first:
+      213: -916269894944857040
+    second: music_noir_elevator-Sheet_6
+  - first:
+      213: 7757723934658542015
+    second: music_noir_elevator-Sheet_7
+  - first:
+      213: -4879865589152885954
+    second: music_noir_elevator-Sheet_8
+  - first:
+      213: -3820664897252578798
+    second: music_noir_elevator-Sheet_9
+  - first:
+      213: 366773600956643805
+    second: music_noir_elevator-Sheet_10
+  - first:
+      213: 1752114210587807650
+    second: music_noir_elevator-Sheet_11
+  - first:
+      213: -8976329022742852294
+    second: music_noir_elevator-Sheet_12
+  - first:
+      213: 5530171993029640862
+    second: music_noir_elevator-Sheet_13
+  - first:
+      213: 5807082854345034349
+    second: music_noir_elevator-Sheet_14
+  - first:
+      213: -3910246063424496480
+    second: music_noir_elevator-Sheet_15
+  - first:
+      213: -7496683796489816905
+    second: music_noir_elevator-Sheet_16
+  - first:
+      213: 1945905573914698619
+    second: music_noir_elevator-Sheet_17
+  - first:
+      213: -940420573671809158
+    second: music_noir_elevator-Sheet_18
+  - first:
+      213: 5609243521529167348
+    second: music_noir_elevator-Sheet_19
+  - first:
+      213: 7474828648632385425
+    second: music_noir_elevator-Sheet_20
+  - first:
+      213: 352430208882428515
+    second: music_noir_elevator-Sheet_21
+  - first:
+      213: -7631635731347405825
+    second: music_noir_elevator-Sheet_22
+  - first:
+      213: -5035800588203971533
+    second: music_noir_elevator-Sheet_23
+  - first:
+      213: -1689177090129837825
+    second: music_noir_elevator-Sheet_24
+  - first:
+      213: 3619692435920165150
+    second: music_noir_elevator-Sheet_25
+  - first:
+      213: 1163333467027109838
+    second: music_noir_elevator-Sheet_26
+  - first:
+      213: -4854197923606766805
+    second: music_noir_elevator-Sheet_27
+  - first:
+      213: 317276599357792392
+    second: music_noir_elevator-Sheet_28
+  - first:
+      213: -3185148270481310116
+    second: music_noir_elevator-Sheet_29
+  - first:
+      213: -8940802605050773749
+    second: music_noir_elevator-Sheet_30
+  - first:
+      213: 1570861579250772326
+    second: music_noir_elevator-Sheet_31
+  - first:
+      213: 5311898841146583056
+    second: music_noir_elevator-Sheet_32
+  - first:
+      213: 4639655067240478387
+    second: music_noir_elevator-Sheet_33
+  - first:
+      213: 3584134239979389368
+    second: music_noir_elevator-Sheet_34
+  - first:
+      213: 7835026421196509988
+    second: music_noir_elevator-Sheet_35
+  - first:
+      213: 6584678345063633985
+    second: music_noir_elevator-Sheet_36
+  - first:
+      213: 8476608746483291537
+    second: music_noir_elevator-Sheet_37
+  - first:
+      213: -3734612854915536981
+    second: music_noir_elevator-Sheet_38
+  - first:
+      213: 1517395173809810514
+    second: music_noir_elevator-Sheet_39
+  - first:
+      213: 5745088193076654132
+    second: music_noir_elevator-Sheet_40
+  - first:
+      213: 7815084027327985598
+    second: music_noir_elevator-Sheet_41
+  - first:
+      213: -52601413145573731
+    second: music_noir_elevator-Sheet_42
+  - first:
+      213: 5942305178368223468
+    second: music_noir_elevator-Sheet_43
+  - first:
+      213: 2936042427303684711
+    second: music_noir_elevator-Sheet_44
+  - first:
+      213: -6220447011319359544
+    second: music_noir_elevator-Sheet_45
+  - first:
+      213: 22455941760442015
+    second: music_noir_elevator-Sheet_46
+  - first:
+      213: -3782100121965284810
+    second: music_noir_elevator-Sheet_47
+  - first:
+      213: -5967005284981963499
+    second: music_noir_elevator-Sheet_48
+  - first:
+      213: 7178698226345029802
+    second: music_noir_elevator-Sheet_49
+  - first:
+      213: 5624933939416282450
+    second: music_noir_elevator-Sheet_50
+  - first:
+      213: -3635787748462892448
+    second: music_noir_elevator-Sheet_51
+  - first:
+      213: 5194364760270796826
+    second: music_noir_elevator-Sheet_52
+  - first:
+      213: -787213385363450768
+    second: music_noir_elevator-Sheet_53
+  - first:
+      213: -1671275278388481750
+    second: music_noir_elevator-Sheet_54
+  - first:
+      213: 1936447144652634950
+    second: music_noir_elevator-Sheet_55
+  - first:
+      213: -1342886088801160898
+    second: music_noir_elevator-Sheet_56
+  - first:
+      213: -4584948566938113099
+    second: music_noir_elevator-Sheet_57
+  - first:
+      213: -667076595830186004
+    second: music_noir_elevator-Sheet_58
+  - first:
+      213: -4355063642498611110
+    second: music_noir_elevator-Sheet_59
+  - first:
+      213: -7893611973180341050
+    second: music_noir_elevator-Sheet_60
+  - first:
+      213: 8814884582113223207
+    second: music_noir_elevator-Sheet_61
+  - first:
+      213: 5330663941428100894
+    second: music_noir_elevator-Sheet_62
+  - first:
+      213: -4478133569969830616
+    second: music_noir_elevator-Sheet_63
+  - first:
+      213: -6154529033343429774
+    second: music_noir_elevator-Sheet_64
+  - first:
+      213: 3977569902934017336
+    second: music_noir_elevator-Sheet_65
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -31,7 +229,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -40,12 +238,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -63,7 +261,19 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -72,7 +282,238 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: music_noir_elevator-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33e70601e224c7770800000000000000
+      internalID: 8609829353236233779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff7104da9c95a3300800000000000000
+      internalID: 232597053492959231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a93aa721fddb29770800000000000000
+      internalID: 8616157802898563994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 288
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 538af6ebb038d5a80800000000000000
+      internalID: -8476474837178537931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e312cb3092685e0800000000000000
+      internalID: -1907792296126890406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c8f3f3ff75c499e0800000000000000
+      internalID: -1615449212974794555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0346d699261c843f0800000000000000
+      internalID: -916269894944857040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb93edef0d8f8ab60800000000000000
+      internalID: 7757723934658542015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e33d3eee91c374cb0800000000000000
+      internalID: -4879865589152885954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21aa479c4854afac0800000000000000
+      internalID: -3820664897252578798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9f20695aa071500800000000000000
+      internalID: 366773600956643805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
