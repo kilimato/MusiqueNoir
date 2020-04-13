@@ -21,6 +21,9 @@ public class ElevatorController : MonoBehaviour
     float percentBetweenWaypoints;
     float nextMoveTime;
 
+    Vector3 startPoint;
+    Vector3 endPoint;
+
 
     void Start()
     {
@@ -29,12 +32,13 @@ public class ElevatorController : MonoBehaviour
         {
             globalWaypoints[i] = localWaypoints[i] + transform.position;
         }
+        startPoint = globalWaypoints[0];
+        endPoint = globalWaypoints[1];
     }
 
     void Update()
     {
-        Vector3 velocity = CalculatePlatformMovement();
-        transform.Translate(velocity);
+
     }
 
     float Ease(float x)
@@ -96,9 +100,10 @@ public class ElevatorController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && Input.GetKeyDown(KeyCode.E))
         {
             other.collider.transform.SetParent(transform);
+            MovePlatform();
         }
     }
 
@@ -108,5 +113,11 @@ public class ElevatorController : MonoBehaviour
         {
             other.collider.transform.SetParent(null);
         }
+    }
+
+    private void MovePlatform()
+    {
+        Vector3 velocity = CalculatePlatformMovement();
+        transform.Translate(velocity);
     }
 }
