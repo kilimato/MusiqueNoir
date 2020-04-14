@@ -36,5 +36,6 @@ public class OpenDoor : MonoBehaviour
     {
         outsideTilemaps.SetActive(false);
         insideTilemaps.SetActive(true);
+        canEnter = false;
     }
 }
