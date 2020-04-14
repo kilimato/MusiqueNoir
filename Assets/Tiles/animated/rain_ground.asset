@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
+  m_Name: rain_ground
+  m_EditorClassIdentifier: 
+  m_AnimatedSprites:
+  - {fileID: -3153580242443625859, guid: da7fadb3f32bf664baea9e89dfd4d1b1, type: 3}
+  - {fileID: -4498970640543397535, guid: da7fadb3f32bf664baea9e89dfd4d1b1, type: 3}
+  - {fileID: -2518405241270693748, guid: da7fadb3f32bf664baea9e89dfd4d1b1, type: 3}
+  - {fileID: 6849146142608177081, guid: da7fadb3f32bf664baea9e89dfd4d1b1, type: 3}
+  - {fileID: -3064364374076318841, guid: da7fadb3f32bf664baea9e89dfd4d1b1, type: 3}
+  - {fileID: -563106101224859199, guid: da7fadb3f32bf664baea9e89dfd4d1b1, type: 3}
+  - {fileID: -5621704517082803401, guid: da7fadb3f32bf664baea9e89dfd4d1b1, type: 3}
+  - {fileID: 8672164537667832054, guid: da7fadb3f32bf664baea9e89dfd4d1b1, type: 3}
+  m_MinSpeed: 5
+  m_MaxSpeed: 5
+  m_AnimationStartTime: 0
+  m_AnimationStartFrame: 0
+  m_TileColliderType: 0
