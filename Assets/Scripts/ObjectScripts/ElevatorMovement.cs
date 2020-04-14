@@ -54,7 +54,6 @@ public class ElevatorMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("Collided with elevator");
         if (other.gameObject.tag == "Player")
         {
             onElevator = true;
@@ -64,7 +63,6 @@ public class ElevatorMovement : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D other)
     {
-        Debug.Log("Stopped colliding with elevator");
         if (other.gameObject.tag == "Player")
         {
             onElevator = false;

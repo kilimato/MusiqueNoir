@@ -12,6 +12,7 @@ TagManager:
   - HidingPlace
   - Stairs
   - Through
+  - Roof
   layers:
   - Default
   - TransparentFX
