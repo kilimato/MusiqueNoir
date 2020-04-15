@@ -147,6 +147,8 @@ MonoBehaviour:
   exitTimer: 0
   ringSize: 2
   ringMaxSize: 6
+  ResonanceEvent: event:/resonating
+  resonanceStartingIntensity: 0
 --- !u!50 &2300155673908010267
 Rigidbody2D:
   serializedVersion: 4

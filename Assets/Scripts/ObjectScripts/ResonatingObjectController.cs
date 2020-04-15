@@ -25,6 +25,20 @@ public class ResonatingObjectController : MonoBehaviour
     private Material mat;
 
     float waveAmount = 0f;
+
+
+    // FMOD event
+    [FMODUnity.EventRef]
+    public string ResonanceEvent = "event:/resonating";
+    public FMOD.Studio.EventInstance soundEvent;
+
+    public float resonanceStartingIntensity = 0.0f;
+    private float resonanceIntensity;
+
+    FMOD.Studio.PARAMETER_ID soundParameterId;
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +46,25 @@ public class ResonatingObjectController : MonoBehaviour
         psMain = particles.main;
 
         mat = GetComponent<Renderer>().material;
+
+
+        //FMOD sound event
+        //manually starting sound event
+        soundEvent = FMODUnity.RuntimeManager.CreateInstance(ResonanceEvent);
+        resonanceIntensity = resonanceStartingIntensity;
+
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEvent, GetComponent<Transform>(), GetComponent<Rigidbody>());
+
+
+        FMOD.Studio.EventDescription resonanceEventDescription;
+        soundEvent.getDescription(out resonanceEventDescription);
+        FMOD.Studio.PARAMETER_DESCRIPTION resonanceParameterDescription;
+        resonanceEventDescription.getParameterDescriptionByName("ResoIntensity", out resonanceParameterDescription);
+        soundParameterId = resonanceParameterDescription.id;
+
+
+        soundEvent.setParameterByID(soundParameterId, resonanceIntensity);
+        soundEvent.start();
     }
 
     // Update is called once per frame
@@ -42,6 +75,11 @@ public class ResonatingObjectController : MonoBehaviour
         if (exposureTimerActive)
         {
             exposureTimer += Time.deltaTime;
+
+            //Changing FMOD intensity parameter
+            changeSoundIntensity();
+
+            //Setting new
             if (exposureTimer > maxExposureTime)
             {
                 Destroy(gameObject);
@@ -53,6 +91,9 @@ public class ResonatingObjectController : MonoBehaviour
         {
             exitTimer += Time.deltaTime;
             Debug.Log(exitTimer);
+
+            //Changing FMOD intensity parameter
+            changeSoundIntensity();
         }
     }
 
@@ -100,6 +141,7 @@ public class ResonatingObjectController : MonoBehaviour
 
         if (exposureTimer >= maxExposureTime)
         {
+
             Destroy(gameObject);
         }
     }
@@ -140,5 +182,17 @@ public class ResonatingObjectController : MonoBehaviour
             psMain.startSize = ringSize;
             particles.Emit(1);
         }
+    }
+
+    void OnDestroy()
+    {
+        soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        soundEvent.release();
+    }
+
+    public void changeSoundIntensity()
+    {
+        resonanceIntensity = (exposureTimer / maxExposureTime) * 100;
+        soundEvent.setParameterByID(soundParameterId, resonanceIntensity);
     }
 }
