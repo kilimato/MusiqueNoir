@@ -18,7 +18,6 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         stateMachine.ChangeState(new PatrolState(this));
-        stateMachine.ChangeState(new PatrolState(this));
         state = stateMachine.GetCurrentState();
     }
 
@@ -30,4 +29,21 @@ public class EnemyController : MonoBehaviour
         stateMachine.Update();
 
     }
+
+    public void Move(float speed, bool isGoingRight)
+    {
+        if(isGoingRight)
+        {
+            transform.localScale = new Vector3(2f, 2f, 1f);
+            Vector3 movement = new Vector3(-1f, 0f, 0f) * speed * Time.deltaTime;
+            transform.position += movement;
+        }
+        else
+        {
+            transform.localScale = new Vector3(-2f, 2f, 1f);
+            Vector3 movement = new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
+            transform.position += movement;
+        }
+    }
+
 }

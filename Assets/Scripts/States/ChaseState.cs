@@ -47,6 +47,15 @@ public class ChaseState : IState
         //alertSign.SetActive(true);
         destSetter.target = target.transform;
 
+        if(target.transform.position.x < enemy.transform.position.x)
+        {
+            enemy.Move(5f, true);
+        }
+        else if(target.transform.position.x > enemy.transform.position.x)
+        {
+            enemy.Move(5f, false);
+        }
+
     }
 
     public void Exit()

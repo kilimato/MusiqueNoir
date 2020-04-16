@@ -31,6 +31,14 @@ public class OpenDoor : MonoBehaviour
             canEnter = !canEnter;
         }
     }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            canEnter = false;
+        }
+    }
+
 
     private void EnterBuilding()
     {

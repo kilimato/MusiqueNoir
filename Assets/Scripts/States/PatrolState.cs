@@ -41,8 +41,6 @@ public class PatrolState : IState
             enemy.GetComponent<Animator>().SetFloat("Speed", enemy.patrolMovementTime);
 
         }
-
-
     }
 
     public void Exit()
