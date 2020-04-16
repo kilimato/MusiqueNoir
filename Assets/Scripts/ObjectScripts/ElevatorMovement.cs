@@ -40,7 +40,7 @@ public class ElevatorMovement : MonoBehaviour
     private void Move()
     {
         transform.localPosition = Vector3.MoveTowards(transform.localPosition, nexPos, speed * Time.deltaTime);
-        if (Vector3.Distance(transform.localPosition, nexPos) <= 0.1)
+        if (Vector3.Distance(transform.localPosition, nexPos) <= 0.01)
         {
             moving = false;
             ChangeDestination();
