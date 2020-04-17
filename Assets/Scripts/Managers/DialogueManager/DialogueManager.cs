@@ -9,12 +9,13 @@ public class DialogueManager : MonoBehaviour
 {
     private JsonData dialogue;
     public TextMeshProUGUI textDisplay;
+    public Canvas dialogueCanvas;
     private int index;
     private string speaker;
 
     // true when a dialog is loaded and a sentence can be printed,
     // false if dialog hasn't finished loading and if we've reached EOD
-    private bool inDialogue;
+    public bool inDialogue;
 
     // dialogTrigger needs to know whether it's own dialogue has loaded (not just any dialogue)
     // so we return bool to indicate that state
@@ -43,6 +44,7 @@ public class DialogueManager : MonoBehaviour
             {
                 inDialogue = false;
                 textDisplay.text = "";
+                dialogueCanvas.enabled = false;
                 return false;
             }
             // every line has exactly one key (the speaker) so this always gives us the correct speaker
@@ -50,9 +52,29 @@ public class DialogueManager : MonoBehaviour
             {
                 speaker = key.ToString();
             }
-            textDisplay.text = speaker + ": " + line[0].ToString();
+
+            string dialoguePart = speaker + ": " + line[0].ToString();
+
+            StopAllCoroutines();
+            DialogueTextColor(speaker);
+            StartCoroutine(TypeDialogue(dialoguePart));
             index++;
         }
         return true;
+    }
+
+
+    IEnumerator TypeDialogue(string dialoguePart)
+    {
+        textDisplay.text = "";
+        foreach (char letter in dialoguePart.ToCharArray())
+        {
+            textDisplay.text += letter;
+            yield return new WaitForSeconds(0.02f);
+        }
+    }
+    private void DialogueTextColor(string character)
+    {
+        textDisplay.color = GameObject.Find(character).GetComponent<Character>().GetDialogueColor();
     }
 }

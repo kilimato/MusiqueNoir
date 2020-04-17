@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private bool canHide = false;
     private bool isVisible = true;
 
+    public DialogueManager dialogueManager;
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -65,6 +67,11 @@ public class PlayerController : MonoBehaviour
     {
         // player can't move if they're hiding
         if (!isVisible) return;
+        if (dialogueManager.inDialogue)
+        {
+            animator.SetFloat("Speed", 0.0f);
+            return;
+        }
 
         // player run animation trigger
         if (Input.GetKeyDown(KeyCode.LeftShift))

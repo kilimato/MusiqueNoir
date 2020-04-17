@@ -7,10 +7,9 @@ public class DialogueTrigger : MonoBehaviour
     public DialogueManager dialogueManager;
     public GameObject player;
     public string dialoguePath;
+
     public bool inTrigger = false;
     public bool dialogueLoaded = false;
-
-    public bool startDialog = false;
 
     public bool firstTime = true;
 
@@ -27,7 +26,6 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            startDialog = true;
             inTrigger = true;
         }
     }
@@ -40,9 +38,9 @@ public class DialogueTrigger : MonoBehaviour
         }
     }
 
-    private void RunDialogue(bool trigger)
+    private void RunDialogue(bool keyTrigger)
     {
-        if (startDialog && firstTime)
+        if (firstTime)
         {
             if (inTrigger && !dialogueLoaded)
             {
@@ -54,7 +52,7 @@ public class DialogueTrigger : MonoBehaviour
                 firstTime = false;
             }
         }
-        else if (trigger)
+        else if (keyTrigger)
         {
             if (inTrigger && !dialogueLoaded)
             {
@@ -70,13 +68,13 @@ public class DialogueTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (startDialog)
+        if (firstTime && inTrigger)
         {
             // we trigger the dialog for the first time, then press c to continue dialog
-            RunDialogue(startDialog);
-            startDialog = false;
+            RunDialogue(firstTime);
         }
-        else
+
+        if (!firstTime)
         {
             // here we start dialogue when we are in collision area of the NPC and press C
             // could be anything else tp trigger the dialogue
