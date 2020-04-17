@@ -12,7 +12,7 @@ public class ChaseState : IState
 
     //private GameObject alertSign;
     private GameObject target;
-    //private GameObject startingPos;
+    private PlayerController player;
 
     readonly EnemyController enemy;
 
@@ -31,6 +31,7 @@ public class ChaseState : IState
         destSetter = enemy.GetComponent<AIDestinationSetter>();
 
         target = GameObject.FindGameObjectWithTag("Player");
+        player = target.GetComponent<PlayerController>();
 
         seeker.enabled = true;
         aiPath.enabled = true;
@@ -56,6 +57,11 @@ public class ChaseState : IState
             enemy.Move(5f, false);
         }
 
+        if(Vector2.Distance(enemy.transform.position, target.transform.position) > 10f)
+        {
+            if (enemy.stateMachine.GetCurrentState() == "ChaseState") enemy.stateMachine.ChangeState(new ReturnState(enemy));
+        }
+        if (!player.IsVisible()) enemy.stateMachine.ChangeState(new ReturnState(enemy));
     }
 
     public void Exit()
@@ -64,6 +70,8 @@ public class ChaseState : IState
         aiPath.enabled = false;
         destSetter.enabled = false;
         enemy.GetComponent<Animator>().SetBool("Alerted", false);
+
+        enemy.ReturnToStartingPos();
         //Debug.Log("Exiting Chase State");
 
     }

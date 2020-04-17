@@ -10,14 +10,21 @@ public class IntroTextController : MonoBehaviour
     RawImage fadeImage;
     Text introText;
 
+    static private bool isAlreadySeen = false;
+
     // Start is called before the first frame update
     void Start()
     {
 
         introCanvas = GetComponent<Canvas>();
+        if (isAlreadySeen)
+        {
+            introCanvas.enabled = false;
+            return;
+        }
         fadeImage = GetComponentInChildren<RawImage>();
         introText = GetComponentInChildren<Text>();
-        //Time.timeScale = 0;
+        Time.timeScale = 0;
         StartCoroutine(FadeIn(introText));
 
     }
@@ -31,6 +38,7 @@ public class IntroTextController : MonoBehaviour
             StartCoroutine(FadeOut(fadeImage));
             StartCoroutine(FadeOut(introText));
             //introCanvas.enabled = false;
+            isAlreadySeen = true;
             Time.timeScale = 1;
         }
 

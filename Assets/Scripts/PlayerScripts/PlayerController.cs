@@ -17,12 +17,15 @@ public class PlayerController : MonoBehaviour
     private bool canHide = false;
     private bool isVisible = true;
 
+    private Rigidbody2D rb;
+
     public DialogueManager dialogueManager;
 
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         hideplayerScript = GetComponent<HidePlayer>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -42,11 +45,13 @@ public class PlayerController : MonoBehaviour
         {
             isVisible = !isVisible;
             sr.enabled = false;
+            rb.simulated = false;
         }
         else if (!isVisible && Input.GetKeyDown(KeyCode.E))
         {
             isVisible = !isVisible;
             sr.enabled = true;
+            rb.simulated = true;
         }
     }
 
@@ -101,13 +106,18 @@ public class PlayerController : MonoBehaviour
 
         //if (movement.x >= 0.01f)
         //{
-        //    transform.localScale = new Vector3(2.5f, 2.5f, 1f);
+        //    transform.localScale = new Vector3(2f, 2.5f, 1f);
         //}
         //else if (movement.x <= -0.01f)
         //{
-        //    transform.localScale = new Vector3(-2.5f, 2.5f, 1f);
+        //    transform.localScale = new Vector3(-2f, 2.5f, 1f);
         //}
 
+    }
+
+    public bool IsVisible()
+    {
+        return isVisible;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

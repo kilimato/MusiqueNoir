@@ -14,11 +14,14 @@ public class EnemyController : MonoBehaviour
 
     public StateMachine stateMachine = new StateMachine();
 
+    private Vector3 startingPos;
+
     // Start is called before the first frame update
     void Start()
     {
         stateMachine.ChangeState(new PatrolState(this));
         state = stateMachine.GetCurrentState();
+        startingPos = transform.position;
     }
 
     // Update is called once per frame
@@ -30,9 +33,9 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    public void Move(float speed, bool isGoingRight)
+    public void Move(float speed, bool isGoingLeft)
     {
-        if(isGoingRight)
+        if(isGoingLeft)
         {
             transform.localScale = new Vector3(2f, 2f, 1f);
             Vector3 movement = new Vector3(-1f, 0f, 0f) * speed * Time.deltaTime;
@@ -46,4 +49,20 @@ public class EnemyController : MonoBehaviour
         }
     }
 
+    public Vector3 GetStartingPos()
+    {
+        return startingPos;
+    }
+
+    public void ReturnToStartingPos()
+    {
+        if (transform.position.x > startingPos.x)
+        {
+            Move(patrolSpeed, true);
+        }
+        else
+        {
+            Move(patrolSpeed, false);
+        }
+    }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Pathfinding;
 
 public class MoveTowardsPlayer : MonoBehaviour
@@ -11,7 +12,7 @@ public class MoveTowardsPlayer : MonoBehaviour
 
     public GameObject alertSign;
     private GameObject target;
-    public GameObject startingPos;
+    private PlayerController player;
 
     public StateMachine sm;
 
@@ -26,6 +27,8 @@ public class MoveTowardsPlayer : MonoBehaviour
         aiPath = GetComponent<AIPath>();
         destSetter = GetComponent<AIDestinationSetter>();
 
+        player = target.GetComponent<PlayerController>();
+
         sm = GetComponent<EnemyController>().stateMachine;
 
         seeker.enabled = false;
@@ -35,21 +38,10 @@ public class MoveTowardsPlayer : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-        if (Vector2.Distance(transform.position, target.transform.position) > 10f)
-        {
-
-            if (sm.GetCurrentState() == "ChaseState") sm.ChangeState(new PatrolState(GetComponent<EnemyController>()));
-            ReturnToStartPos();
-        }
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player") && sm.GetCurrentState() == "PatrolState")
+
+        if (other.gameObject.CompareTag("Player") && sm.GetCurrentState() != "ChaseState")
         {
 
             sm.ChangeState(new ChaseState(GetComponent<EnemyController>()));
@@ -59,16 +51,11 @@ public class MoveTowardsPlayer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if(other.gameObject.CompareTag("Player"))
+
+        if (other.gameObject.CompareTag("Player") && player.IsVisible())
         {
             Destroy(gameObject);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-
-    // not working right now 
-    private void ReturnToStartPos()
-    {
-        //destSetter.target = startingPos.transform;
-    }
-
 }
