@@ -20,6 +20,7 @@ public class IntroTextController : MonoBehaviour
         if (isAlreadySeen)
         {
             introCanvas.enabled = false;
+            enabled = false;
             return;
         }
         fadeImage = GetComponentInChildren<RawImage>();
