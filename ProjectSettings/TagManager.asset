@@ -13,6 +13,9 @@ TagManager:
   - Stairs
   - Through
   - Roof
+  - Rain
+  - OutsideTilemaps
+  - InsideTilemaps
   layers:
   - Default
   - TransparentFX

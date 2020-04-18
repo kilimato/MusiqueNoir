@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class VolumeController : MonoBehaviour
 {
+    private bool resoStart = false;
+    private bool hasStarted = false;
 
     [FMODUnity.EventRef]
     public string VolumeEvent = "";
@@ -24,7 +26,7 @@ public class VolumeController : MonoBehaviour
 
         //manually start event
         soundEvent = FMODUnity.RuntimeManager.CreateInstance(VolumeEvent);
-        soundEvent.start();
+        //soundEvent.start();
 
         FMOD.Studio.EventDescription volumeEventDescription;
         soundEvent.getDescription(out volumeEventDescription);
@@ -48,11 +50,20 @@ public class VolumeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //volume = cachedParticleSystem.StartSize;
-
-        //Constant is caluclated from circlecolliders radious. 0.75x = 100, solve  x
-        volume = cachedParticleCollider.radius * 133.333f;
-        soundEvent.setParameterByID(soundParameterId, volume);
+        if (hasStarted)
+        {
+            //Constant is caluclated from circlecolliders radious. 0.75x = 100, solve  x
+            volume = cachedParticleCollider.radius * 133.333f;
+            soundEvent.setParameterByID(soundParameterId, volume);
+        }
+        else
+        {
+            if (Input.GetKey(KeyCode.Space))
+            {
+                hasStarted = true;
+                soundEvent.start();
+            }
+        }
 
     }
 }
