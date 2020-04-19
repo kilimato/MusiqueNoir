@@ -5,10 +5,10 @@ using UnityEngine;
 public class OpenDoor : MonoBehaviour
 {
     private BoxCollider2D doorCollider;
-    private bool canEnter = false;
+    public bool canEnter = true;
 
-    public GameObject outsideTilemaps;
     public GameObject insideTilemaps;
+    public GameObject buildingExterior;
 
     // Start is called before the first frame update
     void Start()
@@ -18,20 +18,37 @@ public class OpenDoor : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (canEnter && Input.GetKeyDown(KeyCode.E))
+    {/*
+        if (canEnter && insideTilemaps.activeSelf == false && Input.GetKeyDown(KeyCode.E))
         {
+            canEnter = false;
             EnterBuilding();
         }
+
+        if (!canEnter && insideTilemaps.activeSelf == true && Input.GetKeyDown(KeyCode.E))
+        {
+            canEnter = true;
+            ExitBuilding();
+        }
+        */
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && canEnter)
         {
+            buildingExterior.SetActive(false);
+            insideTilemaps.SetActive(true);
+            canEnter = !canEnter;
+        }
+        else if (other.gameObject.tag == "Player" && !canEnter)
+        {
+            buildingExterior.SetActive(true);
+            insideTilemaps.SetActive(false);
             canEnter = !canEnter;
         }
     }
+    /*
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
@@ -43,8 +60,15 @@ public class OpenDoor : MonoBehaviour
 
     private void EnterBuilding()
     {
-        outsideTilemaps.SetActive(false);
+        buildingExterior.SetActive(false);
         insideTilemaps.SetActive(true);
-        canEnter = false;
     }
+
+    private void ExitBuilding()
+    {
+        buildingExterior.SetActive(true);
+        insideTilemaps.SetActive(false);
+    }
+    */
 }
+
