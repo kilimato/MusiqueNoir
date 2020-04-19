@@ -8,6 +8,7 @@ public class ElevatorMovement : MonoBehaviour
     private Vector3 posB;
 
     private Vector3 nexPos;
+    public PlatformEffector2D upperFloorOneWayPlatform;
 
     [SerializeField]
     private float speed;
@@ -26,9 +27,10 @@ public class ElevatorMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (onElevator && Input.GetKey(KeyCode.E))
+        if (onElevator && Input.GetKeyDown(KeyCode.E))
         {
             moving = true;
+            //upperFloorOneWayPlatform.rotationalOffset = upperFloorOneWayPlatform.rotationalOffset != 180 ? 180 : 0;
         }
 
         if (moving)
@@ -66,7 +68,7 @@ public class ElevatorMovement : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             onElevator = false;
-           // other.gameObject.transform.parent = null;
+            // other.gameObject.transform.parent = null;
         }
     }
 

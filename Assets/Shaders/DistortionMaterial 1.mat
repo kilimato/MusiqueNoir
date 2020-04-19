@@ -46,6 +46,10 @@ Material:
     - Vector1_C9DB460A: 8.53
     - Vector1_EC78E118: 0.81
     - _EnableExternalAlpha: 0
+    - _RadialPush: 0
+    - _SineAmplitude: 0
+    - _SineFrequency: 0
+    - _SineSpeed: 0
     - _Speed: 0.89
     m_Colors:
     - Vector2_A829EC05: {r: 1, g: 1, b: 0, a: 0}

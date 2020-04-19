@@ -17,6 +17,7 @@ TagManager:
   - OutsideTilemaps
   - InsideTilemaps
   - Elevator
+  - ElevatorButton
   layers:
   - Default
   - TransparentFX
