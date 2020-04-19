@@ -26,7 +26,7 @@ public class OutlineController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player" && other.IsTouching(boxCollider))
         {
             // StartCoroutine(UpdateOutline());
             mat.SetFloat("_OutlineThickness", 0.5f);

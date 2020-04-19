@@ -243,12 +243,12 @@ MonoBehaviour:
   Path: event:/resonating
   guid: 3dcf33ae977ae54d9716c9147eea9d95
   Banks:
-  - {fileID: 3346802810214128563}
+  - {fileID: 1580364792562394221}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -8322185366044898577}
+  - {fileID: -147311256343910801}
   MinDistance: 30
   MaxDistance: 100
   Length: 21381
@@ -303,7 +303,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-8231909923588414970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1015,12 +1015,12 @@ MonoBehaviour:
   Path: event:/missionMusic
   guid: 1cb9efd4c5bad4429bc06461dd1969aa
   Banks:
-  - {fileID: 3346802810214128563}
+  - {fileID: 1580364792562394221}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 5991326940244030580}
+  - {fileID: 1575692759864176459}
   MinDistance: 0
   MaxDistance: 0
   Length: 144000
@@ -1215,12 +1215,12 @@ MonoBehaviour:
   Path: event:/hubMusic
   guid: c6541614f92dc143a99768b334653072
   Banks:
-  - {fileID: 3346802810214128563}
+  - {fileID: 1580364792562394221}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 6346166375666552636}
+  - {fileID: 289465853785532906}
   MinDistance: 0
   MaxDistance: 0
   Length: 85055
@@ -1651,12 +1651,12 @@ MonoBehaviour:
   Path: event:/footstepsEnemy
   guid: 00ff3a69ae25bd448f378693f0444e02
   Banks:
-  - {fileID: 3346802810214128563}
+  - {fileID: 1580364792562394221}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -781361713709773355}
+  - {fileID: -2332278800861649187}
   MinDistance: 1
   MaxDistance: 20
   Length: 616
@@ -2312,7 +2312,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 1
-  Exists: 1
+  Exists: 0
 --- !u!114 &-3977137713714868256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2689,12 +2689,12 @@ MonoBehaviour:
   Path: event:/weather
   guid: 464945b55e57eb48b29d0bca6cf6d1d3
   Banks:
-  - {fileID: 3346802810214128563}
+  - {fileID: 1580364792562394221}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -3981825324011071778}
+  - {fileID: 1002201627864280019}
   MinDistance: 0
   MaxDistance: 0
   Length: 110000
@@ -3007,6 +3007,23 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &-2332278800861649187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footstepsEnemy/Wet
+  m_EditorClassIdentifier: 
+  Name: Wet
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-2293886451603008103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3128,6 +3145,23 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &-2016138127080981797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: A
+  m_EditorClassIdentifier: 
+  Name: A
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-1967515469536625784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3299,7 +3333,7 @@ MonoBehaviour:
   Path: event:/propaganda
   guid: 1b4aa256e2aec145bdc60c0b3141094d
   Banks:
-  - {fileID: 3346802810214128563}
+  - {fileID: 1580364792562394221}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -3751,7 +3785,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-773877245294234111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3961,6 +3995,23 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &-147311256343910801
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/resonating/ResoIntensity
+  m_EditorClassIdentifier: 
+  Name: ResoIntensity
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &-147255003074748862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4061,7 +4112,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 6828508143646911579}
-  - {fileID: 3346802810214128563}
+  - {fileID: 1580364792562394221}
   EditorEvents:
   - {fileID: -1519064390366593515}
   - {fileID: -6914027808843071411}
@@ -4071,12 +4122,12 @@ MonoBehaviour:
   - {fileID: -5526553331237327715}
   - {fileID: -3053228357255148190}
   EditorParameters:
-  - {fileID: 4015933630769443060}
+  - {fileID: -2016138127080981797}
   MasterBanks:
-  - {fileID: 3346802810214128563}
+  - {fileID: 1580364792562394221}
   StringsBanks:
   - {fileID: 6828508143646911579}
-  stringsBankWriteTime: 637229154965350600
+  stringsBankWriteTime: 637228885556059754
   cacheVersion: 3
 --- !u!114 &94828488519339762
 MonoBehaviour:
@@ -4181,6 +4232,23 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &289465853785532906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/hubMusic/JumpTo
+  m_EditorClassIdentifier: 
+  Name: JumpTo
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &337391651735529713
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4267,6 +4335,23 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &498181405638120301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footstepsPlayer/Wet
+  m_EditorClassIdentifier: 
+  Name: Wet
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &602534868480932696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4507,6 +4592,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 0
+--- !u!114 &1002201627864280019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/weather/isOutside
+  m_EditorClassIdentifier: 
+  Name: isOutside
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 1
 --- !u!114 &1026156230010146001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4817,6 +4919,41 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 0
+--- !u!114 &1575692759864176459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/missionMusic/Volume
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
+--- !u!114 &1580364792562394221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637229163696853598
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &1631742302227556887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4937,7 +5074,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &1945918411552861936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5731,7 +5868,7 @@ MonoBehaviour:
   lastModified: 637229154965275533
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &3371428921843416709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5988,7 +6125,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &4071674512398530184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6365,7 +6502,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &5026205400607159221
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6774,7 +6911,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &6008156267312502726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6963,7 +7100,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &6376096337058132302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7152,7 +7289,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637229154965350600
+  lastModified: 637228885556059754
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -7328,13 +7465,13 @@ MonoBehaviour:
   Path: event:/footstepsPlayer
   guid: 239a0be8420ff74b8761bf50db024890
   Banks:
-  - {fileID: 3346802810214128563}
+  - {fileID: 1580364792562394221}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: 4980601006291320548}
-  - {fileID: 1935982892061710198}
+  - {fileID: 9151922855884789330}
+  - {fileID: 498181405638120301}
   MinDistance: 0
   MaxDistance: 0
   Length: 616
@@ -8272,6 +8409,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &9151922855884789330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footstepsPlayer/isRunning
+  m_EditorClassIdentifier: 
+  Name: isRunning
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &9191395999922721981
 MonoBehaviour:
   m_ObjectHideFlags: 0
