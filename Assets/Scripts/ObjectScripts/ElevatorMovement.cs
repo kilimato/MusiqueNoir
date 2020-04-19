@@ -57,7 +57,7 @@ public class ElevatorMovement : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             onElevator = true;
-            other.gameObject.transform.parent = transform;
+            //other.gameObject.transform.parent = transform;
         }
     }
 
@@ -66,7 +66,30 @@ public class ElevatorMovement : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             onElevator = false;
+           // other.gameObject.transform.parent = null;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            //onElevator = true;
+            other.gameObject.transform.parent = transform;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            //onElevator = false;
             other.gameObject.transform.parent = null;
         }
+    }
+
+    public bool IsMoving()
+    {
+        return moving;
     }
 }

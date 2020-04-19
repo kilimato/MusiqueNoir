@@ -7,6 +7,15 @@ public class GameManager : MonoBehaviour
 {
     public GameObject fow;
     private bool isActive = true;
+
+    public GameObject insideTilemaps;
+    public GameObject outsideTilemaps;
+
+    private void Start()
+    {
+        insideTilemaps.SetActive(false);
+        outsideTilemaps.SetActive(true);
+    }
     // Update is called once per frame
     void Update()
     {

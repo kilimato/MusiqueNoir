@@ -16,6 +16,7 @@ TagManager:
   - Rain
   - OutsideTilemaps
   - InsideTilemaps
+  - Elevator
   layers:
   - Default
   - TransparentFX
