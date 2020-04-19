@@ -5,10 +5,10 @@ using UnityEngine;
 public class WeatherSoundController : MonoBehaviour
 {
     private bool isRaining = true;
-    private bool isOutside = true;
+    private bool isInside = false;
     private bool hasStarted = false;
 
-    public GameObject outsideTilemaps;
+    public GameObject insideTilemaps;
 
     [FMODUnity.EventRef]
     public string weatherEvent = "";
@@ -40,8 +40,8 @@ public class WeatherSoundController : MonoBehaviour
     {
         if (hasStarted)
         {
-            isOutside = outsideTilemaps.activeInHierarchy;
-            weatherInstance.setParameterByID(outsideParameterId, isOutside ? 1 : 0);
+            isInside = insideTilemaps.activeInHierarchy;
+            weatherInstance.setParameterByID(outsideParameterId, isInside ? 0 : 1);
         }
         else if (isRaining)
         {
@@ -52,6 +52,6 @@ public class WeatherSoundController : MonoBehaviour
 
     public void setOutside(bool b)
     {
-        isOutside = b;
+        isInside = b;
     }
 }

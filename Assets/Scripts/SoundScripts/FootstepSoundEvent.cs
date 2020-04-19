@@ -5,12 +5,12 @@ using UnityEngine;
 public class FootstepSoundEvent : MonoBehaviour
 {
     public GameObject rain;
-    public GameObject outsideTilemaps;
+    public GameObject insideTilemaps;
 
     [FMODUnity.EventRef]
     public string StepEvent = "";
 
-    private bool isOutside = true;
+    private bool isInside = false;
     private bool isRaining = true;
     public bool isWet = false;
 
@@ -40,7 +40,7 @@ public class FootstepSoundEvent : MonoBehaviour
     public void setWetness()
     {
         rain = GameObject.FindWithTag("Rain");
-        outsideTilemaps = GameObject.FindWithTag("OutsideTilemaps");
+        insideTilemaps = GameObject.FindWithTag("InsideTilemaps");
 
         if (rain == null)
         {
@@ -52,15 +52,15 @@ public class FootstepSoundEvent : MonoBehaviour
 
         }
 
-        if (outsideTilemaps == null)
+        if (insideTilemaps == null)
         {
-            isOutside = false;
+            isInside = false;
         }
         else
         {
-            isOutside = outsideTilemaps.activeInHierarchy;
+            isInside = insideTilemaps.activeInHierarchy;
 
         }
-        isWet = (isOutside && isRaining);
+        isWet = (!isInside && isRaining);
     }
 }
