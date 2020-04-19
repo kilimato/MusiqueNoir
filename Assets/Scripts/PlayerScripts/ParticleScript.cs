@@ -55,7 +55,7 @@ public class ParticleScript : MonoBehaviour
 
     void UpdateColliderSize()
     {
-        if (isResonating)
+        if (isResonating || IsInvoking("EmitFadingParticles"))
         {
             particleCollider.radius = ringSize / 8;
         }
