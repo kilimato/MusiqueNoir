@@ -9,6 +9,7 @@ public class Checkpoint : MonoBehaviour
     private GameManager manager;
 
     public Light2D checkpointLight;
+    public Color32 checpointColor;
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -21,7 +22,7 @@ public class Checkpoint : MonoBehaviour
         if (other.tag == "Player")
         {
             manager.lastCheckPointPos = transform.position;
-            checkpointLight.color = new Color32(39, 255, 0, 255);
+            checkpointLight.color = checpointColor;
         }
     }
 }

@@ -13,6 +13,8 @@ public class DialogueManager : MonoBehaviour
     private int index;
     private string speaker;
 
+    private bool coroutineRunning;
+
     // true when a dialog is loaded and a sentence can be printed,
     // false if dialog hasn't finished loading and if we've reached EOD
     public bool inDialogue;
@@ -52,10 +54,17 @@ public class DialogueManager : MonoBehaviour
             {
                 speaker = key.ToString();
             }
-
-            string dialoguePart = speaker + ": " + line[0].ToString();
-
             StopAllCoroutines();
+            string dialoguePart = speaker + ": " + line[0].ToString();
+           /* if (coroutineRunning)
+            {
+                StopAllCoroutines();
+                textDisplay.text = dialogue[index - 1].Keys +": " + dialogue[index-1][0].ToString();
+                return true;
+            }
+            */
+            //textDisplay.text = dialoguePart;
+
             DialogueTextColor(speaker);
             StartCoroutine(TypeDialogue(dialoguePart));
             index++;
@@ -66,12 +75,14 @@ public class DialogueManager : MonoBehaviour
 
     IEnumerator TypeDialogue(string dialoguePart)
     {
+        coroutineRunning = true;
         textDisplay.text = "";
         foreach (char letter in dialoguePart.ToCharArray())
         {
             textDisplay.text += letter;
             yield return new WaitForSeconds(0.02f);
         }
+        coroutineRunning = false;
     }
     private void DialogueTextColor(string character)
     {

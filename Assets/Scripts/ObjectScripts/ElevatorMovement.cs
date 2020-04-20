@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ElevatorMovement : MonoBehaviour
 {
-    private Vector3 posA;
-    private Vector3 posB;
+    public Vector3 posA;
+    public Vector3 posB;
 
     private Vector3 nexPos;
     public PlatformEffector2D upperFloorOneWayPlatform;
