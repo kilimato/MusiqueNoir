@@ -11,6 +11,12 @@ public class Checkpoint : MonoBehaviour
     public Light2D checkpointLight;
     public Color32 checpointColor;
 
+    public GameObject insideTilemaps;
+    public GameObject buildingExterior;
+
+    bool insideTilemapVisible;
+    bool exteriorTilemapVisible;
+
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -22,7 +28,22 @@ public class Checkpoint : MonoBehaviour
         if (other.tag == "Player")
         {
             manager.lastCheckPointPos = transform.position;
+            if (gameObject.activeSelf)
+            {
+                insideTilemapVisible = insideTilemaps.activeSelf;
+                exteriorTilemapVisible = buildingExterior.activeSelf;
+            }
             checkpointLight.color = checpointColor;
         }
+    }
+
+    public bool IsInteriorVisible()
+    {
+        return insideTilemapVisible;
+    }
+
+    public bool IsExteriorVisible()
+    {
+        return exteriorTilemapVisible;
     }
 }

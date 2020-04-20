@@ -70,15 +70,15 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (firstTime && inTrigger)
         {
-            // we trigger the dialog for the first time, then press c to continue dialog
+            // we trigger the dialog for the first time, then press e to continue dialog
             RunDialogue(firstTime);
         }
 
         if (!firstTime)
         {
-            // here we start dialogue when we are in collision area of the NPC and press C
+            // here we start dialogue when we are in collision area of the NPC and press E
             // could be anything else tp trigger the dialogue
-            RunDialogue(Input.GetKeyDown(KeyCode.C));
+            RunDialogue(Input.GetKeyDown(KeyCode.E));
         }
     }
 }

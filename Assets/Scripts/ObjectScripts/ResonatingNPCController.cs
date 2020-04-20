@@ -126,6 +126,7 @@ public class ResonatingNPCController : MonoBehaviour
             if (enlightenedColor.r >= 255)
             {
                 pointLight.enabled = true;
+                transform.localScale = new Vector3(2f, 2f, 1f);
             }
             spriteRenderer.color = enlightenedColor;
             Debug.Log("Color: " + enlightenedColor.r + ", " + enlightenedColor.g

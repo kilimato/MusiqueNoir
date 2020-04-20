@@ -29,7 +29,9 @@ public class PropagandaDialogueManager : MonoBehaviour
             inDialogue = true;
             return true;
         }
-        return false;
+        // purkkaratkaisu: changed from original, since don't know yet how to stop dialogue in the middle and change to another
+        //return false;
+        return true;
     }
 
     // we need to know which dialogTrigger instance needs to know when it ends
