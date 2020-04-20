@@ -12,6 +12,11 @@ public class EnemyController : MonoBehaviour
     public float patrolTurnTime = 2f;
     public float patrolSpeed = 2f;
 
+    [HideInInspector]
+    public float startPatrolMovementTime;
+    [HideInInspector]
+    public float startPatrolTurnTime;
+
     public StateMachine stateMachine = new StateMachine();
 
     private Vector3 startingPos;
@@ -19,6 +24,8 @@ public class EnemyController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        startPatrolMovementTime = patrolMovementTime;
+        startPatrolTurnTime = patrolTurnTime;
         stateMachine.ChangeState(new PatrolState(this));
         state = stateMachine.GetCurrentState();
         startingPos = transform.position;

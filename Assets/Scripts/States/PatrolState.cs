@@ -27,8 +27,8 @@ public class PatrolState : IState
             {
                 enemy.transform.localScale = new Vector3(enemy.transform.localScale.x * -1f, enemy.transform.localScale.y, 1f);
                 patrolDirection *= -1;
-                enemy.patrolMovementTime = 2f;
-                enemy.patrolTurnTime = 2f;
+                enemy.patrolMovementTime = enemy.startPatrolMovementTime;
+                enemy.patrolTurnTime = enemy.startPatrolTurnTime;
             }
 
         }
