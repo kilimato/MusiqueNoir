@@ -14,6 +14,8 @@ public class ChaseState : IState
     private GameObject target;
     private PlayerController player;
 
+    private float chaseTime = 3f;
+
     readonly EnemyController enemy;
 
     public ChaseState(EnemyController enemy)
@@ -46,6 +48,7 @@ public class ChaseState : IState
 
         //Debug.Log("Executing Chase State");
         //alertSign.SetActive(true);
+        chaseTime -= Time.deltaTime;
         destSetter.target = target.transform;
 
         if(target.transform.position.x < enemy.transform.position.x)
@@ -57,7 +60,7 @@ public class ChaseState : IState
             enemy.Move(5f, false);
         }
 
-        if(Vector2.Distance(enemy.transform.position, target.transform.position) > 10f)
+        if(Vector2.Distance(enemy.transform.position, target.transform.position) > 10f || chaseTime <= 0)
         {
             if (enemy.stateMachine.GetCurrentState() == "ChaseState") enemy.stateMachine.ChangeState(new ReturnState(enemy));
         }

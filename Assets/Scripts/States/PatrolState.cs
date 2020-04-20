@@ -13,6 +13,8 @@ public class PatrolState : IState
     {
         //Debug.Log("Enter Patrol State");
         patrolDirection = -enemy.transform.localScale.x / Mathf.Abs(enemy.transform.localScale.x);
+        enemy.patrolMovementTime = enemy.startPatrolMovementTime;
+        enemy.patrolTurnTime = enemy.startPatrolTurnTime;
     }
 
     public void Execute()

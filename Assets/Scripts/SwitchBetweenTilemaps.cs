@@ -11,6 +11,7 @@ public class SwitchBetweenTilemaps : MonoBehaviour
 
     public GameObject outsideTilemaps;
     public GameObject insideTilemaps;
+
     // Start is called before the first frame update
     void Start()
     {

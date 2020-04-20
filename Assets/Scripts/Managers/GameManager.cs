@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
     public GameObject insideTilemaps;
     public GameObject outsideTilemaps;
 
-
     private void Awake()
     {
         startingPoint = GameObject.FindGameObjectWithTag("StartingPoint").transform;
@@ -29,12 +28,15 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(instance);
         }
         else Destroy(gameObject);
+
     }
+
     private void Start()
     {
-        insideTilemaps.SetActive(false);
         outsideTilemaps.SetActive(true);
+        insideTilemaps.SetActive(false);
     }
+
     // Update is called once per frame
     void Update()
     {

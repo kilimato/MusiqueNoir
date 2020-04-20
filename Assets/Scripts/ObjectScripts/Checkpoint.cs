@@ -10,12 +10,12 @@ public class Checkpoint : MonoBehaviour
 
     public Light2D checkpointLight;
     public Color32 checpointColor;
+
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         //checkpointLight = GetComponent<Light2D>();
     }
-
 
     void OnTriggerEnter2D(Collider2D other)
     {
