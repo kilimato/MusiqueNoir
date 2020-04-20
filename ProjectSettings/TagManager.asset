@@ -18,6 +18,8 @@ TagManager:
   - InsideTilemaps
   - Elevator
   - ElevatorButton
+  - StartingPoint
+  - GameManager
   layers:
   - Default
   - TransparentFX
