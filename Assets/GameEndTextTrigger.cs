@@ -19,4 +19,12 @@ public class GameEndTextTrigger : MonoBehaviour
             endText.enabled = true;
         }
     }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            endText.enabled = false;
+        }
+    }
 }
