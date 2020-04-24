@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class IntroTextController : MonoBehaviour
 {
 
     Canvas introCanvas;
     RawImage fadeImage;
-    Text introText;
+    TextMeshProUGUI introText;
 
     static private bool isAlreadySeen = false;
 
@@ -24,7 +25,7 @@ public class IntroTextController : MonoBehaviour
             return;
         }
         fadeImage = GetComponentInChildren<RawImage>();
-        introText = GetComponentInChildren<Text>();
+        introText = GetComponentInChildren<TextMeshProUGUI>();
         Time.timeScale = 0;
         StartCoroutine(FadeIn(introText));
 

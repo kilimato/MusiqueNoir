@@ -99,10 +99,5 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene(0);
         }
-
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            Application.Quit();
-        }
     }
 }

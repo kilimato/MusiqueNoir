@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuController : MonoBehaviour
 {
@@ -33,5 +34,11 @@ public class PauseMenuController : MonoBehaviour
     {
         Debug.Log("Quit game");
         Application.Quit();
+    }
+
+    public void GoToMainMenu()
+    {
+        // start menu is always the first scene to be loaded -> always 0
+        SceneManager.LoadScene(0);
     }
 }

@@ -29,6 +29,7 @@ public class SettingsMenu : MonoBehaviour
 
             if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
             {
+                // another way: resolutions[i].width == Screen.currentResolution.width etc.
                 currentResolutionIndex = i;
             }
         }
