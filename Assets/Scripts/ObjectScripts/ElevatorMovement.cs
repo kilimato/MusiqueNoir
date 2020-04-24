@@ -10,6 +10,8 @@ public class ElevatorMovement : MonoBehaviour
     private Vector3 nexPos;
     public PlatformEffector2D upperFloorOneWayPlatform;
 
+    public GameObject elevatorDoors;
+
     [SerializeField]
     private float speed;
 
@@ -59,6 +61,8 @@ public class ElevatorMovement : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             onElevator = true;
+            elevatorDoors.SetActive(false);
+
             //other.gameObject.transform.parent = transform;
         }
     }
@@ -68,6 +72,7 @@ public class ElevatorMovement : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             onElevator = false;
+            elevatorDoors.SetActive(true);
             // other.gameObject.transform.parent = null;
         }
     }
