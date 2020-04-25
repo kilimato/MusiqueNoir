@@ -12,22 +12,23 @@ public class PatrolState : IState
     public void Enter()
     {
         //Debug.Log("Enter Patrol State");
-        patrolDirection = -enemy.transform.localScale.x / Mathf.Abs(enemy.transform.localScale.x);
+        patrolDirection = enemy.GetStartingDirection();
         enemy.patrolMovementTime = enemy.startPatrolMovementTime;
         enemy.patrolTurnTime = enemy.startPatrolTurnTime;
     }
 
     public void Execute()
     {
-       // Debug.Log("Executing Patrol State");
+        // Debug.Log("Executing Patrol State");
 
         if (enemy.patrolMovementTime <= 0f)
         {
 
+            enemy.animator.SetFloat("Speed", 0);
+
             enemy.patrolTurnTime -= 1f * Time.deltaTime;
             if (enemy.patrolTurnTime <= 0f)
             {
-                enemy.transform.localScale = new Vector3(enemy.transform.localScale.x * -1f, enemy.transform.localScale.y, 1f);
                 patrolDirection *= -1;
                 enemy.patrolMovementTime = enemy.startPatrolMovementTime;
                 enemy.patrolTurnTime = enemy.startPatrolTurnTime;
@@ -38,9 +39,8 @@ public class PatrolState : IState
         {
 
             enemy.patrolMovementTime -= 1f * Time.deltaTime;
-            Vector3 movement = new Vector3(patrolDirection, 0f, 0f) * enemy.patrolSpeed * Time.deltaTime;
-            enemy.transform.position += movement;
-            enemy.GetComponent<Animator>().SetFloat("Speed", enemy.patrolMovementTime);
+            enemy.Move(enemy.patrolSpeed, new Vector2(patrolDirection, 0));
+            enemy.animator.SetFloat("Speed", enemy.patrolSpeed);
 
         }
     }

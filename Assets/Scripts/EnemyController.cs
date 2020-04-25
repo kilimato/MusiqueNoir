@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField]
     private string state;
 
-    public float patrolMovementTime = 2f; 
+    public float patrolMovementTime = 2f;
     public float patrolTurnTime = 2f;
     public float patrolSpeed = 2f;
 
@@ -18,42 +18,38 @@ public class EnemyController : MonoBehaviour
     public float startPatrolTurnTime;
 
     public StateMachine stateMachine = new StateMachine();
+    public Rigidbody2D rb2D;
+
+    public Animator animator;
 
     private Vector3 startingPos;
+    private float startingDirection;
 
     // Start is called before the first frame update
     void Start()
     {
+        animator = GetComponent<Animator>();
+        rb2D = GetComponent<Rigidbody2D>();
+        startingPos = transform.position;
+        startingDirection = -transform.localScale.x / Mathf.Abs(transform.localScale.x);
         startPatrolMovementTime = patrolMovementTime;
         startPatrolTurnTime = patrolTurnTime;
         stateMachine.ChangeState(new PatrolState(this));
         state = stateMachine.GetCurrentState();
-        startingPos = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        state = stateMachine.GetCurrentState(); //Poista tää jossakin vaihees
-
+        state = stateMachine.GetCurrentState(); //Debuggausta varten
         stateMachine.Update();
-
     }
 
-    public void Move(float speed, bool isGoingLeft)
+    public void Move(float speed, Vector2 direction)
     {
-        if(isGoingLeft)
-        {
-            transform.localScale = new Vector3(2f, 2f, 1f);
-            Vector3 movement = new Vector3(-1f, 0f, 0f) * speed * Time.deltaTime;
-            transform.position += movement;
-        }
-        else
-        {
-            transform.localScale = new Vector3(-2f, 2f, 1f);
-            Vector3 movement = new Vector3(1f, 0f, 0f) * speed * Time.deltaTime;
-            transform.position += movement;
-        }
+        Vector2 movement = direction * speed * Time.deltaTime;
+        rb2D.velocity = movement;
+        rb2D.position += movement;
     }
 
     public Vector3 GetStartingPos()
@@ -61,15 +57,20 @@ public class EnemyController : MonoBehaviour
         return startingPos;
     }
 
+    public float GetStartingDirection()
+    {
+        return startingDirection;
+    }
+
     public void ReturnToStartingPos()
     {
         if (transform.position.x > startingPos.x)
         {
-            Move(patrolSpeed, true);
+            Move(patrolSpeed, new Vector2(-1, 0));
         }
         else
         {
-            Move(patrolSpeed, false);
+            Move(patrolSpeed, new Vector2(1, 0));
         }
     }
 }

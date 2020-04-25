@@ -51,16 +51,16 @@ public class ChaseState : IState
         chaseTime -= Time.deltaTime;
         destSetter.target = target.transform;
 
-        if(target.transform.position.x < enemy.transform.position.x)
+        if (target.transform.position.x < enemy.transform.position.x)
         {
-            enemy.Move(5f, true);
+            enemy.Move(5f, new Vector2(-1, 0));
         }
-        else if(target.transform.position.x > enemy.transform.position.x)
+        else if (target.transform.position.x > enemy.transform.position.x)
         {
-            enemy.Move(5f, false);
+            enemy.Move(5f, new Vector2(1, 0));
         }
 
-        if(Vector2.Distance(enemy.transform.position, target.transform.position) > 10f || chaseTime <= 0)
+        if (Vector2.Distance(enemy.transform.position, target.transform.position) > 10f || chaseTime <= 0)
         {
             if (enemy.stateMachine.GetCurrentState() == "ChaseState") enemy.stateMachine.ChangeState(new ReturnState(enemy));
         }

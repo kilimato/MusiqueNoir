@@ -7,9 +7,9 @@ public class ReturnState : IState
 
     readonly EnemyController enemy;
 
-    public ReturnState(EnemyController enemy) 
+    public ReturnState(EnemyController enemy)
     {
-        this.enemy = enemy; 
+        this.enemy = enemy;
     }
 
     public void Enter()
@@ -19,10 +19,11 @@ public class ReturnState : IState
 
     public void Execute()
     {
-        if(Vector3.Distance(enemy.transform.position, enemy.GetStartingPos()) < 0.1f)
+        if (Mathf.Abs(enemy.transform.position.x - enemy.GetStartingPos().x) < 0.15f)
         {
             enemy.stateMachine.ChangeState(new PatrolState(enemy));
         }
+        enemy.animator.SetFloat("Speed", enemy.patrolSpeed);
         enemy.ReturnToStartingPos();
     }
 
