@@ -433,6 +433,8 @@ MonoBehaviour:
   patrolMovementTime: 2
   patrolTurnTime: 2
   patrolSpeed: 2
+  startPatrolMovementTime: 0
+  startPatrolTurnTime: 0
 --- !u!114 &-2757918271749370577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,5 +447,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 906d743fd4c21a54e83e2e96523495fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StepEvent: event:/footstepsEnemy
+  rain: {fileID: 0}
+  insideTilemaps: {fileID: 0}
+  StepEvent: event:/SFX/footstepsEnemy
   isWet: 0

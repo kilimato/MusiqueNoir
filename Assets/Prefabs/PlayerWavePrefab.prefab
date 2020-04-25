@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 9151987455011293567}
   - component: {fileID: 7684965703692434881}
   - component: {fileID: 7684965703692434880}
+  - component: {fileID: -2686422123620190291}
   m_Layer: 0
-  m_Name: WavePrefab
+  m_Name: PlayerWavePrefab
   m_TagString: Resonator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4819,3 +4820,17 @@ MonoBehaviour:
   ringMaxSize: 6
   ringStep: 0.5
   particleCollider: {fileID: 7684965703692434881}
+--- !u!114 &-2686422123620190291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5604234211009581392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66e47a2e9209e4542aabca29e81d785f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  VolumeEvent: event:/Music/missionMusic
+  StartingVolume: 0
