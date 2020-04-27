@@ -100,4 +100,9 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(0);
         }
     }
+
+    public Vector2 GetLastCheckpointPosition()
+    {
+        return lastCheckPointPos;
+    }
 }
