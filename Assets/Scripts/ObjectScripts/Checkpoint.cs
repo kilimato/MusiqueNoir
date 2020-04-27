@@ -19,10 +19,10 @@ public class Checkpoint : MonoBehaviour
 
     void Start()
     {
-        manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        //manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         //checkpointLight = GetComponent<Light2D>();
     }
-
+    /*
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -36,7 +36,7 @@ public class Checkpoint : MonoBehaviour
             checkpointLight.color = checpointColor;
         }
     }
-
+    */
     public bool IsInteriorVisible()
     {
         return insideTilemapVisible;

@@ -2,107 +2,118 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using System.Runtime.Serialization.Formatters.Binary;
+using UnityEngine.Tilemaps;
+using System.IO;
 
 // GameManager that manages the state of our game
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
-    public Vector2 lastCheckPointPos = Vector2.zero;
-    private Transform startingPoint;
-
-    public GameObject[] checkpoints;
-
-    public GameObject fow;
-    private bool isActive = true;
-
-    public GameObject insideTilemaps;
-    public GameObject adBuildingTilemaps;
-
-    //public BoxCollider2D checkpoint1, checkpoint2;
-
-    private void Awake()
+    [SerializeField]
+    private GameObject[] changingVisibilityAreas;
+    // public List<bool> activeTilemaps = new List<bool>();
+    /*
+    [SerializeField]
+    public Vector2 currentCheckpoint;
+    [SerializeField]
+    public float[] startingCheckpoint = new float[2];
+    [SerializeField]
+    public bool finishedStartingConversation;
+    */
+    public void LoadPlayer()
     {
-        insideTilemaps = GameObject.Find("InsideTilemaps");
-        adBuildingTilemaps = GameObject.Find("AdministrativeBuilding");
-        //checkpoints = 
-        startingPoint = GameObject.FindGameObjectWithTag("StartingPoint").transform;
-        if (lastCheckPointPos == Vector2.zero) lastCheckPointPos = startingPoint.position;
 
-        if (lastCheckPointPos != Vector2.zero)
+    }
+
+    public void SaveGame()
+    {
+        // 1
+        Save save = CreateSaveGameObject();
+
+        // 2
+        BinaryFormatter bf = new BinaryFormatter();
+        FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
+        bf.Serialize(file, save);
+        file.Close();
+
+        // 3: resetting the game so that everything is in a default state
+         ResetTilemaps();
+       // ResetCheckpoints();
+        //currentCheckpoint = startingCheckpoint;
+        //finishedStartingConversation = false;
+
+        Debug.Log("Game Saved");
+    }
+
+    public void NewGame()
+    {
+        ResetTilemaps();
+        Time.timeScale = 1;
+    }
+
+    private void ResetTilemaps()
+    {
+        changingVisibilityAreas[0].SetActive(false);
+        changingVisibilityAreas[1].SetActive(true);
+    }
+    private void ResetCheckpoints()
+    {
+       // currentCheckpoint = startingCheckpoint;
+    }
+
+
+    private Save CreateSaveGameObject()
+    {
+        Save save = new Save();
+        //int i = 0;
+        foreach (GameObject tilemapGameObject in changingVisibilityAreas)
         {
-            insideTilemaps.SetActive(true);
-            adBuildingTilemaps.SetActive(false);
-            /*
-            for (int i = 0; i < checkpoints.Length; i++)
+            //Tilemap tilemap = tilemapGameObject.GetComponent<Tilemap>();
+            if (/*target.activeRobot != null*/true)
             {
-                if (new Vector2(checkpoints[i].transform.position.x, checkpoints[i].transform.position.y) == lastCheckPointPos)
-                {
-                    adBuildingTilemaps.SetActive(checkpoints[i].GetComponent<Checkpoint>().IsExteriorVisible());
-                    insideTilemaps.SetActive(checkpoints[i].GetComponent<Checkpoint>().IsInteriorVisible());
-                }
+                //save.changingVisibilityAreas.Add(tilemapGameObject);
+                save.tilemapsActive.Add(tilemapGameObject.activeSelf);
+                //save.livingTargetPositions.Add(target.position);
+                //save.livingTargetsTypes.Add((int)target.activeRobot.GetComponent<Robot>().type);
+                // i++;
             }
-           
-         */
+        }
+
+        // save.hits = hits;
+        // save.shots = shots;
+        //save.checkpoint[0] = currentCheckpoint[0];
+        //save.checkpoint[1] = currentCheckpoint[1];
+       // save.finishedStartingConversation = finishedStartingConversation;
+
+        return save;
+    }
+
+    public void LoadGame()
+    {
+        // 1
+        if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
+        {
+            ResetTilemaps();
+
+            // 2
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
+            Save save = (Save)bf.Deserialize(file);
+            file.Close();
+
+            changingVisibilityAreas[0].SetActive(save.tilemapsActive[0]);
+            changingVisibilityAreas[1].SetActive(save.tilemapsActive[1]);
+
+            Debug.Log("Game Loaded");
         }
         else
         {
-            insideTilemaps.SetActive(false);
-            adBuildingTilemaps.SetActive(true);
+            Debug.Log("No game saved!");
         }
 
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(instance);
-        }
-        else Destroy(gameObject);
-
-    }
-
-    private void Start()
-    {
-        if (lastCheckPointPos != Vector2.zero)
-        {
-            insideTilemaps.SetActive(true);
-            adBuildingTilemaps.SetActive(false);
-            /*
-            for (int i = 0; i < checkpoints.Length; i++)
-            {
-                if (new Vector2(checkpoints[i].transform.position.x, checkpoints[i].transform.position.y) == lastCheckPointPos)
-                {
-                    adBuildingTilemaps.SetActive(checkpoints[i].GetComponent<Checkpoint>().IsExteriorVisible());
-                    insideTilemaps.SetActive(checkpoints[i].GetComponent<Checkpoint>().IsInteriorVisible());
-                }
-            }
-           
-         */
-        }
-        else
-        {
-            insideTilemaps.SetActive(false);
-            adBuildingTilemaps.SetActive(true);
-        }
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.T))
-        {
-            isActive = !isActive;
-            fow.SetActive(isActive);
-        }
-
-        if (Input.GetKey(KeyCode.R))
-        {
-            SceneManager.LoadScene(0);
-        }
-    }
-
-    public Vector2 GetLastCheckpointPosition()
-    {
-        return lastCheckPointPos;
+        Time.timeScale = 1;
     }
 }

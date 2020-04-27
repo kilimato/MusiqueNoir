@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 5.0f;
-    private float horizontalInput;
-    private float verticalInput;
+    public float speed = 5.0f;
+    public float horizontalInput;
+    public float verticalInput;
 
     public Animator animator;
 
@@ -14,8 +14,8 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer sr;
 
     public HidePlayer hideplayerScript;
-    private bool canHide = false;
-    private bool isVisible = true;
+    public bool canHide = false;
+    public bool isVisible = true;
 
     private Rigidbody2D rb;
 

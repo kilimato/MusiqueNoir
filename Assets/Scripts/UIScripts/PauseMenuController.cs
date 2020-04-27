@@ -12,6 +12,7 @@ public class PauseMenuController : MonoBehaviour
     void Start()
     {
         canvas = GetComponent<Canvas>();
+        canvas.enabled = false;
     }
 
     // Update is called once per frame
@@ -38,7 +39,6 @@ public class PauseMenuController : MonoBehaviour
 
     public void GoToMainMenu()
     {
-        // start menu is always the first scene to be loaded -> always 0
-        SceneManager.LoadScene(0);
+        canvas.enabled = false;
     }
 }

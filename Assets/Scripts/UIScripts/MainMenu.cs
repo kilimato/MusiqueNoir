@@ -5,10 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    private Canvas canvas;
+
+    private void Start()
+    {
+        canvas = GetComponent<Canvas>();
+    }
     public void PlayGame()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(1);
+        //SceneManager.LoadScene(0);
+        canvas.enabled = false;
     }
 
     public void QuitGame()

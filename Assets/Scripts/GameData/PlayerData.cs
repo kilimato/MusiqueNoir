@@ -2,15 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class PlayerData : MonoBehaviour
 {
-    public float[] checkpointPosition;
+    public float speed;
+    public bool canHide;
+    public bool isVisible;
 
-    public PlayerData(GameManager manager)
+
+    public PlayerData(PlayerController controller)
     {
-        checkpointPosition = new float[2];
-
-        checkpointPosition[0] = manager.lastCheckPointPos.x;
-        checkpointPosition[1] = manager.lastCheckPointPos.y;
+        speed = controller.speed;
+        canHide = controller.canHide;
+        isVisible = controller.isVisible;
     }
 }
