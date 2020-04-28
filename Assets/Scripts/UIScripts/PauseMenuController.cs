@@ -36,9 +36,4 @@ public class PauseMenuController : MonoBehaviour
         Debug.Log("Quit game");
         Application.Quit();
     }
-
-    public void GoToMainMenu()
-    {
-        canvas.enabled = false;
-    }
 }

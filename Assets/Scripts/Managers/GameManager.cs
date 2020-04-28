@@ -6,27 +6,29 @@ using UnityEngine.UI;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine.Tilemaps;
 using System.IO;
+using TMPro;
 
 // GameManager that manages the state of our game
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    public GameObject dialogueManager;
+    public GameObject dialogueTrigger;
+    public Canvas dialogueCanvas;
+
+    public TextMeshProUGUI dialogueText;
+
     [SerializeField]
     private GameObject[] changingVisibilityAreas;
-    // public List<bool> activeTilemaps = new List<bool>();
     /*
     [SerializeField]
     public Vector2 currentCheckpoint;
     [SerializeField]
-    public float[] startingCheckpoint = new float[2];
+    public float[] startingCheckpoint = new float[2];*/
     [SerializeField]
     public bool finishedStartingConversation;
-    */
-    public void LoadPlayer()
-    {
-
-    }
+    
 
     public void SaveGame()
     {
@@ -43,7 +45,7 @@ public class GameManager : MonoBehaviour
          ResetTilemaps();
        // ResetCheckpoints();
         //currentCheckpoint = startingCheckpoint;
-        //finishedStartingConversation = false;
+        finishedStartingConversation = false;
 
         Debug.Log("Game Saved");
     }
@@ -51,6 +53,7 @@ public class GameManager : MonoBehaviour
     public void NewGame()
     {
         ResetTilemaps();
+        ResetDialogues();
         Time.timeScale = 1;
     }
 
@@ -58,6 +61,18 @@ public class GameManager : MonoBehaviour
     {
         changingVisibilityAreas[0].SetActive(false);
         changingVisibilityAreas[1].SetActive(true);
+    }
+
+    private void ResetDialogues()
+    {
+        finishedStartingConversation = false;
+        dialogueManager.GetComponent<DialogueManager>().finishedDialogue = false;
+        //alogueManager.GetComponent<DialogueManager>().dialogu
+        dialogueManager.SetActive(true);
+        dialogueTrigger.GetComponent<DialogueTrigger>().firstTime = true;
+        dialogueTrigger.GetComponent<DialogueTrigger>().dialogueLoaded = false;
+        dialogueCanvas.enabled = true;
+        dialogueText.text = "";
     }
     private void ResetCheckpoints()
     {
@@ -86,7 +101,8 @@ public class GameManager : MonoBehaviour
         // save.shots = shots;
         //save.checkpoint[0] = currentCheckpoint[0];
         //save.checkpoint[1] = currentCheckpoint[1];
-       // save.finishedStartingConversation = finishedStartingConversation;
+        save.finishedStartingConversation = dialogueManager.GetComponent<DialogueManager>().FinishedDialogue();
+        save.enteringDialogue = dialogueTrigger.GetComponent<DialogueTrigger>().firstTime;
 
         return save;
     }
@@ -97,6 +113,7 @@ public class GameManager : MonoBehaviour
         if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
         {
             ResetTilemaps();
+            ResetDialogues();
 
             // 2
             BinaryFormatter bf = new BinaryFormatter();
@@ -106,6 +123,13 @@ public class GameManager : MonoBehaviour
 
             changingVisibilityAreas[0].SetActive(save.tilemapsActive[0]);
             changingVisibilityAreas[1].SetActive(save.tilemapsActive[1]);
+
+            dialogueManager.GetComponent<DialogueManager>().finishedDialogue = save.finishedStartingConversation;
+            if (save.finishedStartingConversation)
+            {
+                dialogueManager.SetActive(false);
+            }
+            dialogueTrigger.GetComponent<DialogueTrigger>().firstTime = save.enteringDialogue;
 
             Debug.Log("Game Loaded");
         }

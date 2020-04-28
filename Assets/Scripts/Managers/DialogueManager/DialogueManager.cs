@@ -19,6 +19,8 @@ public class DialogueManager : MonoBehaviour
     // false if dialog hasn't finished loading and if we've reached EOD
     public bool inDialogue;
 
+    public bool finishedDialogue = false;
+
     // dialogTrigger needs to know whether it's own dialogue has loaded (not just any dialogue)
     // so we return bool to indicate that state
     public bool LoadDialogue(string path)
@@ -39,6 +41,8 @@ public class DialogueManager : MonoBehaviour
     // this returns true when we still have lines to print, and false when we have hit our last line EOD
     public bool PrintLine()
     {
+        if (finishedDialogue) return false;
+
         if (inDialogue)
         {
             JsonData line = dialogue[index];
@@ -47,6 +51,7 @@ public class DialogueManager : MonoBehaviour
                 inDialogue = false;
                 textDisplay.text = "";
                 dialogueCanvas.enabled = false;
+                finishedDialogue = true;
                 return false;
             }
             // every line has exactly one key (the speaker) so this always gives us the correct speaker
@@ -56,13 +61,17 @@ public class DialogueManager : MonoBehaviour
             }
             StopAllCoroutines();
             string dialoguePart = speaker + ": " + line[0].ToString();
-           /* if (coroutineRunning)
-            {
-                StopAllCoroutines();
-                textDisplay.text = dialogue[index - 1].Keys +": " + dialogue[index-1][0].ToString();
-                return true;
-            }
-            */
+
+            Debug.Log(dialoguePart);
+
+
+            /* if (coroutineRunning)
+             {
+                 StopAllCoroutines();
+                 textDisplay.text = dialogue[index - 1].Keys +": " + dialogue[index-1][0].ToString();
+                 return true;
+             }
+             */
             //textDisplay.text = dialoguePart;
 
             DialogueTextColor(speaker);
@@ -87,5 +96,10 @@ public class DialogueManager : MonoBehaviour
     private void DialogueTextColor(string character)
     {
         textDisplay.color = GameObject.Find(character).GetComponent<Character>().GetDialogueColor();
+    }
+
+    public bool FinishedDialogue()
+    {
+        return finishedDialogue;
     }
 }

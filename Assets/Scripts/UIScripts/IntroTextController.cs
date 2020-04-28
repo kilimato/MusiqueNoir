@@ -14,7 +14,7 @@ public class IntroTextController : MonoBehaviour
     static private bool isAlreadySeen = false;
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
 
         introCanvas = GetComponent<Canvas>();
@@ -76,5 +76,18 @@ public class IntroTextController : MonoBehaviour
 
     }
 
+    public void ShowIntroText()
+    {
+        if (!isAlreadySeen)
+        {
+            introCanvas.enabled = true;
+            fadeImage = GetComponentInChildren<RawImage>();
+            introText = GetComponentInChildren<TextMeshProUGUI>();
+            Time.timeScale = 0;
+            StartCoroutine(FadeIn(introText));
+            isAlreadySeen = !isAlreadySeen;
+        }
+
+    }
 
 }

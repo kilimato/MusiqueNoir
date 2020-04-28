@@ -18,10 +18,12 @@ public class MoveTowardsPlayer : MonoBehaviour
 
     public Animator animator;
 
+    GameObject manager;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        manager = GameObject.FindGameObjectWithTag("GameManager");
         target = GameObject.FindGameObjectWithTag("Player");
         seeker = GetComponent<Seeker>();
         aiPath = GetComponent<AIPath>();
