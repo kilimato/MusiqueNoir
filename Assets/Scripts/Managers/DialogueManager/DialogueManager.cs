@@ -12,6 +12,7 @@ public class DialogueManager : MonoBehaviour
     public Canvas dialogueCanvas;
     private int index;
     private string speaker;
+    private string dialoguePart;
 
     private bool coroutineRunning;
 
@@ -59,8 +60,11 @@ public class DialogueManager : MonoBehaviour
             {
                 speaker = key.ToString();
             }
-            StopAllCoroutines();
-            string dialoguePart = speaker + ": " + line[0].ToString();
+            if (coroutineRunning)
+            {
+                StopAllCoroutines();
+            }
+            dialoguePart = speaker + ": " + line[0].ToString();
 
             Debug.Log(dialoguePart);
 
@@ -74,7 +78,7 @@ public class DialogueManager : MonoBehaviour
              */
             //textDisplay.text = dialoguePart;
 
-            DialogueTextColor(speaker);
+           // DialogueTextColor(speaker);
             StartCoroutine(TypeDialogue(dialoguePart));
             index++;
         }
@@ -86,13 +90,46 @@ public class DialogueManager : MonoBehaviour
     {
         coroutineRunning = true;
         textDisplay.text = "";
-        foreach (char letter in dialoguePart.ToCharArray())
+        
+        int revealedChars = 0;
+        while (revealedChars < dialoguePart.Length)
         {
-            textDisplay.text += letter;
+            while (dialoguePart[revealedChars] == ' ')
+            {
+                revealedChars++;
+            }
+            revealedChars++;
+            textDisplay.text = dialoguePart.Substring(0, revealedChars);
             yield return new WaitForSeconds(0.02f);
         }
         coroutineRunning = false;
+        
+        /*
+         * ADDED COLOR TAG TO ENABLE FURTHER DIALOGUE IMPROVEMENT
+        coroutineRunning = true;
+        textDisplay.text = dialoguePart;
+        //textDisplay.color = new Color32(0,0,0,0);
+        string currentlyShowingText = "";
+        string notVisibleText = "";
+
+        int revealedCharIndex = 0;
+        while (revealedCharIndex < dialoguePart.Length)
+        {
+            revealedCharIndex++;
+            //currentlyShowingText = textDisplay.co);
+            //textDisplay.text = currentlyShowingText;
+            currentlyShowingText = dialoguePart.Substring(0, revealedCharIndex);
+            notVisibleText = dialoguePart.Substring(revealedCharIndex, dialoguePart.Length-revealedCharIndex);
+            textDisplay.text =  "<#FF0000>" + currentlyShowingText;
+            //DialogueTextColor(speaker);
+
+            yield return new WaitForSeconds(0.02f);
+        }
+        coroutineRunning = false;
+        */
     }
+
+
     private void DialogueTextColor(string character)
     {
         textDisplay.color = GameObject.Find(character).GetComponent<Character>().GetDialogueColor();
