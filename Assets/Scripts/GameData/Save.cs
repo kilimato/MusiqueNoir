@@ -12,17 +12,10 @@ public class Save
 
     public bool finishedStartingConversation;
     public bool enteringDialogue;
-    public class CheckpointPos
-    {
-        public float[] checkpoint;
 
-        public CheckpointPos(PlayerPos playerpos)
-        {
-            checkpoint = new float[2];
-            checkpoint[0] = playerpos.transform.position.x;
-            checkpoint[1] = playerpos.transform.position.y;
-        }
-    }
+    public float[] checkpoint = new float[3];
+    public List<bool> savedPeasants = new List<bool>();
+    public List<bool> brokenWalls = new List<bool>();
 }
 
 

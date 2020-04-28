@@ -57,7 +57,8 @@ public class MoveTowardsPlayer : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && player.IsVisible())
         {
             //Destroy(gameObject);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            manager.GetComponent<GameManager>().LoadGame();
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
 }

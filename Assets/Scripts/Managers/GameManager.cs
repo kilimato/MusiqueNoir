@@ -13,22 +13,26 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    public GameObject player;
+
     public GameObject dialogueManager;
     public GameObject dialogueTrigger;
     public Canvas dialogueCanvas;
-
     public TextMeshProUGUI dialogueText;
 
     [SerializeField]
     private GameObject[] changingVisibilityAreas;
-    /*
     [SerializeField]
-    public Vector2 currentCheckpoint;
+    public GameObject[] peasants;
+    public GameObject[] breakableObjects;
+
     [SerializeField]
-    public float[] startingCheckpoint = new float[2];*/
+    public Vector3 lastCheckpointPos;
+    [SerializeField]
+    public GameObject startingPoint;
     [SerializeField]
     public bool finishedStartingConversation;
-    
+
 
     public void SaveGame()
     {
@@ -40,21 +44,50 @@ public class GameManager : MonoBehaviour
         FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
         bf.Serialize(file, save);
         file.Close();
-
+        
         // 3: resetting the game so that everything is in a default state
-         ResetTilemaps();
-       // ResetCheckpoints();
+        ResetTilemaps();
+        // ResetCheckpoints();
         //currentCheckpoint = startingCheckpoint;
         finishedStartingConversation = false;
-
+        
         Debug.Log("Game Saved");
     }
 
     public void NewGame()
     {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            return;
+        }
+
         ResetTilemaps();
         ResetDialogues();
+        ResetPlayerPosition();
+        ResetPeasants();
+        ResetObjects();
         Time.timeScale = 1;
+    }
+
+    private void ResetPeasants()
+    {
+        foreach (GameObject peasant in peasants)
+        {
+            peasant.GetComponent<ResonatingNPCController>().saved = false;
+        }
+    }
+
+    private void ResetObjects()
+    {
+        foreach (GameObject breakableObject in breakableObjects)
+        {
+            breakableObject.SetActive(true);
+        }
+    }
+
+    private void ResetPlayerPosition()
+    {
+        player.transform.position = new Vector3(startingPoint.transform.position.x, startingPoint.transform.position.y, -1);
     }
 
     private void ResetTilemaps()
@@ -76,7 +109,7 @@ public class GameManager : MonoBehaviour
     }
     private void ResetCheckpoints()
     {
-       // currentCheckpoint = startingCheckpoint;
+        lastCheckpointPos = startingPoint.transform.position;
     }
 
 
@@ -86,34 +119,46 @@ public class GameManager : MonoBehaviour
         //int i = 0;
         foreach (GameObject tilemapGameObject in changingVisibilityAreas)
         {
-            //Tilemap tilemap = tilemapGameObject.GetComponent<Tilemap>();
-            if (/*target.activeRobot != null*/true)
-            {
-                //save.changingVisibilityAreas.Add(tilemapGameObject);
-                save.tilemapsActive.Add(tilemapGameObject.activeSelf);
-                //save.livingTargetPositions.Add(target.position);
-                //save.livingTargetsTypes.Add((int)target.activeRobot.GetComponent<Robot>().type);
-                // i++;
-            }
+            save.tilemapsActive.Add(tilemapGameObject.activeSelf);
         }
 
-        // save.hits = hits;
-        // save.shots = shots;
-        //save.checkpoint[0] = currentCheckpoint[0];
-        //save.checkpoint[1] = currentCheckpoint[1];
+        foreach (GameObject peasant in peasants)
+        {
+            save.savedPeasants.Add(peasant.GetComponent<ResonatingNPCController>().saved);
+        }
+
+        foreach (GameObject wall in breakableObjects)
+        {
+            save.brokenWalls.Add(wall.activeSelf);
+        }
+
         save.finishedStartingConversation = dialogueManager.GetComponent<DialogueManager>().FinishedDialogue();
         save.enteringDialogue = dialogueTrigger.GetComponent<DialogueTrigger>().firstTime;
+
+        save.checkpoint[0] = lastCheckpointPos.x;
+        save.checkpoint[1] = lastCheckpointPos.y;
+        save.checkpoint[2] = -1;
 
         return save;
     }
 
     public void LoadGame()
     {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            return;
+        }
         // 1
         if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
         {
+            
             ResetTilemaps();
             ResetDialogues();
+            ResetPlayerPosition();
+            ResetCheckpoints();
+            ResetPeasants();
+            ResetObjects();
+            
 
             // 2
             BinaryFormatter bf = new BinaryFormatter();
@@ -131,6 +176,21 @@ public class GameManager : MonoBehaviour
             }
             dialogueTrigger.GetComponent<DialogueTrigger>().firstTime = save.enteringDialogue;
 
+            lastCheckpointPos.x = save.checkpoint[0];
+            lastCheckpointPos.y = save.checkpoint[1];
+            lastCheckpointPos.z = save.checkpoint[2];
+
+            player.transform.position = lastCheckpointPos;
+            for (int i = 0; i < peasants.Length; i++)
+            {
+                peasants[i].GetComponent<ResonatingNPCController>().saved = save.savedPeasants[i];
+            }
+
+            for (int i = 0; i < breakableObjects.Length; i++)
+            {
+                breakableObjects[i].SetActive(save.brokenWalls[i]);
+            }
+
             Debug.Log("Game Loaded");
         }
         else
@@ -139,5 +199,13 @@ public class GameManager : MonoBehaviour
         }
 
         Time.timeScale = 1;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            return;
+        }
     }
 }

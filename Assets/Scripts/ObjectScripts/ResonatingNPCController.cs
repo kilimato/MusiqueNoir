@@ -28,7 +28,7 @@ public class ResonatingNPCController : MonoBehaviour
     public SpriteRenderer spriteRenderer;
     public Light2D pointLight;
 
-
+    public bool saved = false;
     /*
      Billboard particle systemin asetuksissa:
      default partikkeli ei ole pallo, vaikka näyttää siltä, vaan neliö, johon on piirretty ympyrä
@@ -50,10 +50,22 @@ public class ResonatingNPCController : MonoBehaviour
     {
         mat = GetComponent<Renderer>().material;
         spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.color = new Color32(70, 70, 70, 255);
-        enlightenedColor = new Color32(70, 70, 70, 255);
+        if (!saved)
+        {
+            spriteRenderer.color = new Color32(70, 70, 70, 255);
+            enlightenedColor = new Color32(70, 70, 70, 255);
+            transform.localScale = new Vector3(1f, 1f, 1f);
+            pointLight.enabled = false;
+        }
+        if (saved)
+        {
+            spriteRenderer.color = new Color32(255, 255, 255, 255);
+            enlightenedColor = new Color32(255, 255, 255, 255);
 
-        pointLight.enabled = false;
+            pointLight.enabled = true; 
+            transform.localScale = new Vector3(-1f, 1f, 1f);
+            saved = true;
+        }
 
         //FMOD sound event
         //manually starting sound event
@@ -127,6 +139,7 @@ public class ResonatingNPCController : MonoBehaviour
             {
                 pointLight.enabled = true;
                 transform.localScale = new Vector3(-1f, 1f, 1f);
+                saved = true;
             }
             spriteRenderer.color = enlightenedColor;
             Debug.Log("Color: " + enlightenedColor.r + ", " + enlightenedColor.g

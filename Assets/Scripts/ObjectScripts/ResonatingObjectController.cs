@@ -82,7 +82,8 @@ public class ResonatingObjectController : MonoBehaviour
             //Setting new
             if (exposureTimer > maxExposureTime)
             {
-                Destroy(gameObject);
+                //Destroy(gameObject);
+                gameObject.SetActive(false);
             }
             Debug.Log(exposureTimer);
         }
@@ -142,7 +143,8 @@ public class ResonatingObjectController : MonoBehaviour
         if (exposureTimer >= maxExposureTime)
         {
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
