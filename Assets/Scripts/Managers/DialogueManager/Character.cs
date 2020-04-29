@@ -5,7 +5,7 @@ using UnityEngine;
 // script for placing information that is unique to each character in their dialogue
 public class Character : MonoBehaviour
 {
-    public Color dialogueColor;
+    public Color32 dialogueColor;
 
 
     public Color GetDialogueColor()

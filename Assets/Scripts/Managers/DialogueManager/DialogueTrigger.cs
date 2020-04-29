@@ -68,6 +68,13 @@ public class DialogueTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dialogueManager.coroutineRunning && Input.GetKeyDown(KeyCode.E))
+        {
+            dialogueManager.coroutineRunning = false;
+            dialogueManager.StopAllCoroutines();
+            dialogueManager.PrintEntireLine();
+            return;
+        }
         if (firstTime && inTrigger)
         {
             // we trigger the dialog for the first time, then press e to continue dialog

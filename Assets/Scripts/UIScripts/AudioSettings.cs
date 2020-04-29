@@ -81,15 +81,10 @@ public class AudioSettings : MonoBehaviour
         for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + " x " + resolutions[i].height;
+
             Debug.Log(option);
-            if (options.Count == 0)
-            {
-                options.Add(option);
-            }
-            else if (resolutions[i].width != resolutions[i-1].width && resolutions[i].height != resolutions[i - 1].height)
-            {
-                options.Add(option);
-            }
+            options.Add(option);
+
 
             if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
             {
@@ -99,7 +94,7 @@ public class AudioSettings : MonoBehaviour
         }
 
         // let's see if this removes duplicates:
-        // options = options.Distinct().ToList();
+         options = options.Distinct().ToList();
 
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = PlayerPrefs.GetInt(resName, currentResolutionIndex);

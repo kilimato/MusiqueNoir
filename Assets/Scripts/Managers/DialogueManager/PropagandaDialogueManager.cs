@@ -65,12 +65,30 @@ public class PropagandaDialogueManager : MonoBehaviour
 
     IEnumerator TypeDialogue(string dialoguePart)
     {
+        /*
         textDisplay.text = "";
         foreach (char letter in dialoguePart.ToCharArray())
         {
             textDisplay.text += letter;
             yield return new WaitForSeconds(0.02f);
         }
+        */
+
+        string currentlyShowingText = "";
+        string notVisibleText = "";
+
+        int revealedCharIndex = 0;
+        while (revealedCharIndex < dialoguePart.Length)
+        {
+            revealedCharIndex++;
+            currentlyShowingText = dialoguePart.Substring(0, revealedCharIndex);
+            notVisibleText = dialoguePart.Substring(revealedCharIndex, dialoguePart.Length - revealedCharIndex);
+            textDisplay.text = "<#00FF16>" + currentlyShowingText + "<#00000000>" + notVisibleText;
+            //DialogueTextColor(speaker);
+
+            yield return new WaitForSeconds(0.02f);
+        }
+
     }
 
     private void DialogueTextColor()

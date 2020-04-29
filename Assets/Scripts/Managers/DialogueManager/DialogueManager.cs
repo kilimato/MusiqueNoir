@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour
     private string speaker;
     private string dialoguePart;
 
-    private bool coroutineRunning;
+    public bool coroutineRunning;
 
     // true when a dialog is loaded and a sentence can be printed,
     // false if dialog hasn't finished loading and if we've reached EOD
@@ -60,10 +60,13 @@ public class DialogueManager : MonoBehaviour
             {
                 speaker = key.ToString();
             }
+
             if (coroutineRunning)
             {
                 StopAllCoroutines();
+                PrintEntireLine();
             }
+
             dialoguePart = speaker + ": " + line[0].ToString();
 
             Debug.Log(dialoguePart);
@@ -85,30 +88,18 @@ public class DialogueManager : MonoBehaviour
         return true;
     }
 
+    public void PrintEntireLine()
+    {
+        textDisplay.text = TextColorToHex(speaker) + dialoguePart;
+    }
+
 
     IEnumerator TypeDialogue(string dialoguePart)
-    {
+    {    
+         // ADDED COLOR TAG TO ENABLE FURTHER DIALOGUE IMPROVEMENT
         coroutineRunning = true;
-        textDisplay.text = "";
-        
-        int revealedChars = 0;
-        while (revealedChars < dialoguePart.Length)
-        {
-            while (dialoguePart[revealedChars] == ' ')
-            {
-                revealedChars++;
-            }
-            revealedChars++;
-            textDisplay.text = dialoguePart.Substring(0, revealedChars);
-            yield return new WaitForSeconds(0.02f);
-        }
-        coroutineRunning = false;
-        
-        /*
-         * ADDED COLOR TAG TO ENABLE FURTHER DIALOGUE IMPROVEMENT
-        coroutineRunning = true;
-        textDisplay.text = dialoguePart;
-        //textDisplay.color = new Color32(0,0,0,0);
+        //textDisplay.text = dialoguePart;
+
         string currentlyShowingText = "";
         string notVisibleText = "";
 
@@ -116,23 +107,28 @@ public class DialogueManager : MonoBehaviour
         while (revealedCharIndex < dialoguePart.Length)
         {
             revealedCharIndex++;
-            //currentlyShowingText = textDisplay.co);
-            //textDisplay.text = currentlyShowingText;
             currentlyShowingText = dialoguePart.Substring(0, revealedCharIndex);
             notVisibleText = dialoguePart.Substring(revealedCharIndex, dialoguePart.Length-revealedCharIndex);
-            textDisplay.text =  "<#FF0000>" + currentlyShowingText;
+            textDisplay.text =  TextColorToHex(speaker) + currentlyShowingText  + "<#00000000>" + notVisibleText;
             //DialogueTextColor(speaker);
 
             yield return new WaitForSeconds(0.02f);
         }
         coroutineRunning = false;
-        */
+        
     }
 
 
     private void DialogueTextColor(string character)
     {
         textDisplay.color = GameObject.Find(character).GetComponent<Character>().GetDialogueColor();
+        string color = GameObject.Find(character).GetComponent<Character>().GetDialogueColor().ToString();
+    }
+
+    private string TextColorToHex(string character)
+    {    
+        string hexColor = "<#"+ ColorUtility.ToHtmlStringRGB(GameObject.Find(character).GetComponent<Character>().GetDialogueColor()) + ">";
+        return hexColor;      
     }
 
     public bool FinishedDialogue()
