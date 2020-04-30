@@ -45,12 +45,13 @@ public class GameManager : MonoBehaviour
         bf.Serialize(file, save);
         file.Close();
         
+        /*
         // 3: resetting the game so that everything is in a default state
         ResetTilemaps();
         // ResetCheckpoints();
         //currentCheckpoint = startingCheckpoint;
         finishedStartingConversation = false;
-        
+        */
         Debug.Log("Game Saved");
     }
 

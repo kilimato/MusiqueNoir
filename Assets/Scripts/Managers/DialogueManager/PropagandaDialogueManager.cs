@@ -77,7 +77,7 @@ public class PropagandaDialogueManager : MonoBehaviour
         string currentlyShowingText = "";
         string notVisibleText = "";
 
-        int revealedCharIndex = 0;
+        int revealedCharIndex = -1;
         while (revealedCharIndex < dialoguePart.Length)
         {
             revealedCharIndex++;

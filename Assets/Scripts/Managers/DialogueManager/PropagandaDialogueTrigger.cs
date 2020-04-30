@@ -35,7 +35,7 @@ public class PropagandaDialogueTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject == player)
+        if (other.gameObject == player && player.GetComponent<PlayerController>().isVisible)
         {
             inTrigger = false;
         }
