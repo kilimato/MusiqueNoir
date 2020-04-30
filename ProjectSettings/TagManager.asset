@@ -23,6 +23,7 @@ TagManager:
   - Checkpoint
   - ElevatorPosA
   - ElevatorPosB
+  - Enemy
   layers:
   - Default
   - TransparentFX
