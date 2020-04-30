@@ -20,7 +20,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
 
     public DialogueManager dialogueManager;
-    public ElevatorMovement elevatorMovement;
 
     void Start()
     {
@@ -72,7 +71,7 @@ public class PlayerController : MonoBehaviour
     private void PlayerMoves()
     {
         // player can't move if they're hiding, in elevator or in dialogue
-        if (dialogueManager.inDialogue || !isVisible || elevatorMovement.IsMoving())
+        if (dialogueManager.inDialogue || !isVisible)
         {
             animator.SetFloat("Speed", 0.0f);
             return;
@@ -125,10 +124,6 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("HidingPlace"))
         {
             canHide = true;
-        }
-        if (collision.gameObject.tag == "Elevator")
-        {
-            elevatorMovement = collision.gameObject.GetComponent<ElevatorMovement>();
         }
     }
 

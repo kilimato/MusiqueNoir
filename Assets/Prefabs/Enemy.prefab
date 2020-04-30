@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: -2757918271749370577}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -357,7 +357,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4290aafe95d24ee4d87e7f325896a0aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  aiPath: {fileID: 621849731775663929}
 --- !u!95 &621849731775663932
 Animator:
   serializedVersion: 3
@@ -435,6 +434,8 @@ MonoBehaviour:
   patrolSpeed: 2
   startPatrolMovementTime: 0
   startPatrolTurnTime: 0
+  rb2D: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!114 &-2757918271749370577
 MonoBehaviour:
   m_ObjectHideFlags: 0

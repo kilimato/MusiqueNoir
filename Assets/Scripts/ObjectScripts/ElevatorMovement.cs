@@ -4,99 +4,94 @@ using UnityEngine;
 
 public class ElevatorMovement : MonoBehaviour
 {
+
     public Vector3 posA;
     public Vector3 posB;
+    public float speed = 1;
 
-    private Vector3 nexPos;
-    public PlatformEffector2D upperFloorOneWayPlatform;
+    private GameObject player;
 
-    public GameObject elevatorDoors;
+    private Vector3 tempPos;
+    private float t;
+    private bool isTeleportingEnabled;
+    private Vector3 startingPos;
 
-    [SerializeField]
-    private float speed;
-
-    [SerializeField]
-    private Transform transformB;
-
-    public bool moving = false;
-    public bool onElevator = false;
+    // Start is called before the first frame update
     void Start()
     {
-        posA = transform.localPosition;
-        posB = transformB.localPosition;
-        nexPos = posB;
+
+        isTeleportingEnabled = false;
+
+        posA = transform.Find("ElevatorPosA").position;
+        posB = transform.Find("ElevatorPosB").position;
+
+        player = GameObject.FindGameObjectWithTag("Player");
+
     }
 
-    private void FixedUpdate()
+    // Update is called once per frame
+    void Update()
     {
-        if (onElevator && Input.GetKeyDown(KeyCode.E))
+
+        if (isTeleportingEnabled && Input.GetKeyDown(KeyCode.E))
         {
-            moving = true;
-            //upperFloorOneWayPlatform.rotationalOffset = upperFloorOneWayPlatform.rotationalOffset != 180 ? 180 : 0;
+            StartCoroutine(SmoothMovement(player, startingPos));
         }
 
-        if (moving)
+    }
+
+    IEnumerator SmoothMovement(GameObject movableObject, Vector3 startingPos)
+    {
+
+        isTeleportingEnabled = false;
+        movableObject.SetActive(false);
+
+        //Vähän ruma tällai tarkastella, mutten tähän hätään keksi miten vaihtaa clamp-tarkistusta, 
+        //t:n arvoa ja sen summauksen ja vähentämisen riippuvuutta t:n lähtöarvosta siistimmin.
+        if (startingPos == posA)
         {
-            Move();
+            t = 0;
+            do
+            {
+                t += speed * Time.deltaTime;
+                tempPos = new Vector3(Mathf.Lerp(posA.x, posB.x, t), Mathf.Lerp(posA.y, posB.y, t), Mathf.Lerp(posA.z, posB.z, t));
+                movableObject.transform.position = tempPos;
+                yield return null;
+
+            } while (Mathf.Clamp01(t) != 1);
         }
-    }
-
-    private void Move()
-    {
-        transform.localPosition = Vector3.MoveTowards(transform.localPosition, nexPos, speed * Time.deltaTime);
-        if (Vector3.Distance(transform.localPosition, nexPos) <= 0.01)
+        else if (startingPos == posB)
         {
-            moving = false;
-            ChangeDestination();
+            t = 1;
+            do
+            {
+                t -= speed * Time.deltaTime;
+                tempPos = new Vector3(Mathf.Lerp(posA.x, posB.x, t), Mathf.Lerp(posA.y, posB.y, t), Mathf.Lerp(posA.z, posB.z, t));
+                movableObject.transform.position = tempPos;
+                yield return null;
+
+            } while (Mathf.Clamp01(t) != 0);
         }
+
+        isTeleportingEnabled = true;
+        movableObject.SetActive(true);
     }
 
-    private void ChangeDestination()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        nexPos = nexPos != posA ? posA : posB;
-    }
-
-    private void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Player")
+        if (collision.CompareTag("Player"))
         {
-            onElevator = true;
-            elevatorDoors.SetActive(false);
-
-            //other.gameObject.transform.parent = transform;
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            onElevator = false;
-            elevatorDoors.SetActive(true);
-            // other.gameObject.transform.parent = null;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            //onElevator = true;
-            other.gameObject.transform.parent = transform;
-        }
-    }
-
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.tag == "Player")
-        {
-            //onElevator = false;
-            other.gameObject.transform.parent = null;
+            isTeleportingEnabled = true;
+            startingPos = Vector3.Distance(posA, collision.transform.position) < Vector3.Distance(posB, collision.transform.position) ? posA : posB;
         }
     }
 
-    public bool IsMoving()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        return moving;
+        if (collision.CompareTag("Player"))
+        {
+            isTeleportingEnabled = false;
+        }
     }
+
 }

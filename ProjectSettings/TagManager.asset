@@ -20,6 +20,9 @@ TagManager:
   - ElevatorButton
   - StartingPoint
   - GameManager
+  - Checkpoint
+  - ElevatorPosA
+  - ElevatorPosB
   layers:
   - Default
   - TransparentFX
