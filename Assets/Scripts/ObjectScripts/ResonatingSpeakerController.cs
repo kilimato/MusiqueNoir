@@ -6,6 +6,7 @@ public class ResonatingSpeakerController : MonoBehaviour
 {
     private ParticleSystem particles;
     ParticleSystem.MainModule psMain;
+    ParticleSystem.ColorOverLifetimeModule colorModule;
 
     private float minExitTime = 1f;
     private float maxExposureTime = 1.5f;
@@ -159,6 +160,8 @@ public class ResonatingSpeakerController : MonoBehaviour
             particles.Emit(1);
 
             speakerActive = false;
+            other.gameObject.SetActive(false);
+            Debug.Log("Stunned enemy");
         }
 
     }
@@ -203,8 +206,23 @@ public class ResonatingSpeakerController : MonoBehaviour
         {
             Debug.Log("Activated speaker");
             coroutineRunning = true;
+            //StartCoroutine(EmitActivationSignal());
+
             StartCoroutine(EmitActivatedParticles());
         }
+    }
+
+    public IEnumerator EmitActivationSignal()
+    {
+        int i = 0;
+        while (i < 5)
+        {
+            colorModule.color = Color.white;
+            particles.Emit(1);
+            yield return new WaitForSeconds(0.3f);
+        }
+
+        //colorModule.color = Color.blue;
     }
 
     public void EmitParticles()

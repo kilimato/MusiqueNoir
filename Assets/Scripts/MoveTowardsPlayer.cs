@@ -56,7 +56,7 @@ public class MoveTowardsPlayer : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player") && player.IsVisible())
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             //manager.GetComponent<GameManager>().LoadGame();
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
