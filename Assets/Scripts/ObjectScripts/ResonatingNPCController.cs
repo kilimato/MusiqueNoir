@@ -29,7 +29,10 @@ public class ResonatingNPCController : MonoBehaviour
     public Light2D pointLight;
 
     public bool saved = false;
+    public bool startDialogue = false;
     public GameObject resonator;
+
+    public GameObject dialogueTrigger;
     /*
      Billboard particle systemin asetuksissa:
      default partikkeli ei ole pallo, vaikka näyttää siltä, vaan neliö, johon on piirretty ympyrä
@@ -140,6 +143,7 @@ public class ResonatingNPCController : MonoBehaviour
                 pointLight.enabled = true;
                 transform.localScale = new Vector3(-1f, 1f, 1f);
                 saved = true;
+                startDialogue = true;
             }
             spriteRenderer.color = enlightenedColor;
             Debug.Log("Color: " + enlightenedColor.r + ", " + enlightenedColor.g

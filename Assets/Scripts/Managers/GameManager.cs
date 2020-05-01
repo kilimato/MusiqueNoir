@@ -173,7 +173,7 @@ public class GameManager : MonoBehaviour
             dialogueManager.GetComponent<DialogueManager>().finishedDialogue = save.finishedStartingConversation;
             if (save.finishedStartingConversation)
             {
-                dialogueManager.SetActive(false);
+               // dialogueManager.SetActive(false);
             }
             dialogueTrigger.GetComponent<DialogueTrigger>().firstTime = save.enteringDialogue;
 
