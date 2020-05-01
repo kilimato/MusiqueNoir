@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
         dialogueManager.SetActive(true);
         dialogueTrigger.GetComponent<DialogueTrigger>().firstTime = true;
         dialogueTrigger.GetComponent<DialogueTrigger>().dialogueLoaded = false;
-        dialogueCanvas.enabled = true;
+        //dialogueCanvas.enabled = true;
         dialogueText.text = "";
     }
     private void ResetCheckpoints()

@@ -10,6 +10,8 @@ public class DialogueManager : MonoBehaviour
     private JsonData dialogue;
     public TextMeshProUGUI textDisplay;
     public Canvas dialogueCanvas;
+
+    public Image characterImage;
     private int index;
     private string speaker;
     private string dialoguePart;
@@ -43,6 +45,7 @@ public class DialogueManager : MonoBehaviour
     public bool PrintLine()
     {
         if (finishedDialogue) return false;
+        dialogueCanvas.enabled = true;
 
         if (inDialogue)
         {
@@ -81,7 +84,8 @@ public class DialogueManager : MonoBehaviour
              */
             //textDisplay.text = dialoguePart;
 
-           // DialogueTextColor(speaker);
+            // DialogueTextColor(speaker);
+            DialogueImage(speaker);
             StartCoroutine(TypeDialogue(dialoguePart));
             index++;
         }
@@ -95,8 +99,8 @@ public class DialogueManager : MonoBehaviour
 
 
     IEnumerator TypeDialogue(string dialoguePart)
-    {    
-         // ADDED COLOR TAG TO ENABLE FURTHER DIALOGUE IMPROVEMENT
+    {
+        // ADDED COLOR TAG TO ENABLE FURTHER DIALOGUE IMPROVEMENT
         coroutineRunning = true;
         //textDisplay.text = dialoguePart;
 
@@ -108,27 +112,26 @@ public class DialogueManager : MonoBehaviour
         {
             revealedCharIndex++;
             currentlyShowingText = dialoguePart.Substring(0, revealedCharIndex);
-            notVisibleText = dialoguePart.Substring(revealedCharIndex, dialoguePart.Length-revealedCharIndex);
-            textDisplay.text =  TextColorToHex(speaker) + currentlyShowingText  + "<#00000000>" + notVisibleText;
+            notVisibleText = dialoguePart.Substring(revealedCharIndex, dialoguePart.Length - revealedCharIndex);
+            textDisplay.text = TextColorToHex(speaker) + currentlyShowingText + "<#00000000>" + notVisibleText;
             //DialogueTextColor(speaker);
 
             yield return new WaitForSeconds(0.02f);
         }
         coroutineRunning = false;
-        
+
     }
 
 
-    private void DialogueTextColor(string character)
+    private void DialogueImage(string character)
     {
-        textDisplay.color = GameObject.Find(character).GetComponent<Character>().GetDialogueColor();
-        string color = GameObject.Find(character).GetComponent<Character>().GetDialogueColor().ToString();
+        characterImage.sprite = GameObject.Find(character).GetComponent<Character>().GetDialogueSprite();
     }
 
     private string TextColorToHex(string character)
-    {    
-        string hexColor = "<#"+ ColorUtility.ToHtmlStringRGB(GameObject.Find(character).GetComponent<Character>().GetDialogueColor()) + ">";
-        return hexColor;      
+    {
+        string hexColor = "<#" + ColorUtility.ToHtmlStringRGB(GameObject.Find(character).GetComponent<Character>().GetDialogueColor()) + ">";
+        return hexColor;
     }
 
     public bool FinishedDialogue()

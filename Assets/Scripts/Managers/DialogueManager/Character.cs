@@ -6,10 +6,15 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     public Color32 dialogueColor;
-
+    public Sprite characterSprite;
 
     public Color GetDialogueColor()
     {
         return dialogueColor;
+    }
+
+    public Sprite GetDialogueSprite()
+    {
+        return characterSprite;
     }
 }
