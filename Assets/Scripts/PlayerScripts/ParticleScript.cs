@@ -137,4 +137,9 @@ public class ParticleScript : MonoBehaviour
 
         particles.Emit(1);
     }
+
+    public bool GetPlayerResonating()
+    {
+        return isResonating;
+    }
 }

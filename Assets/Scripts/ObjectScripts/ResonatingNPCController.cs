@@ -29,6 +29,7 @@ public class ResonatingNPCController : MonoBehaviour
     public Light2D pointLight;
 
     public bool saved = false;
+    public GameObject resonator;
     /*
      Billboard particle systemin asetuksissa:
      default partikkeli ei ole pallo, vaikka näyttää siltä, vaan neliö, johon on piirretty ympyrä
@@ -89,7 +90,6 @@ public class ResonatingNPCController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (exposureTimerActive)
         {
             exposureTimer += Time.deltaTime;
@@ -121,7 +121,7 @@ public class ResonatingNPCController : MonoBehaviour
      * Note: Trigger events are only sent if one of the Colliders also has a Rigidbody2D attached. Trigger events are sent to disabled MonoBehaviours, to allow enabling Behaviours in response to collisions.*/
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Resonator") && (!IsInvoking("EmitParticles")))
+        if (other.gameObject.CompareTag("Resonator") && resonator.GetComponent<ParticleScript>().GetPlayerResonating() && (!IsInvoking("EmitParticles")))
         {
             StartCoroutine(Coloring());
         }
@@ -129,7 +129,7 @@ public class ResonatingNPCController : MonoBehaviour
 
     IEnumerator Coloring()
     {
-        while (enlightenedColor.r < 255)
+        while (enlightenedColor.r < 255 && resonator.GetComponent<ParticleScript>().GetPlayerResonating())
         {
             enlightenedColor.r += 1;
             enlightenedColor.g += 1;
