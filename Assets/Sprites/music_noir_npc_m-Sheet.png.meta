@@ -26,6 +26,54 @@ TextureImporter:
   - first:
       213: 3629610123360051909
     second: music_noir_npc_m-Sheet_7
+  - first:
+      213: -1773411615811021123
+    second: music_noir_npc_m-Sheet_0
+  - first:
+      213: 6161624462806361359
+    second: music_noir_npc_m-Sheet_1
+  - first:
+      213: -7476090300477749098
+    second: music_noir_npc_m-Sheet_2
+  - first:
+      213: -4319635692254979614
+    second: music_noir_npc_m-Sheet_3
+  - first:
+      213: -3845453245311930963
+    second: music_noir_npc_m-Sheet_4
+  - first:
+      213: -7794714594010002446
+    second: music_noir_npc_m-Sheet_5
+  - first:
+      213: -7883096438929310672
+    second: music_noir_npc_m-Sheet_6
+  - first:
+      213: 4750841297452036904
+    second: music_noir_npc_m-Sheet_7
+  - first:
+      213: -5068393721915659159
+    second: music_noir_npc_m-Sheet_8
+  - first:
+      213: -5857965419454290220
+    second: music_noir_npc_m-Sheet_9
+  - first:
+      213: 642211813520457654
+    second: music_noir_npc_m-Sheet_10
+  - first:
+      213: -2157812502431794394
+    second: music_noir_npc_m-Sheet_11
+  - first:
+      213: 5179766464183210870
+    second: music_noir_npc_m-Sheet_12
+  - first:
+      213: -1654052045796063365
+    second: music_noir_npc_m-Sheet_13
+  - first:
+      213: -2750309408667122571
+    second: music_noir_npc_m-Sheet_14
+  - first:
+      213: -2852561489868660484
+    second: music_noir_npc_m-Sheet_15
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -114,6 +162,69 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db6580708839367e0800000000000000
+      internalID: -1773411615811021123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_npc_m-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f052ee0adcc728550800000000000000
+      internalID: 6161624462806361359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_npc_m-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 698c7435b779f3890800000000000000
+      internalID: -7476090300477749098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_npc_m-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 64
         width: 64
         height: 64
@@ -124,14 +235,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa37888ea264d62e0800000000000000
-      internalID: -2130969898572549206
+      spriteID: 2e91b0c69329d04c0800000000000000
+      internalID: -4319635692254979614
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_npc_m-Sheet_1
+      name: music_noir_npc_m-Sheet_4
       rect:
         serializedVersion: 2
         x: 64
@@ -145,14 +256,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43b9ad17badf772a0800000000000000
-      internalID: -6739639404545270988
+      spriteID: dad2fc0c5a432aac0800000000000000
+      internalID: -3845453245311930963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_npc_m-Sheet_2
+      name: music_noir_npc_m-Sheet_5
       rect:
         serializedVersion: 2
         x: 128
@@ -166,14 +277,56 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f47c100792b8c7110800000000000000
-      internalID: 1260035005845981007
+      spriteID: 2fb0b7aff5c93d390800000000000000
+      internalID: -7794714594010002446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_npc_m-Sheet_3
+      name: music_noir_npc_m-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03cb8732e8d999290800000000000000
+      internalID: -7883096438929310672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_npc_m-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82372ee2df06ee140800000000000000
+      internalID: 4750841297452036904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_npc_m-Sheet_8
       rect:
         serializedVersion: 2
         x: 0
@@ -187,14 +340,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a72920487c8785050800000000000000
-      internalID: 5789510119293358714
+      spriteID: 96ca56f63c279a9b0800000000000000
+      internalID: -5068393721915659159
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_npc_m-Sheet_4
+      name: music_noir_npc_m-Sheet_9
       rect:
         serializedVersion: 2
         x: 64
@@ -208,14 +361,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d57b920aa6190840800000000000000
-      internalID: 5190704964965201364
+      spriteID: 4d6a7e2ec7354bea0800000000000000
+      internalID: -5857965419454290220
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_npc_m-Sheet_5
+      name: music_noir_npc_m-Sheet_10
       rect:
         serializedVersion: 2
         x: 128
@@ -229,14 +382,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 852b83faace35ab40800000000000000
-      internalID: 5450831964245897816
+      spriteID: 6bf3277ed3899e800800000000000000
+      internalID: 642211813520457654
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_npc_m-Sheet_6
+      name: music_noir_npc_m-Sheet_11
       rect:
         serializedVersion: 2
         x: 192
@@ -250,14 +403,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cca7d0aec24eea9c0800000000000000
-      internalID: -3913940144581936436
+      spriteID: 62bf7ac26f8ed02e0800000000000000
+      internalID: -2157812502431794394
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_npc_m-Sheet_7
+      name: music_noir_npc_m-Sheet_12
       rect:
         serializedVersion: 2
         x: 256
@@ -271,8 +424,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c2a90c3d27fe5230800000000000000
-      internalID: 3629610123360051909
+      spriteID: 6731f15d72a32e740800000000000000
+      internalID: 5179766464183210870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_npc_m-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b77415a8d60ab09e0800000000000000
+      internalID: -1654052045796063365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_npc_m-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5744bf12a20f4d9d0800000000000000
+      internalID: -2750309408667122571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_npc_m-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf06b60407aa968d0800000000000000
+      internalID: -2852561489868660484
       vertices: []
       indices: 
       edges: []

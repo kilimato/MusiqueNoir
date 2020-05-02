@@ -35,6 +35,72 @@ TextureImporter:
   - first:
       213: -7157450153276927903
     second: music_noir_thug_1_64_sheet_10
+  - first:
+      213: -4722020938925066113
+    second: music_noir_thug_1_64_sheet_0
+  - first:
+      213: -2890494028874151267
+    second: music_noir_thug_1_64_sheet_1
+  - first:
+      213: -9178825133729582619
+    second: music_noir_thug_1_64_sheet_2
+  - first:
+      213: -587129700017957443
+    second: music_noir_thug_1_64_sheet_3
+  - first:
+      213: 1784208719702527437
+    second: music_noir_thug_1_64_sheet_4
+  - first:
+      213: 4989734724168332337
+    second: music_noir_thug_1_64_sheet_5
+  - first:
+      213: 321009475446422426
+    second: music_noir_thug_1_64_sheet_6
+  - first:
+      213: -4270868374882310178
+    second: music_noir_thug_1_64_sheet_7
+  - first:
+      213: -5826402283920829972
+    second: music_noir_thug_1_64_sheet_8
+  - first:
+      213: 1007605951352779485
+    second: music_noir_thug_1_64_sheet_9
+  - first:
+      213: -6228637871622590160
+    second: music_noir_thug_1_64_sheet_10
+  - first:
+      213: 6839860380457759610
+    second: music_noir_thug_1_64_sheet_11
+  - first:
+      213: 2699871577944393832
+    second: music_noir_thug_1_64_sheet_12
+  - first:
+      213: -85244205534764179
+    second: music_noir_thug_1_64_sheet_13
+  - first:
+      213: 7200205086044193524
+    second: music_noir_thug_1_64_sheet_14
+  - first:
+      213: 358186884891308938
+    second: music_noir_thug_1_64_sheet_15
+  - first:
+      213: -5965250437689861946
+    second: music_noir_thug_1_64_sheet_16
+  - first:
+      213: 6413781872455312377
+    second: music_noir_thug_1_64_sheet_17
+  - first:
+      213: 2248602652332581914
+    second: music_noir_thug_1_64_sheet_18
+  - first:
+      213: -8550506119061608995
+    second: music_noir_thug_1_64_sheet_19
+  - first:
+      213: 6152379789269020612
+    second: music_noir_thug_1_64_sheet_20
+  - first:
+      213: 6317940486102982295
+    second: music_noir_thug_1_64_sheet_21
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -123,6 +189,237 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f783a6179f2087eb0800000000000000
+      internalID: -4722020938925066113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_thug_1_64_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a8197cef6e2e7d0800000000000000
+      internalID: -2890494028874151267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_thug_1_64_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e1fe902c234e9080800000000000000
+      internalID: -9178825133729582619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_thug_1_64_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db5195906a81ad7f0800000000000000
+      internalID: -587129700017957443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_thug_1_64_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcd060f9068c2c810800000000000000
+      internalID: 1784208719702527437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_thug_1_64_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1343c7d7b491f3540800000000000000
+      internalID: 4989734724168332337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_thug_1_64_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9bb489ca64747400800000000000000
+      internalID: 321009475446422426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_thug_1_64_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed7a0b057d3dab4c0800000000000000
+      internalID: -4270868374882310178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_thug_1_64_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce1df5c0ef5742fa0800000000000000
+      internalID: -5826402283920829972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_thug_1_64_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd2b3f3364cbbfd00800000000000000
+      internalID: 1007605951352779485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_thug_1_64_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 031f3634bde6f89a0800000000000000
+      internalID: -6228637871622590160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_thug_1_64_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 64
         width: 64
         height: 64
@@ -133,14 +430,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bd01da577b989a590800000000000000
-      internalID: -7662441869947891493
+      spriteID: a73f372e6c01cee50800000000000000
+      internalID: 6839860380457759610
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_thug_1_64_sheet_1
+      name: music_noir_thug_1_64_sheet_12
       rect:
         serializedVersion: 2
         x: 64
@@ -154,14 +451,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 80efdd8d71d8a8740800000000000000
-      internalID: 5155087857041145352
+      spriteID: 8688c8645eed77520800000000000000
+      internalID: 2699871577944393832
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_thug_1_64_sheet_2
+      name: music_noir_thug_1_64_sheet_13
       rect:
         serializedVersion: 2
         x: 128
@@ -175,14 +472,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b03ce22aca3df700800000000000000
-      internalID: 575680967217000626
+      spriteID: d63a0f1c8d621def0800000000000000
+      internalID: -85244205534764179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_thug_1_64_sheet_3
+      name: music_noir_thug_1_64_sheet_14
       rect:
         serializedVersion: 2
         x: 0
@@ -196,14 +493,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fc4ef72372e33f850800000000000000
-      internalID: 6409535032750236879
+      spriteID: 4f200af90644ce360800000000000000
+      internalID: 7200205086044193524
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_thug_1_64_sheet_4
+      name: music_noir_thug_1_64_sheet_15
       rect:
         serializedVersion: 2
         x: 64
@@ -217,14 +514,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3a01d67bb5f67eba0800000000000000
-      internalID: -6059752333893627741
+      spriteID: a837625f21988f400800000000000000
+      internalID: 358186884891308938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_thug_1_64_sheet_5
+      name: music_noir_thug_1_64_sheet_16
       rect:
         serializedVersion: 2
         x: 128
@@ -238,14 +535,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4987c636f649f5f90800000000000000
-      internalID: -6962683292761163628
+      spriteID: 6c89049055c273da0800000000000000
+      internalID: -5965250437689861946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_thug_1_64_sheet_6
+      name: music_noir_thug_1_64_sheet_17
       rect:
         serializedVersion: 2
         x: 192
@@ -259,14 +556,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4fb84759414341120800000000000000
-      internalID: 2383587365797268468
+      spriteID: 9f3e98e91a4520950800000000000000
+      internalID: 6413781872455312377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_thug_1_64_sheet_7
+      name: music_noir_thug_1_64_sheet_18
       rect:
         serializedVersion: 2
         x: 256
@@ -280,14 +577,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 58c138260be942af0800000000000000
-      internalID: -422037984661791611
+      spriteID: a14e84dd234a43f10800000000000000
+      internalID: 2248602652332581914
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_thug_1_64_sheet_8
+      name: music_noir_thug_1_64_sheet_19
       rect:
         serializedVersion: 2
         x: 320
@@ -301,14 +598,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6eaeca725da889d90800000000000000
-      internalID: -7090764965196535066
+      spriteID: dd5678bbcff765980800000000000000
+      internalID: -8550506119061608995
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_thug_1_64_sheet_9
+      name: music_noir_thug_1_64_sheet_20
       rect:
         serializedVersion: 2
         x: 384
@@ -322,14 +619,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 50ebc68f93ee8d920800000000000000
-      internalID: 3015421883272969733
+      spriteID: 4cf2ca652d4a16550800000000000000
+      internalID: 6152379789269020612
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_thug_1_64_sheet_10
+      name: music_noir_thug_1_64_sheet_21
       rect:
         serializedVersion: 2
         x: 448
@@ -343,8 +640,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1601d54e101abac90800000000000000
-      internalID: -7157450153276927903
+      spriteID: 79e1a32f565dda750800000000000000
+      internalID: 6317940486102982295
       vertices: []
       indices: 
       edges: []

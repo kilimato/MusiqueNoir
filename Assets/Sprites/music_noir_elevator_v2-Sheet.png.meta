@@ -1,0 +1,415 @@
+fileFormatVersion: 2
+guid: 4e552b059f035d44bb470a79ef3d1547
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3021903271335232927
+    second: music_noir_elevator_v2-Sheet_0
+  - first:
+      213: 435613779259295702
+    second: music_noir_elevator_v2-Sheet_1
+  - first:
+      213: -2956924541948585974
+    second: music_noir_elevator_v2-Sheet_2
+  - first:
+      213: 817109915646499332
+    second: music_noir_elevator_v2-Sheet_3
+  - first:
+      213: 2099107357262066187
+    second: music_noir_elevator_v2-Sheet_4
+  - first:
+      213: 3477834616860349418
+    second: music_noir_elevator_v2-Sheet_5
+  - first:
+      213: -432748530971206226
+    second: music_noir_elevator_v2-Sheet_6
+  - first:
+      213: -3715427871944620945
+    second: music_noir_elevator_v2-Sheet_7
+  - first:
+      213: -8315911371306020220
+    second: music_noir_elevator_v2-Sheet_8
+  - first:
+      213: 4986628671298153307
+    second: music_noir_elevator_v2-Sheet_9
+  - first:
+      213: 2331072416217952238
+    second: music_noir_elevator_v2-Sheet_10
+  - first:
+      213: -8935233438080735047
+    second: music_noir_elevator_v2-Sheet_11
+  - first:
+      213: -2741697945073379590
+    second: music_noir_elevator_v2-Sheet_12
+  - first:
+      213: 1922933324186914690
+    second: music_noir_elevator_v2-Sheet_13
+  - first:
+      213: 8092038744839556832
+    second: music_noir_elevator_v2-Sheet_14
+  - first:
+      213: 5893621034179315735
+    second: music_noir_elevator_v2-Sheet_15
+  - first:
+      213: 7232162613721723476
+    second: music_noir_elevator_v2-Sheet_16
+  - first:
+      213: 7273352596844507502
+    second: music_noir_elevator_v2-Sheet_17
+  - first:
+      213: 7523847204013876334
+    second: music_noir_elevator_v2-Sheet_18
+  - first:
+      213: -6191698010876267022
+    second: music_noir_elevator_v2-Sheet_19
+  - first:
+      213: 6246441620742470637
+    second: music_noir_elevator_v2-Sheet_20
+  - first:
+      213: 6070535311361195122
+    second: music_noir_elevator_v2-Sheet_21
+  - first:
+      213: -1342988563697612954
+    second: music_noir_elevator_v2-Sheet_22
+  - first:
+      213: -845518182588001298
+    second: music_noir_elevator_v2-Sheet_23
+  - first:
+      213: -2941245069022242262
+    second: music_noir_elevator_v2-Sheet_24
+  - first:
+      213: 3940131758042663872
+    second: music_noir_elevator_v2-Sheet_25
+  - first:
+      213: -6928017324026396575
+    second: music_noir_elevator_v2-Sheet_26
+  - first:
+      213: 1020648437616311887
+    second: music_noir_elevator_v2-Sheet_27
+  - first:
+      213: -2519151546051817464
+    second: music_noir_elevator_v2-Sheet_28
+  - first:
+      213: 2198256571692198780
+    second: music_noir_elevator_v2-Sheet_29
+  - first:
+      213: -3446815415384471085
+    second: music_noir_elevator_v2-Sheet_30
+  - first:
+      213: -7626158068560084873
+    second: music_noir_elevator_v2-Sheet_31
+  - first:
+      213: -4204100117633019171
+    second: music_noir_elevator_v2-Sheet_32
+  - first:
+      213: 5679068219169714041
+    second: music_noir_elevator_v2-Sheet_33
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: music_noir_elevator_v2-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f950789b305ffe920800000000000000
+      internalID: 3021903271335232927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator_v2-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 288
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d7040c9c6c9b0600800000000000000
+      internalID: 435613779259295702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator_v2-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a081589abc4e6f6d0800000000000000
+      internalID: -2956924541948585974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator_v2-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a1f889325f65b00800000000000000
+      internalID: 817109915646499332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator_v2-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b02b3071507812d10800000000000000
+      internalID: 2099107357262066187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator_v2-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae3948d5820c34030800000000000000
+      internalID: 3477834616860349418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator_v2-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ead936ef0819ef9f0800000000000000
+      internalID: -432748530971206226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator_v2-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f64c7202906207cc0800000000000000
+      internalID: -3715427871944620945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator_v2-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 96
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4825ca9daa2f79c80800000000000000
+      internalID: -8315911371306020220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_elevator_v2-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5b21833b50143540800000000000000
+      internalID: 4986628671298153307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
