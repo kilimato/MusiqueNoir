@@ -21,6 +21,8 @@ public class ParticleScript : MonoBehaviour
     private bool isResonating = false;
     public CircleCollider2D particleCollider;
 
+    public PlayerController playerController;
+
     /*
      Billboard particle systemin asetuksissa:
      default partikkeli ei ole pallo, vaikka näyttää siltä, vaan neliö, johon on piirretty ympyrä
@@ -37,7 +39,14 @@ public class ParticleScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerController.isVisible == false)
+        {
+            CancelInvoke();
+            ringSize = 0.0001f;
+        }
+
         CanPlayerResonate();
+
         psMain = particles.main;
 
         UpdateColliderSize();
@@ -55,7 +64,7 @@ public class ParticleScript : MonoBehaviour
 
     void UpdateColliderSize()
     {
-        if (isResonating || IsInvoking("EmitFadingParticles"))
+        if (isResonating || IsInvoking("EmitFadingParticles") && playerController.isVisible)
         {
             particleCollider.radius = ringSize / 8;
         }
@@ -89,6 +98,8 @@ public class ParticleScript : MonoBehaviour
     // when player holds space, waves are created, when space is released, waves stop
     private void CanPlayerResonate()
     {
+        if (!playerController.isVisible) return;
+
         while (Input.GetKey(KeyCode.Space) && !IsInvoking("EmitParticles"))
         {
             if (IsInvoking("EmitFadingParticles"))
@@ -103,7 +114,6 @@ public class ParticleScript : MonoBehaviour
             CancelInvoke("EmitParticles");
 
             InvokeRepeating("EmitFadingParticles", 0, 0.4f);
-
             isResonating = false;
         }
     }
@@ -111,6 +121,11 @@ public class ParticleScript : MonoBehaviour
 
     private void EmitParticles()
     {
+        if (ringSize <= ringMinSize)
+        {
+            ringSize = ringMinSize;
+        }
+        
         if (ringSize >= ringMaxSize)
         {
             ringSize = ringMaxSize;

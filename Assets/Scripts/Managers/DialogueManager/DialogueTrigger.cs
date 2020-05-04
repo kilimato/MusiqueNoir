@@ -83,9 +83,14 @@ public class DialogueTrigger : MonoBehaviour
 
         if (!firstTime)
         {
-            // here we start dialogue when we are in collision area of the NPC and press E
-            // could be anything else tp trigger the dialogue
+            // here we continue dialogue when we are in collision area of the NPC and press E
+            // could be anything else to trigger the dialogue
             RunDialogue(Input.GetKeyDown(KeyCode.E));
+        }
+
+        if (dialogueManager.finishedDialogue)
+        {
+            gameObject.SetActive(false);
         }
     }
 }
