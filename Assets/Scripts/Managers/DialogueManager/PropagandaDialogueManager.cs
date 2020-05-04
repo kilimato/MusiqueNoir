@@ -11,6 +11,7 @@ public class PropagandaDialogueManager : MonoBehaviour
     public TextMeshProUGUI textDisplay;
     private int index;
     private string speaker;
+    string currentDialoguePath;
 
     // true when a dialog is loaded and a sentence can be printed,
     // false if dialog hasn't finished loading and if we've reached EOD
@@ -18,20 +19,22 @@ public class PropagandaDialogueManager : MonoBehaviour
 
     // dialogTrigger needs to know whether it's own dialogue has loaded (not just any dialogue)
     // so we return bool to indicate that state
-    public bool LoadDialogue(string path)
+    public bool LoadDialogue(string path, int sentenceIndex)
     {
+        currentDialoguePath = path;
+        Debug.Log("Manager: " + currentDialoguePath);
         // we don't load a dialogue if we're already in one
-        if (!inDialogue)
-        {
-            index = 0;
+        //**if (inDialogue)
+       //** {
+            index = sentenceIndex;
             var jsonTextFile = Resources.Load<TextAsset>("Dialogues/" + path);
             dialogue = JsonMapper.ToObject(jsonTextFile.text);
             inDialogue = true;
             return true;
-        }
+       //** }
         // purkkaratkaisu: changed from original, since don't know yet how to stop dialogue in the middle and change to another
         //return false;
-        return true;
+       //** return true;
     }
 
     // we need to know which dialogTrigger instance needs to know when it ends
@@ -94,5 +97,10 @@ public class PropagandaDialogueManager : MonoBehaviour
     private void DialogueTextColor()
     {
         textDisplay.color = Color.green;
+    }
+
+    public string GetCurrentDialoguePath()
+    {
+        return currentDialoguePath;
     }
 }

@@ -16,6 +16,8 @@ public class PropagandaDialogueTrigger : MonoBehaviour
 
     public bool firstTime = true;
 
+    public int sentenceIndex = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,12 +47,29 @@ public class PropagandaDialogueTrigger : MonoBehaviour
     {
         if (!dialogueLoaded)
         {
-            dialogueLoaded = dialogueManager.LoadDialogue(dialoguePath);
+            dialogueLoaded = dialogueManager.LoadDialogue(dialoguePath, sentenceIndex);
+            Debug.Log("Dialogue loaded: " + dialoguePath + " " + sentenceIndex);
         }
-        if (dialogueLoaded)
+        /*   else if (dialogueLoaded && dialogueManager.GetCurrentDialoguePath() != dialoguePath)
+           {
+               Debug.Log("Wrong dialogue: " + dialogueManager.GetCurrentDialoguePath());
+               dialogueLoaded = dialogueManager.LoadDialogue(dialoguePath);
+
+               Debug.Log("Dialogue changed: " + dialogueManager.GetCurrentDialoguePath());
+           }*/
+        else if (dialogueLoaded)
         {
+            Debug.Log("Dialogue correct: " + dialoguePath);
             dialogueManager.PrintLine();
+            sentenceIndex++;
+
+            if (sentenceIndex > 10)
+            {
+                sentenceIndex = 0;
+                dialogueManager.LoadDialogue(dialoguePath, sentenceIndex);
+            }
         }
+
     }
 
     // Update is called once per frame
@@ -63,7 +82,7 @@ public class PropagandaDialogueTrigger : MonoBehaviour
             if (!IsInvoking("RunDialogue"))
             {
                 propagandaCanvas.enabled = true;
-                InvokeRepeating("RunDialogue", 0, 3.5f);
+                InvokeRepeating("RunDialogue", 0, 4.5f);
             }
             // RunDialogue(Input.GetKeyDown(KeyCode.C));
         }
