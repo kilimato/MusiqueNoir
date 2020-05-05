@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody2D rb;
 
+    private Vector3 movement = Vector3.zero;
+
     public DialogueManager dialogueManager;
 
     void Start()
@@ -36,6 +38,11 @@ public class PlayerController : MonoBehaviour
         IsPlayerUsingResonator();
 
         CanPlayerHide();
+    }
+
+    void FixedUpdate()
+    {
+        rb.MovePosition(transform.position + movement);
     }
 
     // eli: jos pelaaja on alueella (canHide = true) ja painanut E:tä -> muututaan näkymättömäksi, painaessaan uudestaan -> muuttuu näkyväksi
@@ -73,6 +80,7 @@ public class PlayerController : MonoBehaviour
         // player can't move if they're hiding, in elevator or in dialogue
         if (dialogueManager.inDialogue || !isVisible)
         {
+            movement = Vector3.zero;
             animator.SetFloat("Speed", 0.0f);
             return;
         }
@@ -92,12 +100,9 @@ public class PlayerController : MonoBehaviour
 
         verticalInput = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(horizontalInput, 0f, 0f) * speed * Time.deltaTime;
-        transform.position += movement;
-        //transform.Translate(Vector2.right * horizontalInput * speed * Time.deltaTime);
+        movement = new Vector3(horizontalInput, 0f, 0f) * speed * Time.fixedDeltaTime;
 
         // flips the player sprite to face to the right direction
-
         if (movement.x != 0)
         {
             sr.flipX = movement.x > 0f ? true : false;
