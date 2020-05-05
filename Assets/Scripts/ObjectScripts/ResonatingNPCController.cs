@@ -31,6 +31,7 @@ public class ResonatingNPCController : MonoBehaviour
     public bool saved = false;
     public bool startDialogue = false;
     public GameObject resonator;
+    public Animator animator;
 
     public GameObject dialogueTrigger;
     /*
@@ -144,6 +145,7 @@ public class ResonatingNPCController : MonoBehaviour
                 transform.localScale = new Vector3(-1f, 1f, 1f);
                 saved = true;
                 startDialogue = true;
+                animator.SetBool("IsSaved", true);
             }
             spriteRenderer.color = enlightenedColor;
             Debug.Log("Color: " + enlightenedColor.r + ", " + enlightenedColor.g
