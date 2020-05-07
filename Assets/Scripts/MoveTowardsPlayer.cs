@@ -53,11 +53,9 @@ public class MoveTowardsPlayer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-
         if (other.gameObject.CompareTag("Player") && player.IsVisible())
         {
-            gameObject.SetActive(false);
-            //manager.GetComponent<GameManager>().LoadGame();
+             manager.GetComponent<GameManager>().LoadGame();
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }

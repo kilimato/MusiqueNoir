@@ -16,6 +16,7 @@ public class Save
     public float[] checkpoint = new float[3];
     public List<bool> savedPeasants = new List<bool>();
     public List<bool> brokenWalls = new List<bool>();
+    public List<bool> enemies = new List<bool>();
 }
 
 

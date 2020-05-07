@@ -24,10 +24,18 @@ public class GameManager : MonoBehaviour
     private GameObject[] changingVisibilityAreas;
     [SerializeField]
     public GameObject[] peasants;
+    [SerializeField]
+    public GameObject[] enemies;
+    [SerializeField]
+    public StateMachine sm;
+
+    [SerializeField]
     public GameObject[] breakableObjects;
 
     [SerializeField]
     public Vector3 lastCheckpointPos;
+    [SerializeField]
+    public GameObject lastCheckpoint;
     [SerializeField]
     public GameObject startingPoint;
     [SerializeField]
@@ -67,9 +75,21 @@ public class GameManager : MonoBehaviour
         ResetPlayerPosition();
         ResetPeasants();
         ResetObjects();
+        ResetEnemies();
         Time.timeScale = 1;
     }
 
+
+    private void ResetEnemies()
+    {
+        foreach (GameObject enemy in enemies)
+        {
+            enemy.transform.position = enemy.GetComponent<EnemyController>().GetStartingPos();
+            sm = enemy.GetComponent<EnemyController>().stateMachine;
+            sm.ChangeState(new PatrolState(enemy.GetComponent<EnemyController>()));
+           // enemy.GetComponent<EnemyController>().startingDirection = -transform.localScale.x / Mathf.Abs(transform.localScale.x);
+        }
+    }
     private void ResetPeasants()
     {
         foreach (GameObject peasant in peasants)
@@ -111,6 +131,7 @@ public class GameManager : MonoBehaviour
     private void ResetCheckpoints()
     {
         lastCheckpointPos = startingPoint.transform.position;
+        lastCheckpoint = startingPoint;
     }
 
 
@@ -159,6 +180,7 @@ public class GameManager : MonoBehaviour
             ResetCheckpoints();
             ResetPeasants();
             ResetObjects();
+            ResetEnemies();
             
 
             // 2

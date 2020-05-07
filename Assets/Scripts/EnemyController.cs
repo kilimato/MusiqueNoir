@@ -23,7 +23,7 @@ public class EnemyController : MonoBehaviour
     public Animator animator;
 
     private Vector3 startingPos;
-    private float startingDirection;
+    public float startingDirection;
 
     // Start is called before the first frame update
     void Start()
