@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Linq;
 
-public class AudioSettings : MonoBehaviour
+public class Settings : MonoBehaviour
 {
 
     FMOD.Studio.EventInstance SFXVolumeTestEvent;

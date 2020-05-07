@@ -15,6 +15,7 @@ public class ElevatorMovement : MonoBehaviour
     private float t;
     private bool isTeleportingEnabled;
     private Vector3 startingPos;
+    private bool usingElevator;
 
     // Start is called before the first frame update
     void Start()
@@ -42,7 +43,7 @@ public class ElevatorMovement : MonoBehaviour
 
     IEnumerator SmoothMovement(GameObject movableObject, Vector3 startingPos)
     {
-
+        usingElevator = true;
         isTeleportingEnabled = false;
         movableObject.SetActive(false);
 
@@ -75,6 +76,7 @@ public class ElevatorMovement : MonoBehaviour
 
         isTeleportingEnabled = true;
         movableObject.SetActive(true);
+        usingElevator = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -92,6 +94,11 @@ public class ElevatorMovement : MonoBehaviour
         {
             isTeleportingEnabled = false;
         }
+    }
+
+    public bool IsUsingElevator()
+    {
+        return usingElevator;
     }
 
 }

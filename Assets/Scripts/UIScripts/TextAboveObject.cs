@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class ClampName : MonoBehaviour
+public class TextAboveObject : MonoBehaviour
 {
     public TextMeshProUGUI textLabel;
     // Update is called once per frame

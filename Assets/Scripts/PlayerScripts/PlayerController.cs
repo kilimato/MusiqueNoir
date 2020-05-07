@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     public HidePlayer hideplayerScript;
     public bool canHide = false;
     public bool isVisible = true;
+    public bool usingElevator = false;
 
     private Rigidbody2D rb;
 
@@ -119,16 +120,17 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    public bool IsVisible()
-    {
-        return isVisible;
-    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("HidingPlace"))
         {
             canHide = true;
+        }
+        if (collision.CompareTag("Elevator"))
+        {
+            usingElevator = true;
         }
     }
 
@@ -138,5 +140,18 @@ public class PlayerController : MonoBehaviour
         {
             canHide = false;
         }
+        if (collision.CompareTag("Elevator"))
+        {
+            usingElevator = false;
+        }
+    }
+    public bool IsVisible()
+    {
+        return isVisible;
+    }
+
+    public bool IsUsingElevator()
+    {
+        return usingElevator;
     }
 }

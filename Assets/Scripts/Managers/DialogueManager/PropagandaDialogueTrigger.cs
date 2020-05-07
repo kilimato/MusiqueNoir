@@ -8,6 +8,7 @@ public class PropagandaDialogueTrigger : MonoBehaviour
 
     public PropagandaDialogueManager dialogueManager;
     public GameObject player;
+    private PlayerController playerController;
     public string dialoguePath;
     public Canvas propagandaCanvas;
 
@@ -21,6 +22,7 @@ public class PropagandaDialogueTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerController = player.GetComponent<PlayerController>();
         if (dialogueManager == null)
         {
             dialogueManager = GameObject.Find("PropagandaDialogueManager").GetComponent<PropagandaDialogueManager>();
@@ -37,7 +39,7 @@ public class PropagandaDialogueTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject == player && player.GetComponent<PlayerController>().isVisible)
+        if (other.gameObject == playerController.isVisible && playerController.IsUsingElevator() == false)
         {
             inTrigger = false;
         }

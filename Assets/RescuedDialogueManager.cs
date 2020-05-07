@@ -58,18 +58,14 @@ public class RescuedDialogueManager : MonoBehaviour
                 speaker = key.ToString();
             }
 
-            dialoguePart = speaker + ": " + line[0].ToString();
+            dialoguePart = speaker.Substring(0, speaker.Length-1) + ": " + line[0].ToString();
 
             Debug.Log(dialoguePart);
-            textDisplay.text = dialoguePart;
+            textDisplay.text = TextColorToHex(speaker) + dialoguePart;
+
             index++;
         }
         return true;
-    }
-
-    public void PrintEntireLine()
-    {
-        textDisplay.text = TextColorToHex(speaker) + dialoguePart;
     }
 
     private string TextColorToHex(string character)
