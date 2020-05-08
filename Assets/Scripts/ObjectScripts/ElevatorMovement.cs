@@ -8,6 +8,8 @@ public class ElevatorMovement : MonoBehaviour
     public Vector3 posA;
     public Vector3 posB;
     public float speed = 1;
+    public Animator aniA;
+    public Animator aniB;
 
     private GameObject player;
 
@@ -15,6 +17,7 @@ public class ElevatorMovement : MonoBehaviour
     private float t;
     private bool isTeleportingEnabled;
     private Vector3 startingPos;
+    private Vector3 leavingPos;
     private bool usingElevator;
 
     // Start is called before the first frame update
@@ -46,6 +49,7 @@ public class ElevatorMovement : MonoBehaviour
         usingElevator = true;
         isTeleportingEnabled = false;
         movableObject.SetActive(false);
+
 
         //Vähän ruma tällai tarkastella, mutten tähän hätään keksi miten vaihtaa clamp-tarkistusta, 
         //t:n arvoa ja sen summauksen ja vähentämisen riippuvuutta t:n lähtöarvosta siistimmin.
@@ -85,6 +89,15 @@ public class ElevatorMovement : MonoBehaviour
         {
             isTeleportingEnabled = true;
             startingPos = Vector3.Distance(posA, collision.transform.position) < Vector3.Distance(posB, collision.transform.position) ? posA : posB;
+
+            if (startingPos == posA)
+            {
+                aniA.SetTrigger("PlayerEnters");
+            }
+            else if (startingPos == posB)
+            {
+                aniB.SetTrigger("PlayerEnters");
+            }
         }
     }
 
@@ -93,6 +106,17 @@ public class ElevatorMovement : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isTeleportingEnabled = false;
+
+            leavingPos = Vector3.Distance(posA, collision.transform.position) < Vector3.Distance(posB, collision.transform.position) ? posA : posB;
+
+            if (leavingPos == posA)
+            {
+                aniA.SetTrigger("PlayerLeaves");
+            }
+            else if (leavingPos == posB)
+            {
+                aniB.SetTrigger("PlayerLeaves");
+            }
         }
     }
 

@@ -83,12 +83,12 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        /*
+        
         if (Input.GetKey(KeyCode.Space))
         {
             return;
         }
-        */
+        
 
         //File.Delete(Application.persistentDataPath + "/gamesave.save");
 
