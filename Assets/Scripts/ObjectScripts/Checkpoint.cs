@@ -9,7 +9,8 @@ public class Checkpoint : MonoBehaviour
     private GameManager manager;
 
     public Light2D checkpointLight;
-    public Color32 checkpointColor;
+    public Color32 checkedColor;
+    public Color32 inactiveColor;
 
     public List<GameObject> checkpoints;
     private GameObject[] points;
@@ -35,11 +36,22 @@ public class Checkpoint : MonoBehaviour
         {
             if (manager.lastCheckpoint.GetComponent<Checkpoint>().orderNumber <= orderNumber)
             {
+                manager.lastCheckpoint.GetComponent<Checkpoint>().ChangeInactiveColor();
                 manager.lastCheckpoint = this.gameObject;
                 manager.lastCheckpointPos = transform.position;
                 manager.SaveGame();
-                checkpointLight.color = checkpointColor;
+                checkpointLight.color = checkedColor;
             }
         }
+    }
+
+    public void ChangeInactiveColor()
+    {
+        checkpointLight.color = inactiveColor;
+    }
+
+    public Color32 GetCurrentColor()
+    {
+        return checkpointLight.color;
     }
 }

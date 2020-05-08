@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 364430138409027582}
   - component: {fileID: 364430138409027576}
   - component: {fileID: 1938091698384843976}
+  - component: {fileID: 2316782653297651455}
   m_Layer: 0
   m_Name: PropagandaSpeaker 1
   m_TagString: Object
@@ -54,7 +55,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9a7dcc96db6c3d943bd57140873a2e4d, type: 2}
+  - {fileID: 2100000, guid: 7be4f2f0e665f174a8990abf5608b315, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -100,7 +101,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.42286283, y: -0.21357748}
+  m_Offset: {x: -0.22034085, y: -0.2788248}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -111,7 +112,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6747528, y: 1.3480964}
+  m_Size: {x: 1.2697089, y: 2.7835484}
   m_EdgeRadius: 0
 --- !u!68 &364430138409027576
 EdgeCollider2D:
@@ -150,6 +151,18 @@ MonoBehaviour:
   speakerActive: 0
   ResonanceEvent: event:/SFX/resonating
   resonanceStartingIntensity: 0
+--- !u!114 &2316782653297651455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 364430138409027579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a7aea7c80ae76448af31726330e61bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8316447775003711352
 GameObject:
   m_ObjectHideFlags: 0

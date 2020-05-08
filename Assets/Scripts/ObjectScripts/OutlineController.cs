@@ -28,8 +28,15 @@ public class OutlineController : MonoBehaviour
     {
         if (other.gameObject.tag == "Player" && other.IsTouching(boxCollider))
         {
-            // StartCoroutine(UpdateOutline());
-            mat.SetFloat("_OutlineThickness", 0.5f);
+            if (CompareTag("Door"))
+            {
+                mat.SetFloat("_OutlineThickness", 1f);
+            }
+            else
+            {
+                // StartCoroutine(UpdateOutline());
+                mat.SetFloat("_OutlineThickness", 0.5f);
+            }
         }
     }
 

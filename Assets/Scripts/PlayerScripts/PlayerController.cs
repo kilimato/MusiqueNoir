@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5.0f;
+    public float runningSpeed = 8f;
     public float horizontalInput;
     public float verticalInput;
 
@@ -78,6 +79,7 @@ public class PlayerController : MonoBehaviour
 
     private void PlayerMoves()
     {
+        movement = new Vector3(horizontalInput, 0f, 0f) * speed * Time.fixedDeltaTime;
         // player can't move if they're hiding, in elevator or in dialogue
         if (dialogueManager.inDialogue || !isVisible)
         {
@@ -86,9 +88,15 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
+        horizontalInput = Input.GetAxis("Horizontal");
+        animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
+
+        verticalInput = Input.GetAxis("Vertical");
+
         // player run animation trigger
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
+            movement = new Vector3(horizontalInput, 0f, 0f) * runningSpeed * Time.fixedDeltaTime;
             animator.SetBool("IsRunning", true);
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift))
@@ -96,12 +104,7 @@ public class PlayerController : MonoBehaviour
             animator.SetBool("IsRunning", false);
         }
 
-        horizontalInput = Input.GetAxis("Horizontal");
-        animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
 
-        verticalInput = Input.GetAxis("Vertical");
-
-        movement = new Vector3(horizontalInput, 0f, 0f) * speed * Time.fixedDeltaTime;
 
         // flips the player sprite to face to the right direction
         if (movement.x != 0)

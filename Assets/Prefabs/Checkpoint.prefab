@@ -170,10 +170,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   checkpointLight: {fileID: 8286688855575061947}
-  checkpointColor:
+  checkedColor:
     serializedVersion: 2
-    rgba: 65341
+    rgba: 65307
+  inactiveColor:
+    serializedVersion: 2
+    rgba: 255
   checkpoints: []
+  orderNumber: 0
 --- !u!61 &8286688856635224532
 BoxCollider2D:
   m_ObjectHideFlags: 0

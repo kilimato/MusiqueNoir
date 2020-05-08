@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject[] changingVisibilityAreas;
     [SerializeField]
+    public GameObject[] checkpoints;
+    [SerializeField]
     public GameObject[] peasants;
     [SerializeField]
     public GameObject[] enemies;
@@ -41,6 +43,22 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     public bool finishedStartingConversation;
 
+
+    public void Start()
+    {
+        if (instance == null)
+        {
+            //If null, then this instance is now the singleton of the assigned type
+            instance = this;
+
+            //making sure this instance is kept persisted across screens
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void SaveGame()
     {
@@ -65,10 +83,14 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
+        /*
         if (Input.GetKey(KeyCode.Space))
         {
             return;
         }
+        */
+
+        //File.Delete(Application.persistentDataPath + "/gamesave.save");
 
         ResetTilemaps();
         ResetDialogues();
@@ -76,6 +98,8 @@ public class GameManager : MonoBehaviour
         ResetPeasants();
         ResetObjects();
         ResetEnemies();
+        ResetCheckpoints();
+
         Time.timeScale = 1;
     }
 
@@ -166,18 +190,19 @@ public class GameManager : MonoBehaviour
 
     public void LoadGame()
     {
+        /*
         if (Input.GetKey(KeyCode.Space))
         {
             return;
         }
-        // 1
+    */    
+    // 1
         if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
         {
-            
-            ResetTilemaps();
+            ResetTilemaps(); // CHECK!
             ResetDialogues();
-            ResetPlayerPosition();
-            ResetCheckpoints();
+            ResetPlayerPosition(); // CHECK!
+            ResetCheckpoints();   // CHECK!
             ResetPeasants();
             ResetObjects();
             ResetEnemies();
@@ -226,9 +251,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        /*
         if (Input.GetKey(KeyCode.Space))
         {
             return;
         }
+        */
     }
 }
