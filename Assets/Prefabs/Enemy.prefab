@@ -437,6 +437,7 @@ MonoBehaviour:
   startPatrolTurnTime: 0
   rb2D: {fileID: 0}
   animator: {fileID: 0}
+  startingDirection: 0
 --- !u!114 &-2757918271749370577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,7 +461,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 621849731775663921}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1

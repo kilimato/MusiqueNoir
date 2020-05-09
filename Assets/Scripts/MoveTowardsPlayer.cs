@@ -55,6 +55,7 @@ public class MoveTowardsPlayer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && player.IsVisible())
         {
+
              manager.GetComponent<GameManager>().LoadGame();
             //SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
