@@ -8,7 +8,6 @@ public class PropagandaDialogueTrigger : MonoBehaviour
 
     public PropagandaDialogueManager dialogueManager;
     public GameObject player;
-    private PlayerController playerController;
     public string dialoguePath;
     public Canvas propagandaCanvas;
 
@@ -19,10 +18,18 @@ public class PropagandaDialogueTrigger : MonoBehaviour
 
     public int sentenceIndex = 0;
 
+    //how many sentences are in the dialogue file - for some reason this was hard coded as 10 before
+    public int sentenceAmount = 10;
+
+    //time revoke waits in seconds before calling RunDialogue again
+    private float wait = 13.0f;
+
+    FMOD.Studio.EventInstance dialogueSoundInstance;
+    FMOD.Studio.EventDescription dialogueSoundDescription;
+
     // Start is called before the first frame update
     void Start()
     {
-        playerController = player.GetComponent<PlayerController>();
         if (dialogueManager == null)
         {
             dialogueManager = GameObject.Find("PropagandaDialogueManager").GetComponent<PropagandaDialogueManager>();
@@ -39,7 +46,7 @@ public class PropagandaDialogueTrigger : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject == playerController.isVisible && playerController.IsUsingElevator() == false)
+        if (other.gameObject == player && player.GetComponent<PlayerController>().isVisible)
         {
             inTrigger = false;
         }
@@ -63,15 +70,34 @@ public class PropagandaDialogueTrigger : MonoBehaviour
         {
             Debug.Log("Dialogue correct: " + dialoguePath);
             dialogueManager.PrintLine();
+
+            //Plays sound and gives it's duration as float seconds
+            //wait = PlayOneShotAndGetDuration(sentenceIndex);
+            PlayOneShotAndGetDuration(sentenceIndex);
+
             sentenceIndex++;
 
-            if (sentenceIndex > 10)
+            if (sentenceIndex >= sentenceAmount)
             {
                 sentenceIndex = 0;
                 dialogueManager.LoadDialogue(dialoguePath, sentenceIndex);
             }
         }
 
+    }
+
+    //Plays FMOD sound (now hardcoded as propagande event) as a one shot and gives it's duration in float in seconds
+    public float PlayOneShotAndGetDuration(int index)
+    {
+        int length = 8000;
+        dialogueSoundInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Propaganda/Propaganda1/propaganda " + index.ToString());
+        dialogueSoundInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(propagandaCanvas.transform));
+        dialogueSoundInstance.start();
+        dialogueSoundInstance.getDescription(out dialogueSoundDescription);
+        dialogueSoundDescription.getLength(out length);
+        dialogueSoundInstance.release();
+        dialogueSoundInstance.clearHandle();
+        return (float)(length / 1000);
     }
 
     // Update is called once per frame
@@ -84,7 +110,7 @@ public class PropagandaDialogueTrigger : MonoBehaviour
             if (!IsInvoking("RunDialogue"))
             {
                 propagandaCanvas.enabled = true;
-                InvokeRepeating("RunDialogue", 0, 4.5f);
+                InvokeRepeating("RunDialogue", 0, wait);
             }
             // RunDialogue(Input.GetKeyDown(KeyCode.C));
         }

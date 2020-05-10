@@ -24,6 +24,16 @@ public class DialogueManager : MonoBehaviour
 
     public bool finishedDialogue = false;
 
+    [FMODUnity.EventRef]
+    public string typingEvent = "";
+    [FMODUnity.EventRef]
+    public string smashingEvent = "";
+
+    private bool play = true;
+
+
+
+
     // dialogTrigger needs to know whether it's own dialogue has loaded (not just any dialogue)
     // so we return bool to indicate that state
     public bool LoadDialogue(string path)
@@ -95,6 +105,9 @@ public class DialogueManager : MonoBehaviour
     public void PrintEntireLine()
     {
         textDisplay.text = TextColorToHex(speaker) + dialoguePart;
+
+        //play sound
+        FMODUnity.RuntimeManager.PlayOneShot(smashingEvent);
     }
 
 
@@ -115,6 +128,10 @@ public class DialogueManager : MonoBehaviour
             notVisibleText = dialoguePart.Substring(revealedCharIndex, dialoguePart.Length - revealedCharIndex);
             textDisplay.text = TextColorToHex(speaker) + currentlyShowingText + "<#00000000>" + notVisibleText;
             //DialogueTextColor(speaker);
+
+            //play sound
+            if (play) FMODUnity.RuntimeManager.PlayOneShot(typingEvent);
+            play = !play;
 
             yield return new WaitForSeconds(0.02f);
         }

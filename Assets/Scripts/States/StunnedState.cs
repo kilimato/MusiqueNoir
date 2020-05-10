@@ -8,6 +8,9 @@ public class StunnedState : IState
     EnemyController enemy;
     float stunTime;
 
+    [FMODUnity.EventRef]
+    public string soundEvent = "event:/SFX/Enemy/stunned";
+
     public StunnedState(EnemyController enemy)
     {
         this.enemy = enemy;
@@ -15,6 +18,8 @@ public class StunnedState : IState
 
     public void Enter()
     {
+        //play sound
+        FMODUnity.RuntimeManager.PlayOneShot(soundEvent, enemy.transform.position);
 
         stunTime = 10f;
     }

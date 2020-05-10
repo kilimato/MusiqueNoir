@@ -20,6 +20,10 @@ public class ElevatorMovement : MonoBehaviour
     private Vector3 leavingPos;
     private bool usingElevator;
 
+    [FMODUnity.EventRef]
+    public string ElevMovingEvent = "event:/SFX/Elevator/elevator moves";
+    public FMOD.Studio.EventInstance soundInstance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +35,7 @@ public class ElevatorMovement : MonoBehaviour
 
         player = GameObject.FindGameObjectWithTag("Player");
 
+        soundInstance = FMODUnity.RuntimeManager.CreateInstance(ElevMovingEvent);
     }
 
     // Update is called once per frame
@@ -72,6 +77,10 @@ public class ElevatorMovement : MonoBehaviour
             }
 
             t = 0;
+
+            //Start elevator moving sound
+            soundInstance.start();
+
             do
             {
                 t += speed * Time.deltaTime;
@@ -80,6 +89,9 @@ public class ElevatorMovement : MonoBehaviour
                 yield return null;
 
             } while (Mathf.Clamp01(t) != 1);
+
+            //Stop elevator moving sound
+            soundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
             // wait for animation to end
             while ((aniB.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
@@ -96,6 +108,9 @@ public class ElevatorMovement : MonoBehaviour
             }
 
             t = 1;
+            //Start elevator moving sound
+            soundInstance.start();
+
             do
             {
                 t -= speed * Time.deltaTime;
@@ -104,6 +119,9 @@ public class ElevatorMovement : MonoBehaviour
                 yield return null;
 
             } while (Mathf.Clamp01(t) != 0);
+
+            //Stop elevator moving sound
+            soundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
             // wait for animation to end
             while ((aniA.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)

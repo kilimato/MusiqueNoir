@@ -104,6 +104,7 @@ MonoBehaviour:
   speed: 1
   aniA: {fileID: 8423330962730599743}
   aniB: {fileID: 8724763504864280598}
+  ElevMovingEvent: event:/SFX/Elevator/elevator moves
 --- !u!1 &5845744330659520447
 GameObject:
   m_ObjectHideFlags: 0
@@ -115,6 +116,7 @@ GameObject:
   - component: {fileID: 4740219102704097179}
   - component: {fileID: 2811210499820842878}
   - component: {fileID: 8724763504864280598}
+  - component: {fileID: 2722798292968060436}
   m_Layer: 0
   m_Name: ElevatorPosB
   m_TagString: ElevatorPosB
@@ -206,6 +208,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2722798292968060436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5845744330659520447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b04d754d7d0fe0b439060c89abdd7aef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEvent1: event:/SFX/Elevator/elevator door opens
+  soundEvent2: event:/SFX/Elevator/elevator door closes
 --- !u!1 &6371486047802486675
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +233,7 @@ GameObject:
   - component: {fileID: 2844107163137400564}
   - component: {fileID: 7001771514768101183}
   - component: {fileID: 8423330962730599743}
+  - component: {fileID: 1620713260070992366}
   m_Layer: 0
   m_Name: ElevatorPosA
   m_TagString: ElevatorPosA
@@ -308,3 +325,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1620713260070992366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6371486047802486675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b04d754d7d0fe0b439060c89abdd7aef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundEvent1: event:/SFX/Elevator/elevator door opens
+  soundEvent2: event:/SFX/Elevator/elevator door closes

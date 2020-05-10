@@ -25,6 +25,11 @@ public class PlayerController : MonoBehaviour
 
     public DialogueManager dialogueManager;
 
+    [FMODUnity.EventRef]
+    public string goToHiding = "";
+    [FMODUnity.EventRef]
+    public string comeFromHiding = "";
+
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -55,12 +60,18 @@ public class PlayerController : MonoBehaviour
             isVisible = !isVisible;
             sr.enabled = false;
             rb.simulated = false;
+
+            //play sound
+            FMODUnity.RuntimeManager.PlayOneShot(goToHiding);
         }
         else if (!isVisible && Input.GetKeyDown(KeyCode.E))
         {
             isVisible = !isVisible;
             sr.enabled = true;
             rb.simulated = true;
+
+            //play sound
+            FMODUnity.RuntimeManager.PlayOneShot(comeFromHiding);
         }
     }
 

@@ -1,38 +1,10 @@
 [
 	{
-		"Speaker": "Being unconscious will not lessen the crime. Report sleep singers immediately."
+		"Speaker": "Silence is responsibility."
 	},
 
 	{
-		"Speaker": "Possessing singing birds is a crime."
-	},
-
-	{
-		"Speaker": "Do you think you’re a good citizen? Think again. Look into the good citizen’s handbook. Handbooks are available in all government check points."
-	},
-
-	{
-		"Speaker": "Reporting is good for society and every citizen should work to society’s benefit."
-	},
-
-	{
-		"Speaker": "The police are your friends, the Tune terrorist is not. Report suspicious individuals to: 555-0101."
-	},
-
-	{
-		"Speaker": "Guards are being hired. The applicants’ as well as their close relatives’ backgrounds will be checked. For more information, call 555-0110."
-	},
-
-	{
-		"Speaker": "The meetings of three or more people are illegal gatherings."
-	},
-
-	{
-		"Speaker": "The right to each household’s own phone must be earned."
-	},
-
-	{
-		"Speaker": "Work cleanses the soul."
+		"Speaker": "Unlicensed public performances are banned"
 	},
 
 	{
@@ -40,15 +12,50 @@
 	},
 
 	{
-		"Speaker": "Unlicensed public performances are banned (under the threat of a fine.)"
+		"Speaker": "Work cleanses the soul."
 	},
 
 	{
-		"Speaker": "Silence is responsibility."
+		"Speaker": "The right to each household’s own phone must be earned."
 	},
 
+	{
+		"Speaker": "Guards are being hired. The applicants’ as well as their close relatives’ backgrounds will be checked. For more information call 555-0110."
+	},
+
+	{
+		"Speaker": "The police are your friends, the Tune terrorist is not. Report suspicious individuals to: 555-0101."
+	},
+
+	{
+		"Speaker": "Reporting is good for society and every citizen should work to society’s benefit."
+	},
+
+	{
+		"Speaker": "The curfew applies to all citizens without an outdoors license from 6 pm to 6 am."
+	},
+
+	{
+		"Speaker": "Possessing singing birds is a crime."
+	},
+
+	{
+		"Speaker": "Quiet down. Detect. Be enlightened."
+	},
+
+	{
+		"Speaker": "Being unconscious will not lessen the crime. Report sleep singers immediately."
+	},
+
+	{
+		"Speaker": "Rhymes are ugly, don’t be ugly."
+	},
+	
+	{
+		"Speaker": "Listen, obey, be silent"
+	},
+	
 	{
 		"Speaker": "EOD"
 	}
-
 ] 

@@ -18,6 +18,9 @@ public class ChaseState : IState
 
     readonly EnemyController enemy;
 
+    [FMODUnity.EventRef]
+    public string soundEvent = "event:/SFX/Enemy/alert";
+
     public ChaseState(EnemyController enemy)
     {
         this.enemy = enemy;
@@ -41,6 +44,8 @@ public class ChaseState : IState
 
         enemy.GetComponent<Animator>().SetBool("Alerted", true);
 
+        //play sound
+        FMODUnity.RuntimeManager.PlayOneShot(soundEvent, seeker.transform.position);
     }
 
     public void Execute()

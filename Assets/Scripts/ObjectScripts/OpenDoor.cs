@@ -9,12 +9,16 @@ public class OpenDoor : MonoBehaviour
     public GameObject insideTilemaps;
     public GameObject buildingExterior;
 
+    [FMODUnity.EventRef]
+    public string openDoorEvent = "";
+
     // Update is called once per frame
     void Update()
     {
         if (canEnter && Input.GetKeyDown(KeyCode.E))
         {
             ChangeBetweenTilemaps();
+            FMODUnity.RuntimeManager.PlayOneShot(openDoorEvent);
         }
     }
 
