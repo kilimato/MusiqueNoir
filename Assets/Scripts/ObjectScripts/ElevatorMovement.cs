@@ -39,6 +39,16 @@ public class ElevatorMovement : MonoBehaviour
 
         if (isTeleportingEnabled && Input.GetKeyDown(KeyCode.E))
         {
+            // triggering animation
+            if (startingPos == posA)
+            {
+                aniA.SetTrigger("PlayerLeaves");
+            }
+            else if (startingPos == posB)
+            {
+                aniB.SetTrigger("PlayerLeaves");
+            }
+
             StartCoroutine(SmoothMovement(player, startingPos));
         }
 
@@ -55,6 +65,12 @@ public class ElevatorMovement : MonoBehaviour
         //t:n arvoa ja sen summauksen ja vähentämisen riippuvuutta t:n lähtöarvosta siistimmin.
         if (startingPos == posA)
         {
+            // wait for animation to end
+            while((aniA.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
+            {
+                yield return null;
+            }
+
             t = 0;
             do
             {
@@ -64,9 +80,21 @@ public class ElevatorMovement : MonoBehaviour
                 yield return null;
 
             } while (Mathf.Clamp01(t) != 1);
+
+            // wait for animation to end
+            while ((aniB.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
+            {
+                yield return null;
+            }
         }
         else if (startingPos == posB)
         {
+            // wait for animation to end
+            while ((aniB.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
+            {
+                yield return null;
+            }
+
             t = 1;
             do
             {
@@ -76,6 +104,12 @@ public class ElevatorMovement : MonoBehaviour
                 yield return null;
 
             } while (Mathf.Clamp01(t) != 0);
+
+            // wait for animation to end
+            while ((aniA.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
+            {
+                yield return null;
+            }
         }
 
         isTeleportingEnabled = true;
@@ -90,6 +124,7 @@ public class ElevatorMovement : MonoBehaviour
             isTeleportingEnabled = true;
             startingPos = Vector3.Distance(posA, collision.transform.position) < Vector3.Distance(posB, collision.transform.position) ? posA : posB;
 
+            // triggering animation
             if (startingPos == posA)
             {
                 aniA.SetTrigger("PlayerEnters");
@@ -106,16 +141,18 @@ public class ElevatorMovement : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             isTeleportingEnabled = false;
-
-            leavingPos = Vector3.Distance(posA, collision.transform.position) < Vector3.Distance(posB, collision.transform.position) ? posA : posB;
-
-            if (leavingPos == posA)
+            if (usingElevator == false)
             {
-                aniA.SetTrigger("PlayerLeaves");
-            }
-            else if (leavingPos == posB)
-            {
-                aniB.SetTrigger("PlayerLeaves");
+                leavingPos = startingPos;
+                // triggering animation
+                if (leavingPos == posA)
+                {
+                    aniA.SetTrigger("PlayerLeaves");
+                }
+                else if (leavingPos == posB)
+                {
+                    aniB.SetTrigger("PlayerLeaves");
+                }
             }
         }
     }
