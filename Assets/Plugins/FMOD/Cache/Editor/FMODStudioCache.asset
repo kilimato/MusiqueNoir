@@ -100,7 +100,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda2/propaganda 7
   guid: c74ed656ca2f6543b3dc2f98d8c8ec1a
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -141,7 +141,7 @@ MonoBehaviour:
   guid: 69472f55be5f284aab6ad9a70eee311d
   Banks:
   - {fileID: -2918165454487911383}
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 0
   IsOneShot: 1
@@ -233,7 +233,7 @@ MonoBehaviour:
   Path: event:/SFX/Typing/smash
   guid: 143c50676f41fc44bc450372162366b9
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -273,7 +273,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda1/propaganda 10
   guid: 9a42e7e99b673b4eb3b0ca1a01a4ba5d
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -331,7 +331,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda1/propaganda 2
   guid: 23fc3329537ffe4994fa431be748234e
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -440,7 +440,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda2/propaganda 4
   guid: 7db754271a077e498fb63f17e2467f50
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -497,7 +497,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda1/propaganda 7
   guid: f6e56e9954ba6e49b2427a6cbea5f2c2
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -535,6 +535,23 @@ MonoBehaviour:
   m_Name: A
   m_EditorClassIdentifier: 
   Name: A
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
+--- !u!114 &-6406381213319096607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footstepsPlayer/Wet
+  m_EditorClassIdentifier: 
+  Name: Wet
   Min: 0
   Max: 2
   Default: 0
@@ -607,12 +624,12 @@ MonoBehaviour:
   guid: 00ff3a69ae25bd448f378693f0444e02
   Banks:
   - {fileID: -2918165454487911383}
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
   Parameters:
-  - {fileID: -395027366331851940}
+  - {fileID: -1886849121373138931}
   MinDistance: 1
   MaxDistance: 20
   Length: 616
@@ -631,7 +648,7 @@ MonoBehaviour:
   Path: event:/SFX/open door
   guid: 97fcbb11b3959f47af4188449b41c711
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -654,6 +671,23 @@ MonoBehaviour:
   Name: JumpTo
   Min: 0
   Max: 2
+  Default: 0
+  Exists: 1
+--- !u!114 &-5804497054129459049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/missionMusic/Volume
+  m_EditorClassIdentifier: 
+  Name: Volume
+  Min: 0
+  Max: 100
   Default: 0
   Exists: 1
 --- !u!114 &-5681907492420082831
@@ -745,7 +779,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda2/propaganda 12
   guid: b1a44d9f4ff1d94ebb56d493bc9461f5
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -802,7 +836,7 @@ MonoBehaviour:
   Path: event:/SFX/resonator/push resonator
   guid: d66086e64fd9454cb9648b1d746b42a5
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -911,7 +945,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda2/propaganda 5
   guid: 1b3f191653c0344f964eb8433d6d28a0
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -953,6 +987,23 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 0
+--- !u!114 &-4449018782795095991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: A
+  m_EditorClassIdentifier: 
+  Name: A
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-4430878361314237184
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1070,7 +1121,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda1/propaganda 11
   guid: 901e6ad76f9ea141a88c5346b6a37b8b
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -1111,7 +1162,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda2/propaganda 10
   guid: fd33ccfbcb59f543960626c904994d99
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -1288,7 +1339,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda2/propaganda 2
   guid: a958417d02a30544be0d42f41cbde8f7
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -1380,12 +1431,12 @@ MonoBehaviour:
   guid: c6541614f92dc143a99768b334653072
   Banks:
   - {fileID: -2918165454487911383}
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 8152313551423463806}
+  - {fileID: 4474443718433048507}
   MinDistance: 0
   MaxDistance: 0
   Length: 85055
@@ -1594,13 +1645,13 @@ MonoBehaviour:
   guid: 239a0be8420ff74b8761bf50db024890
   Banks:
   - {fileID: -2918165454487911383}
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters:
-  - {fileID: -1851336565254355828}
-  - {fileID: 193081793980249865}
+  - {fileID: 9096743652300966392}
+  - {fileID: -6406381213319096607}
   MinDistance: 0
   MaxDistance: 0
   Length: 616
@@ -1653,7 +1704,7 @@ MonoBehaviour:
   Path: event:/SFX/Hiding/hidingIn
   guid: 44f33a0346269b4d9cccb5ccfa0b5a01
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1677,7 +1728,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 1
-  Exists: 1
+  Exists: 0
 --- !u!114 &-2222774880170907371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1747,6 +1798,23 @@ MonoBehaviour:
   Max: 100
   Default: 0
   Exists: 1
+--- !u!114 &-1886849121373138931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footstepsEnemy/Wet
+  m_EditorClassIdentifier: 
+  Name: Wet
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &-1851336565254355828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1763,7 +1831,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-1799470939361211190
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1796,7 +1864,7 @@ MonoBehaviour:
   Path: event:/SFX/Elevator/elevator door closes
   guid: 236f5f53b02cee47b39fd531e7e2c336
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -1854,7 +1922,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda1/propaganda 4
   guid: 7cf761029f8e8648ab1dadcc9cdaaea8
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -1911,7 +1979,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda2/propaganda 11
   guid: 8c059c9adfc80141bdb9f981dcb52508
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -1968,7 +2036,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda1/propaganda 12
   guid: a12ec0670070c7478f01129e370597b2
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -2093,7 +2161,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda1/propaganda 5
   guid: 3658dfde5a0cdd4ba028dd22a4ed80be
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -2151,7 +2219,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &-208026778011916890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2167,7 +2235,7 @@ MonoBehaviour:
   Path: event:/SFX/Elevator/elevator moves
   guid: b5526ea13747734b9534dc53f7436daf
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -2259,7 +2327,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2274,7 +2342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 1830667257458835536}
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   EditorEvents:
   - {fileID: -6230941829699127452}
   - {fileID: -5592761194926715945}
@@ -2324,12 +2392,12 @@ MonoBehaviour:
   - {fileID: -6602678414434247056}
   - {fileID: -3993746871278442331}
   EditorParameters:
-  - {fileID: -9903511901915071}
+  - {fileID: -4449018782795095991}
   MasterBanks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   StringsBanks:
   - {fileID: 1830667257458835536}
-  stringsBankWriteTime: 637247286497972327
+  stringsBankWriteTime: 637247375938242181
   cacheVersion: 3
 --- !u!114 &20274999944251102
 MonoBehaviour:
@@ -2363,7 +2431,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda2/propaganda 1
   guid: 15c86d6c892a2f4da27b7f0cc0b6be8a
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -2421,7 +2489,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &329220609148485372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2539,7 +2607,7 @@ MonoBehaviour:
   Path: event:/SFX/Enemy/alert
   guid: b4790b20aec5d54eb835b06a29c63087
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -2563,7 +2631,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &831293828782960741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2699,12 +2767,12 @@ MonoBehaviour:
   guid: 464945b55e57eb48b29d0bca6cf6d1d3
   Banks:
   - {fileID: -2918165454487911383}
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -2253239678839494627}
+  - {fileID: 5007259331516259216}
   MinDistance: 0
   MaxDistance: 0
   Length: 79404
@@ -2741,7 +2809,7 @@ MonoBehaviour:
   Path: event:/SFX/Hiding/hidingOut
   guid: f3b39c661c71074988819fe7c7b2f8df
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -2764,7 +2832,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda2/propaganda 9
   guid: e595a26aca679546a27bb8ff7c18bea6
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -2788,12 +2856,12 @@ MonoBehaviour:
   guid: 3dcf33ae977ae54d9716c9147eea9d95
   Banks:
   - {fileID: -2918165454487911383}
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 5082777661619910864}
+  - {fileID: 2917452468806762924}
   MinDistance: 30
   MaxDistance: 100
   Length: 21381
@@ -2862,7 +2930,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637247286497972327
+  lastModified: 637247375938242181
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -3071,7 +3139,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda1/propaganda 9
   guid: 74b9ff0c5ba287419d7ad45176ec3331
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -3113,6 +3181,23 @@ MonoBehaviour:
   Max: 2
   Default: 0
   Exists: 1
+--- !u!114 &2917452468806762924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/resonating/ResoIntensity
+  m_EditorClassIdentifier: 
+  Name: ResoIntensity
+  Min: 0
+  Max: 100
+  Default: 0
+  Exists: 1
 --- !u!114 &2957948948659119971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3145,7 +3230,7 @@ MonoBehaviour:
   Path: event:/SFX/Typing/oneLetter
   guid: a8737b975774e24d89c8a40e6e5d3f58
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -3186,7 +3271,7 @@ MonoBehaviour:
   Path: event:/SFX/Enemy/stunned
   guid: e5e2fb853d23624da0ef69c24f4317ae
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -3294,7 +3379,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda1/propaganda 3
   guid: 08af6605ed8d8549bed2f51cc0f15c8d
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -3438,7 +3523,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda1/propaganda 8
   guid: f060b834ee53e645aadc9daf2c92bd88
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -3446,6 +3531,23 @@ MonoBehaviour:
   MinDistance: 6.4
   MaxDistance: 15
   Length: 7500
+--- !u!114 &4474443718433048507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/hubMusic/JumpTo
+  m_EditorClassIdentifier: 
+  Name: JumpTo
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &4506949954141804166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3533,6 +3635,23 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &5007259331516259216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/weather/isOutside
+  m_EditorClassIdentifier: 
+  Name: isOutside
+  Min: 0
+  Max: 2
+  Default: 1
+  Exists: 1
 --- !u!114 &5008636475640854263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3566,7 +3685,7 @@ MonoBehaviour:
   Min: 0
   Max: 100
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &5162602157929587889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3616,7 +3735,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda2/propaganda 6
   guid: 294006db88d79047b32485672333702d
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -3656,7 +3775,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda1/propaganda 0
   guid: 1b4aa256e2aec145bdc60c0b3141094d
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -3747,7 +3866,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda2/propaganda 13
   guid: 9d23cb4262da7b408fba845bccd0f400
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -3959,7 +4078,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda1/propaganda 1
   guid: ac8b54cd2eac2b44ab01d2278059e357
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -3982,7 +4101,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda2/propaganda 3
   guid: d27ff91c9dc9c948849b431b2addecc7
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -4022,7 +4141,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda2/propaganda 8
   guid: e354d75e4d3dc0478f77a96fcd5937d6
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -4165,7 +4284,7 @@ MonoBehaviour:
   Path: event:/SFX/Elevator/elevator door opens
   guid: 5f1ee087828d8942855a3f4cbb75286f
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4223,12 +4342,12 @@ MonoBehaviour:
   guid: 1cb9efd4c5bad4429bc06461dd1969aa
   Banks:
   - {fileID: -2918165454487911383}
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 803054269499092516}
+  - {fileID: -5804497054129459049}
   MinDistance: 0
   MaxDistance: 0
   Length: 144000
@@ -4247,7 +4366,7 @@ MonoBehaviour:
   Path: event:/SFX/resonator/pull resonator
   guid: f04e55a5156f684ba837d0f6458f052b
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -4255,6 +4374,24 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 409
+--- !u!114 &8145181359486735880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637247375938182651
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &8152313551423463806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4271,7 +4408,7 @@ MonoBehaviour:
   Min: 0
   Max: 2
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &8153568842647423323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4287,7 +4424,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda2/propaganda 0
   guid: 1781eecebe77d54fa80595da3e810810
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -4446,7 +4583,7 @@ MonoBehaviour:
   Path: event:/SFX/Propaganda/Propaganda1/propaganda 6
   guid: eff0cecb4626bb4396654144e43b28ce
   Banks:
-  - {fileID: 9214344403976564632}
+  - {fileID: 8145181359486735880}
   IsStream: 1
   Is3D: 1
   IsOneShot: 1
@@ -4505,6 +4642,23 @@ MonoBehaviour:
   Max: 2
   Default: 1
   Exists: 1
+--- !u!114 &9096743652300966392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footstepsPlayer/isRunning
+  m_EditorClassIdentifier: 
+  Name: isRunning
+  Min: 0
+  Max: 2
+  Default: 0
+  Exists: 1
 --- !u!114 &9179634087508071871
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4539,4 +4693,4 @@ MonoBehaviour:
   lastModified: 637247286497867228
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
