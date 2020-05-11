@@ -189,13 +189,12 @@ public class GameManager : MonoBehaviour
     }
 
     public void LoadGame()
-    {
-        /*
+    {      
         if (Input.GetKey(KeyCode.Space))
         {
             return;
         }
-    */    
+       
     // 1
         if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
         {

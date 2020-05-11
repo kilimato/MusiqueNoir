@@ -7,8 +7,10 @@ public class FollowPlayer : MonoBehaviour
     public GameObject player;
     private Vector3 offset;
 
+    [SerializeField]
     private float x_offset = 6;
-    private float y_offset = 4.5f;
+    [SerializeField]
+    private float y_offset = 3f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,12 +20,12 @@ public class FollowPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // transform.position = new Vector3(player.transform.position.x + x_offset, player.transform.position.y + y_offset, transform.position.z);
+        // transform.position = new Vector3(player.transform.position.x + x_offset, player.transform.position.y + y_offset, transform.position.z);
     }
 
     void LateUpdate()
     {
 
-        transform.position = new Vector3(player.transform.position.x, player.transform.position.y, -50f);
+        transform.position = new Vector3(player.transform.position.x, player.transform.position.y + y_offset, -50f);
     }
 }
