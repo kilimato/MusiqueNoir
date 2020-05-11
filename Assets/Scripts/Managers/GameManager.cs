@@ -95,6 +95,7 @@ public class GameManager : MonoBehaviour
         ResetTilemaps();
         ResetDialogues();
         ResetPlayerPosition();
+        ResetPlayer();
         ResetPeasants();
         ResetObjects();
         ResetEnemies();
@@ -103,6 +104,13 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
 
+    private void ResetPlayer()
+    {
+        player.SetActive(true);
+        player.GetComponent<SpriteRenderer>().enabled = true;
+        player.GetComponent<Rigidbody2D>().simulated = true;
+        player.GetComponent<PlayerController>().isVisible = true;
+    }
 
     private void ResetEnemies()
     {
@@ -203,6 +211,7 @@ public class GameManager : MonoBehaviour
             ResetTilemaps(); // CHECK!
             ResetDialogues();
             ResetPlayerPosition(); // CHECK!
+            ResetPlayer();
             ResetCheckpoints();   // CHECK!
             ResetPeasants();
             ResetObjects();
