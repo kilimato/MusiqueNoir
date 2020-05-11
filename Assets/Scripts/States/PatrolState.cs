@@ -26,7 +26,7 @@ public class PatrolState : IState
 
             enemy.animator.SetFloat("Speed", 0);
 
-            enemy.patrolTurnTime -= 1f * Time.deltaTime;
+            enemy.patrolTurnTime -= Time.deltaTime;
             if (enemy.patrolTurnTime <= 0f)
             {
                 patrolDirection *= -1;
@@ -38,7 +38,7 @@ public class PatrolState : IState
         else
         {
 
-            enemy.patrolMovementTime -= 1f * Time.deltaTime;
+            enemy.patrolMovementTime -= Time.deltaTime;
             enemy.Move(enemy.patrolSpeed, new Vector2(patrolDirection, 0));
             enemy.animator.SetFloat("Speed", enemy.patrolSpeed);
 

@@ -160,7 +160,8 @@ public class ResonatingSpeakerController : MonoBehaviour
             particles.Emit(1);
 
             speakerActive = false;
-            other.gameObject.SetActive(false);
+            EnemyController enemy = other.GetComponent<EnemyController>();
+            enemy.stateMachine.ChangeState(new StunnedState(enemy));
             Debug.Log("Stunned enemy");
         }
 

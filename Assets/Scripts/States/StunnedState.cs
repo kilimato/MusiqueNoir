@@ -6,7 +6,7 @@ public class StunnedState : IState
 {
 
     EnemyController enemy;
-    float stunTime;
+    private float stunTime;
 
     [FMODUnity.EventRef]
     public string soundEvent = "event:/SFX/Enemy/stunned";
@@ -21,23 +21,29 @@ public class StunnedState : IState
         //play sound
         FMODUnity.RuntimeManager.PlayOneShot(soundEvent, enemy.transform.position);
 
-        stunTime = 10f;
+        enemy.rb2D.simulated = false;
+
+        stunTime = 5f;
     }
 
     public void Execute()
     {
 
-        while(stunTime < 5f)
+        if (stunTime > Mathf.Epsilon)
         {
             stunTime -= Time.deltaTime;
         }
-
-        enemy.stateMachine.ChangeState(new ReturnState(enemy));
+        else
+        {
+            enemy.stateMachine.ChangeState(new ReturnState(enemy));
+        }
 
     }
 
     public void Exit()
     {
+
+        enemy.rb2D.simulated = true;
 
     }
 }
