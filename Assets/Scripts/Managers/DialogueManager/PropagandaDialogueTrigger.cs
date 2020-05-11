@@ -8,8 +8,10 @@ public class PropagandaDialogueTrigger : MonoBehaviour
 
     public PropagandaDialogueManager dialogueManager;
     public GameObject player;
+    public GameObject speaker;
     public string dialoguePath;
     public Canvas propagandaCanvas;
+    public int dialogueNumber;
 
     public bool inTrigger = false;
     public bool dialogueLoaded = false;
@@ -90,8 +92,8 @@ public class PropagandaDialogueTrigger : MonoBehaviour
     public float PlayOneShotAndGetDuration(int index)
     {
         int length = 8000;
-        dialogueSoundInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Propaganda/Propaganda1/propaganda " + index.ToString());
-        dialogueSoundInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(propagandaCanvas.transform));
+        dialogueSoundInstance = FMODUnity.RuntimeManager.CreateInstance("event:/SFX/Propaganda/Propaganda" + dialogueNumber + "/propaganda " + index.ToString());
+        dialogueSoundInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(speaker));
         dialogueSoundInstance.start();
         dialogueSoundInstance.getDescription(out dialogueSoundDescription);
         dialogueSoundDescription.getLength(out length);
