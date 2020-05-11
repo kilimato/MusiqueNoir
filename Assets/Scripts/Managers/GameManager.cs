@@ -188,9 +188,11 @@ public class GameManager : MonoBehaviour
         return save;
     }
 
-    public void LoadGame()
-    {      
-        if (Input.GetKey(KeyCode.Space))
+    public void LoadGame(GameObject caller)
+    {
+        // current problem: if we check for enemy hitting player and loading then, for some reason loading game does 
+        // not change timescale from 0 to 1
+        if (Input.GetKey(KeyCode.Space) && caller.tag != "Enemy")
         {
             return;
         }
