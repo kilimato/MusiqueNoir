@@ -55,12 +55,7 @@ public class ResonatingNPCController : MonoBehaviour
         }
         if (saved)
         {
-            spriteRenderer.color = new Color32(255, 255, 255, 255);
-            enlightenedColor = new Color32(255, 255, 255, 255);
-
-            pointLight.enabled = true; 
-            transform.localScale = new Vector3(-1f, 1f, 1f);
-            saved = true;
+            SetSavedState();
         }
 
         //FMOD sound event
@@ -80,6 +75,16 @@ public class ResonatingNPCController : MonoBehaviour
 
         soundEvent.setParameterByID(soundParameterId, resonanceIntensity);
         soundEvent.start();
+    }
+
+    public void SetSavedState()
+    {
+        spriteRenderer.color = new Color32(255, 255, 255, 255);
+        enlightenedColor = new Color32(255, 255, 255, 255);
+
+        pointLight.enabled = true;
+        transform.localScale = new Vector3(-1f, 1f, 1f);
+        saved = true;
     }
 
     // Update is called once per frame

@@ -248,6 +248,11 @@ public class GameManager : MonoBehaviour
             for (int i = 0; i < peasants.Length; i++)
             {
                 peasants[i].GetComponent<ResonatingNPCController>().saved = save.savedPeasants[i];
+                peasants[i].GetComponent<Animator>().SetBool("IsSaved", save.savedPeasants[i]);
+                if (save.savedPeasants[i])
+                {
+                    peasants[i].GetComponent<ResonatingNPCController>().SetSavedState();
+                }
             }
 
             for (int i = 0; i < breakableObjects.Length; i++)
