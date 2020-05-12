@@ -11,7 +11,7 @@ public class PropagandaDialogueManager : MonoBehaviour
     public TextMeshProUGUI textDisplay;
     private int index;
     private string speaker;
-    string currentDialoguePath;
+    public string currentDialoguePath;
 
     // true when a dialog is loaded and a sentence can be printed,
     // false if dialog hasn't finished loading and if we've reached EOD

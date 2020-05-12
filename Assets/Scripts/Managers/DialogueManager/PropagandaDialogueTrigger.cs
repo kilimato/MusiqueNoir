@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using LitJson;
 
 public class PropagandaDialogueTrigger : MonoBehaviour
 {
-
     public PropagandaDialogueManager dialogueManager;
     public GameObject player;
     public GameObject speaker;
+
+    private JsonData dialogue;
     public string dialoguePath;
     public Canvas propagandaCanvas;
     public int dialogueNumber;
@@ -20,8 +22,10 @@ public class PropagandaDialogueTrigger : MonoBehaviour
 
     public int sentenceIndex = 0;
 
-    //how many sentences are in the dialogue file - for some reason this was hard coded as 10 before
-    public int sentenceAmount = 10;
+    private Transform childTextElement;
+
+    //how many sentences are in the dialogue file
+    public int sentenceAmount;
 
     //time revoke waits in seconds before calling RunDialogue again
     private float wait = 13.0f;
@@ -36,6 +40,12 @@ public class PropagandaDialogueTrigger : MonoBehaviour
         {
             dialogueManager = GameObject.Find("PropagandaDialogueManager").GetComponent<PropagandaDialogueManager>();
         }
+        var jsonTextFile = Resources.Load<TextAsset>("Dialogues/" + dialoguePath);
+        dialogue = JsonMapper.ToObject(jsonTextFile.text);
+        sentenceAmount = dialogue.Count - 1;
+
+
+        childTextElement = speaker.transform.Find("TextElement");
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -43,6 +53,8 @@ public class PropagandaDialogueTrigger : MonoBehaviour
         if (other.gameObject == player)
         {
             inTrigger = true;
+            childTextElement.gameObject.SetActive(true);
+            dialogueLoaded = dialogueManager.LoadDialogue(dialoguePath, sentenceIndex);
         }
     }
 
@@ -51,6 +63,8 @@ public class PropagandaDialogueTrigger : MonoBehaviour
         if (other.gameObject == player && player.GetComponent<PlayerController>().isVisible)
         {
             inTrigger = false;
+
+            childTextElement.gameObject.SetActive(false);
         }
     }
 
