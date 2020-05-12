@@ -11,11 +11,10 @@ public class RescuedTrigger : MonoBehaviour
     public GameObject textElement;
     public GameObject canvasText;
 
-    //public bool inTrigger = false;
+    public bool inTrigger = false;
     public bool dialogueLoaded = false;
 
     public bool firstTime = true;
-    private bool inTrigger = false;
 
     // Start is called before the first frame update
     void Start()

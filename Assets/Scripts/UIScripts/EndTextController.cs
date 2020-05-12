@@ -9,6 +9,9 @@ public class EndTextController : MonoBehaviour
     Canvas endCanvas;
     public GameObject fadeImage;
     public GameObject fadeText;
+    public Canvas mainCanvas;
+
+    private bool coroutineRunning;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,18 +26,25 @@ public class EndTextController : MonoBehaviour
 
     public void Update()
     {
+
+        /*
         if (Input.GetKey(KeyCode.Q))
         {
             StartCoroutine(FadeToBlack());
         }
-        if (Input.GetKey(KeyCode.R))
+        */
+        if (Input.GetKey(KeyCode.Space) && endCanvas.enabled)
         {
-            StartCoroutine(FadeToBlack(false));
+            mainCanvas.enabled = true;
+            endCanvas.enabled = false;
+            Time.timeScale = 0;
         }
+
     }
 
     public IEnumerator FadeToBlack(bool fadeToBlack = true, int fadeSpeed = 2)
     {
+
         Color imageColor = fadeImage.GetComponent<Image>().color;
         Color textColor = fadeText.GetComponent<TextMeshProUGUI>().color;
         float fadeAmount;

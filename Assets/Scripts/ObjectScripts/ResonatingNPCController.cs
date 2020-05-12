@@ -5,7 +5,6 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class ResonatingNPCController : MonoBehaviour
 {
-    private float minExitTime = 2.0f;
     private float maxExposureTime = 5f;
 
     private float exposureTimer = 0;
@@ -13,16 +12,8 @@ public class ResonatingNPCController : MonoBehaviour
     bool exposureTimerActive = false;
     bool exitCollisionTimerActive = false;
 
-    private float ringSize = 2f;
-    private float ringMaxSize = 6f;
-    private float ringStep = 1f;
-
-    private bool waves = false;
-
     Renderer rend;
     private Material mat;
-
-    float waveAmount = 0f;
 
     public Color32 enlightenedColor;
     public SpriteRenderer spriteRenderer;

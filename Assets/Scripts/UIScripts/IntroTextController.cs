@@ -11,7 +11,7 @@ public class IntroTextController : MonoBehaviour
     RawImage fadeImage;
     TextMeshProUGUI introText;
 
-    static private bool isAlreadySeen = false;
+    public bool isAlreadySeen = false;
 
     // Start is called before the first frame update
     public void Start()
@@ -81,10 +81,15 @@ public class IntroTextController : MonoBehaviour
         if (!isAlreadySeen)
         {
             introCanvas.enabled = true;
+
             fadeImage = GetComponentInChildren<RawImage>();
+            Color imageColor = fadeImage.color;
+            fadeImage.color = new Color(imageColor.r, imageColor.g, imageColor.b, 1); 
+
             introText = GetComponentInChildren<TextMeshProUGUI>();
             Time.timeScale = 0;
             StartCoroutine(FadeIn(introText));
+            //StartCoroutine(FadeIn(fadeImage));
             isAlreadySeen = !isAlreadySeen;
         }
 

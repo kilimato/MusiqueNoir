@@ -19,9 +19,10 @@ public class GameManager : MonoBehaviour
     public GameObject dialogueTrigger;
     public Canvas dialogueCanvas;
     public TextMeshProUGUI dialogueText;
+    public GameObject introTextController;
 
     [SerializeField]
-    private GameObject[] changingVisibilityAreas;
+    public GameObject[] changingVisibilityAreas;
     [SerializeField]
     public GameObject[] checkpoints;
     [SerializeField]
@@ -151,17 +152,22 @@ public class GameManager : MonoBehaviour
 
     private void ResetDialogues()
     {
+        dialogueManager.SetActive(true);
         finishedStartingConversation = false;
         dialogueManager.GetComponent<DialogueManager>().finishedDialogue = false;
         //alogueManager.GetComponent<DialogueManager>().dialogu
-        dialogueManager.SetActive(true);
+
+        dialogueTrigger.SetActive(true);
         dialogueTrigger.GetComponent<DialogueTrigger>().firstTime = true;
         dialogueTrigger.GetComponent<DialogueTrigger>().dialogueLoaded = false;
         //dialogueCanvas.enabled = true;
         dialogueText.text = "";
+
+        introTextController.GetComponent<IntroTextController>().isAlreadySeen = false;
     }
     private void ResetCheckpoints()
     {
+        // resettaa valotkin
         lastCheckpointPos = startingPoint.transform.position;
         lastCheckpoint = startingPoint;
     }
