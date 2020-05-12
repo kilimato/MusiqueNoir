@@ -21,6 +21,9 @@ public class StunnedState : IState
         //play sound
         FMODUnity.RuntimeManager.PlayOneShot(soundEvent, enemy.transform.position);
 
+        // stunned animation
+        enemy.GetComponent<Animator>().SetBool("Stunned", true);
+
         enemy.rb2D.simulated = false;
 
         stunTime = 5f;
@@ -43,6 +46,8 @@ public class StunnedState : IState
     public void Exit()
     {
 
+        //exit animation
+        enemy.GetComponent<Animator>().SetBool("Stunned", false);
         enemy.rb2D.simulated = true;
 
     }

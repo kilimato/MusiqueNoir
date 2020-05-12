@@ -14,6 +14,21 @@ TextureImporter:
   - first:
       213: -6948666459328526428
     second: music_noir_portraits_3
+  - first:
+      213: -3092286779639380937
+    second: music_noir_portraits_0
+  - first:
+      213: 6220193352375087864
+    second: music_noir_portraits_1
+  - first:
+      213: -7109171809115987767
+    second: music_noir_portraits_2
+  - first:
+      213: 5222452749143389513
+    second: music_noir_portraits_3
+  - first:
+      213: 783937345609365714
+    second: music_noir_portraits_4
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -102,6 +117,48 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73445fbbe8df515d0800000000000000
+      internalID: -3092286779639380937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_portraits_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f23092e5e0925650800000000000000
+      internalID: 6220193352375087864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: music_noir_portraits_2
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 32
         width: 32
         height: 32
@@ -112,14 +169,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27878b15f47b9f370800000000000000
-      internalID: 8356912134864009330
+      spriteID: 9c0ab66d7e5275d90800000000000000
+      internalID: -7109171809115987767
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_portraits_1
+      name: music_noir_portraits_3
       rect:
         serializedVersion: 2
         x: 32
@@ -133,14 +190,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82a82be315c3679f0800000000000000
-      internalID: -471122791371732440
+      spriteID: 94534f80b11e97840800000000000000
+      internalID: 5222452749143389513
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: music_noir_portraits_2
+      name: music_noir_portraits_4
       rect:
         serializedVersion: 2
         x: 0
@@ -154,29 +211,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 35e99ae7e39db5100800000000000000
-      internalID: 97910679354842707
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: music_noir_portraits_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a74d0dbba0619f90800000000000000
-      internalID: -6948666459328526428
+      spriteID: 2d87533ccda11ea00800000000000000
+      internalID: 783937345609365714
       vertices: []
       indices: 
       edges: []

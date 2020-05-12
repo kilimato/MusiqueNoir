@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7684965703692434881}
   - component: {fileID: 7684965703692434880}
   m_Layer: 0
-  m_Name: WavePrefab
+  m_Name: PlayerWavePrefab
   m_TagString: Resonator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4819,3 +4819,4 @@ MonoBehaviour:
   ringMaxSize: 6
   ringStep: 0.5
   particleCollider: {fileID: 7684965703692434881}
+  playerController: {fileID: 0}
