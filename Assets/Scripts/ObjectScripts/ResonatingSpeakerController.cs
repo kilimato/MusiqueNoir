@@ -32,11 +32,12 @@ public class ResonatingSpeakerController : MonoBehaviour
 
     // FMOD event
     [FMODUnity.EventRef]
-    public string ResonanceEvent = "event:/resonating";
+    public string ResonanceEvent = "event:/SFX/resonating";
     public FMOD.Studio.EventInstance soundEvent;
 
     public float resonanceStartingIntensity = 0.0f;
     private float resonanceIntensity;
+    private bool isSoundPlaying = false;
 
     FMOD.Studio.PARAMETER_ID soundParameterId;
 
@@ -67,7 +68,6 @@ public class ResonatingSpeakerController : MonoBehaviour
 
 
         soundEvent.setParameterByID(soundParameterId, resonanceIntensity);
-        soundEvent.start();
     }
 
     // Update is called once per frame
@@ -236,6 +236,10 @@ public class ResonatingSpeakerController : MonoBehaviour
             exitCollisionTimerActive = false;
             exitTimer = 0;
             ringSize = 0;
+
+            //Stop the sound
+            soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            isSoundPlaying = false;
         }
         else
         {
@@ -267,11 +271,27 @@ public class ResonatingSpeakerController : MonoBehaviour
     {
         soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
         soundEvent.release();
+        isSoundPlaying = false;
     }
 
     public void changeSoundIntensity()
     {
-        resonanceIntensity = (exposureTimer / maxExposureTime) * 100;
-        soundEvent.setParameterByID(soundParameterId, resonanceIntensity);
+        if (maxExposureTime != 0) resonanceIntensity = (exposureTimer / maxExposureTime) * 100;
+        if (exposureTimer > 0.1f || speakerActive)
+        {
+            if (!isSoundPlaying)
+            {
+                soundEvent.start();
+                isSoundPlaying = true;
+            }
+
+            soundEvent.setParameterByID(soundParameterId, resonanceIntensity);
+        }
+        else if (isSoundPlaying)
+        {
+            //Stop the sound
+            soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            isSoundPlaying = false;
+        }
     }
 }

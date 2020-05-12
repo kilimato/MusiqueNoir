@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class VolumeController : MonoBehaviour
 {
-    private bool resoStart = false;
     private bool hasStarted = false;
 
     [FMODUnity.EventRef]

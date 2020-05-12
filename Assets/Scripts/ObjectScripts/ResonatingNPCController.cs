@@ -32,11 +32,12 @@ public class ResonatingNPCController : MonoBehaviour
          */
     // FMOD event
     [FMODUnity.EventRef]
-    public string ResonanceEvent = "event:/resonating";
+    public string ResonanceEvent = "event:/SFX/resonating";
     public FMOD.Studio.EventInstance soundEvent;
 
     public float resonanceStartingIntensity = 0.0f;
     private float resonanceIntensity;
+    private bool isSoundPlaying = false;
 
     FMOD.Studio.PARAMETER_ID soundParameterId;
 
@@ -74,7 +75,6 @@ public class ResonatingNPCController : MonoBehaviour
 
 
         soundEvent.setParameterByID(soundParameterId, resonanceIntensity);
-        soundEvent.start();
     }
 
     public void SetSavedState()
@@ -100,6 +100,10 @@ public class ResonatingNPCController : MonoBehaviour
             //Setting new
             if (exposureTimer > maxExposureTime)
             {
+                //Stop the sound
+                soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                soundEvent.release();
+                isSoundPlaying = false;
                 //Destroy(gameObject);
             }
             Debug.Log(exposureTimer);
@@ -159,7 +163,22 @@ public class ResonatingNPCController : MonoBehaviour
 
     public void changeSoundIntensity()
     {
-        resonanceIntensity = (exposureTimer / maxExposureTime) * 100;
-        soundEvent.setParameterByID(soundParameterId, resonanceIntensity);
+        if (maxExposureTime != 0) resonanceIntensity = (exposureTimer / maxExposureTime) * 100;
+        if (exposureTimer > 0.1f)
+        {
+            if (!isSoundPlaying)
+            {
+                soundEvent.start();
+                isSoundPlaying = true;
+            }
+
+            soundEvent.setParameterByID(soundParameterId, resonanceIntensity);
+        }
+        else if (isSoundPlaying)
+        {
+            //Stop the sound
+            soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            isSoundPlaying = false;
+        }
     }
 }

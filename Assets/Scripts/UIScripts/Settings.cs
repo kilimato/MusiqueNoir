@@ -236,10 +236,17 @@ public class Settings : MonoBehaviour
         Master.setVolume(MasterVolume);
 
         MenuMaster.setVolume(0.0f);
+        WeatherInstance.release();
+        SFXInstance.release();
+        MusicInstance.release();
     }
 
     private void ActivateMenuSounds()
     {
+        WeatherInstance.start();
+        SFXInstance.start();
+        MusicInstance.start();
+
         MenuMusic.setVolume(MusicVolume);
         MenuSFX.setVolume(SFXVolume);
         MenuMaster.setVolume(MasterVolume);
