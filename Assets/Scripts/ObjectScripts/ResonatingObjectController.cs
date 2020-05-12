@@ -124,6 +124,10 @@ public class ResonatingObjectController : MonoBehaviour
      * Note: Trigger events are only sent if one of the Colliders also has a Rigidbody2D attached. Trigger events are sent to disabled MonoBehaviours, to allow enabling Behaviours in response to collisions.*/
     private void OnTriggerEnter2D(Collider2D other)
     {
+        if (! other.IsTouching(GetComponent<EdgeCollider2D>()))
+        {
+            return;
+        }
         exitCollisionTimerActive = false;
         exitTimer = 0;
 
