@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.Rendering.Universal;
 
 public class StunnedState : IState
 {
@@ -23,7 +24,7 @@ public class StunnedState : IState
 
         // stunned animation
         enemy.GetComponent<Animator>().SetBool("Stunned", true);
-
+        enemy.GetComponent<Light2D>().enabled = false;
         enemy.rb2D.simulated = false;
 
         stunTime = 5f;
@@ -48,6 +49,7 @@ public class StunnedState : IState
 
         //exit animation
         enemy.GetComponent<Animator>().SetBool("Stunned", false);
+        enemy.GetComponent<Light2D>().enabled = true;
         enemy.rb2D.simulated = true;
 
     }

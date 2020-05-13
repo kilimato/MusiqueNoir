@@ -71,7 +71,7 @@ public class ElevatorMovement : MonoBehaviour
         if (startingPos == posA)
         {
             // wait for animation to end
-            while((aniA.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
+            while(aniA.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.98f)
             {
                 yield return null;
             }
@@ -94,7 +94,7 @@ public class ElevatorMovement : MonoBehaviour
             soundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
             // wait for animation to end
-            while ((aniB.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
+            while (aniB.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.98f)
             {
                 yield return null;
             }
@@ -102,7 +102,7 @@ public class ElevatorMovement : MonoBehaviour
         else if (startingPos == posB)
         {
             // wait for animation to end
-            while ((aniB.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
+            while (aniB.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.98f)
             {
                 yield return null;
             }
@@ -124,7 +124,7 @@ public class ElevatorMovement : MonoBehaviour
             soundInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
 
             // wait for animation to end
-            while ((aniA.GetCurrentAnimatorStateInfo(0).normalizedTime) % 1 < 0.99f)
+            while (aniA.GetCurrentAnimatorStateInfo(0).normalizedTime <= 0.98f)
             {
                 yield return null;
             }
