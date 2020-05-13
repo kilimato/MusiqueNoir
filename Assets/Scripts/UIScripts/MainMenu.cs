@@ -11,6 +11,7 @@ public class MainMenu : MonoBehaviour
     {
         canvas = GetComponent<Canvas>();
     }
+    /*
     public void PlayGame()
     {
         Time.timeScale = 1;
@@ -22,5 +23,14 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Quit");
         Application.Quit();
+    }
+    */
+
+    private void Update()
+    {
+        if (Input.anyKey)
+        {
+            return;
+        }
     }
 }
