@@ -147,18 +147,22 @@ public class GameManager : MonoBehaviour
     private void ResetTilemaps()
     {
         changingVisibilityAreas[0].SetActive(false);
-        changingVisibilityAreas[1].SetActive(true);
+        changingVisibilityAreas[1].SetActive(true); 
+        changingVisibilityAreas[2].SetActive(false);
+        changingVisibilityAreas[3].SetActive(true);
     }
 
     private void ResetDialogues()
     {
         dialogueManager.SetActive(true);
         finishedStartingConversation = false;
+        dialogueManager.GetComponent<DialogueManager>().inDialogue = false;
         dialogueManager.GetComponent<DialogueManager>().finishedDialogue = false;
-        //alogueManager.GetComponent<DialogueManager>().dialogu
+        dialogueCanvas.enabled = false;
 
         dialogueTrigger.SetActive(true);
         dialogueTrigger.GetComponent<DialogueTrigger>().firstTime = true;
+        dialogueTrigger.GetComponent<DialogueTrigger>().inTrigger = false;
         dialogueTrigger.GetComponent<DialogueTrigger>().dialogueLoaded = false;
         //dialogueCanvas.enabled = true;
         dialogueText.text = "";
@@ -170,6 +174,11 @@ public class GameManager : MonoBehaviour
         // resettaa valotkin
         lastCheckpointPos = startingPoint.transform.position;
         lastCheckpoint = startingPoint;
+
+        foreach (GameObject checkpoint in checkpoints)
+        {
+            checkpoint.GetComponent<Checkpoint>().ChangeInactiveColor();
+        }
     }
 
 
@@ -231,7 +240,9 @@ public class GameManager : MonoBehaviour
             file.Close();
 
             changingVisibilityAreas[0].SetActive(save.tilemapsActive[0]);
-            changingVisibilityAreas[1].SetActive(save.tilemapsActive[1]);
+            changingVisibilityAreas[1].SetActive(save.tilemapsActive[1]); 
+            changingVisibilityAreas[2].SetActive(save.tilemapsActive[2]);
+            changingVisibilityAreas[3].SetActive(save.tilemapsActive[3]);
 
             dialogueManager.GetComponent<DialogueManager>().finishedDialogue = save.finishedStartingConversation;
             if (save.finishedStartingConversation)

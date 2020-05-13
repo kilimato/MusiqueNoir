@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class RescuedTrigger : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class RescuedTrigger : MonoBehaviour
     public GameObject rescued;
     public string dialoguePath;
     public GameObject textElement;
-    public GameObject canvasText;
+    public TextMeshProUGUI canvasText;
 
     public bool inTrigger = false;
     public bool dialogueLoaded = false;
@@ -40,7 +41,8 @@ public class RescuedTrigger : MonoBehaviour
         if (other.gameObject == player && player.GetComponent<PlayerController>().isVisible)
         {
             inTrigger = false;
-            //textElement.SetActive(false);
+            textElement.SetActive(false);
+            canvasText.text = "";
         }
     }
 

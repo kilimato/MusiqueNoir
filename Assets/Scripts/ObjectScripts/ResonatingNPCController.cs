@@ -47,6 +47,7 @@ public class ResonatingNPCController : MonoBehaviour
     {
         mat = GetComponent<Renderer>().material;
         spriteRenderer = GetComponent<SpriteRenderer>();
+
         if (!saved)
         {
             spriteRenderer.color = new Color32(70, 70, 70, 255);

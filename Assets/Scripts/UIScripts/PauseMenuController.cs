@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenuController : MonoBehaviour
 {
-
+    public Canvas mainCanvas;
+    public GameObject pauseMenu;
     private Canvas canvas;
 
     // Start is called before the first frame update
@@ -18,7 +19,7 @@ public class PauseMenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !mainCanvas.enabled && pauseMenu.activeSelf)
         {
             canvas.enabled = !canvas.enabled;
             Time.timeScale = canvas.enabled ? 0 : 1;

@@ -7,16 +7,16 @@ using UnityEngine;
 [System.Serializable]
 public class Save
 {
-    public List<int> changingVisibilityAreas = new List<int>();
-    public List<bool> tilemapsActive = new List<bool>();
 
     public bool finishedStartingConversation;
     public bool enteringDialogue;
 
-    public float[] checkpoint = new float[3];
+    public List<bool> tilemapsActive = new List<bool>();
     public List<bool> savedPeasants = new List<bool>();
     public List<bool> brokenWalls = new List<bool>();
     public List<bool> enemies = new List<bool>();
+
+    public float[] checkpoint = new float[3];
 }
 
 
