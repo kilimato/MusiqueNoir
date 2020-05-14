@@ -24,6 +24,9 @@ public class ParticleScript : MonoBehaviour
 
     public PlayerController playerController;
 
+    public Canvas mainCanvas;
+    public Canvas pauseCanvas;
+
     /*
      Billboard particle systemin asetuksissa:
      default partikkeli ei ole pallo, vaikka näyttää siltä, vaan neliö, johon on piirretty ympyrä
@@ -126,7 +129,7 @@ public class ParticleScript : MonoBehaviour
         {
             ringSize = ringMinSize;
         }
-        
+
         if (ringSize >= ringMaxSize)
         {
             ringSize = ringMaxSize;
