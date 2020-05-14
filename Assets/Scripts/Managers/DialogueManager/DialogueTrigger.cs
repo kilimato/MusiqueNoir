@@ -90,6 +90,7 @@ public class DialogueTrigger : MonoBehaviour
 
         if (dialogueManager.finishedDialogue)
         {
+            // korjaa täältä, tee joku tsekki ton tokan dialogin suhteen
             gameObject.SetActive(false);
         }
     }

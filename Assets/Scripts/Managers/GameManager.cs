@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public GameObject introTextController;
     public GameObject[] rescuedDialogueTriggers;
+    public GameObject endDialogueTrigger;
 
     [SerializeField]
     public GameObject[] changingVisibilityAreas;
@@ -167,6 +168,13 @@ public class GameManager : MonoBehaviour
         dialogueTrigger.GetComponent<DialogueTrigger>().dialogueLoaded = false;
         //dialogueCanvas.enabled = true;
         dialogueText.text = "";
+
+        endDialogueTrigger.SetActive(true);
+        endDialogueTrigger.GetComponent<DialogueTrigger>().firstTime = true;
+        endDialogueTrigger.GetComponent<DialogueTrigger>().inTrigger = false;
+        endDialogueTrigger.GetComponent<DialogueTrigger>().dialogueLoaded = false;
+        //dialogueCanvas.enabled = true;
+        //endDialogueText.text = "";
 
         introTextController.GetComponent<IntroTextController>().isAlreadySeen = false;
     }
