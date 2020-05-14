@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3866362800971905832}
   - component: {fileID: 1559406069418083863}
   m_Layer: 0
-  m_Name: WavePrefab
+  m_Name: ObjectWavePrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1303,17 +1303,17 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 0.18025112, b: 1, a: 1}
-        key1: {r: 0, g: 0.13914871, b: 1, a: 1}
-        key2: {r: 0, g: 0.13914871, b: 1, a: 1}
+        key0: {r: 0, g: 0.19261509, b: 1, a: 1}
+        key1: {r: 0, g: 0.67058825, b: 1, a: 1}
+        key2: {r: 0, g: 0.67058825, b: 1, a: 1}
         key3: {r: 1, g: 1, b: 1, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 10601
-        ctime1: 55512
-        ctime2: 55512
+        ctime0: 39321
+        ctime1: 55705
+        ctime2: 55705
         ctime3: 65535
         ctime4: 0
         ctime5: 0
@@ -4709,8 +4709,8 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6bb376b424034b049b4e369b7ee77f48, type: 2}
-  - {fileID: 2100000, guid: 6bb376b424034b049b4e369b7ee77f48, type: 2}
+  - {fileID: 2100000, guid: 53ebb2535866875479b41b3a2eba1960, type: 2}
+  - {fileID: 2100000, guid: 53ebb2535866875479b41b3a2eba1960, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
