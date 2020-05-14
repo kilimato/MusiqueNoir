@@ -108,8 +108,7 @@ public class ResonatingNPCController : MonoBehaviour
             if (exposureTimer > maxExposureTime)
             {
                 //Stop the sound
-                soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-                soundEvent.release();
+                soundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 isSoundPlaying = false;
                 //Destroy(gameObject);
             }
@@ -170,7 +169,7 @@ public class ResonatingNPCController : MonoBehaviour
 
     void OnDestroy()
     {
-        soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        soundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         soundEvent.release();
     }
 
@@ -190,7 +189,7 @@ public class ResonatingNPCController : MonoBehaviour
         else if (isSoundPlaying)
         {
             //Stop the sound
-            soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            soundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             isSoundPlaying = false;
         }
     }

@@ -232,7 +232,7 @@ public class ResonatingSpeakerController : MonoBehaviour
             ringSize = 0;
 
             //Stop the sound
-            soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            soundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             isSoundPlaying = false;
         }
         else
@@ -263,7 +263,7 @@ public class ResonatingSpeakerController : MonoBehaviour
 
     void OnDestroy()
     {
-        soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        soundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         soundEvent.release();
         isSoundPlaying = false;
     }
@@ -284,7 +284,7 @@ public class ResonatingSpeakerController : MonoBehaviour
         else if (isSoundPlaying)
         {
             //Stop the sound
-            soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            soundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             isSoundPlaying = false;
         }
     }

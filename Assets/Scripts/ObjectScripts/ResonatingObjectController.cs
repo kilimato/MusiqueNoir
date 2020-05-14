@@ -82,7 +82,7 @@ public class ResonatingObjectController : MonoBehaviour
             if (exposureTimer > maxExposureTime)
             {
                 //Stop the sound
-                soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+                soundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
                 soundEvent.release();
                 isSoundPlaying = false;
 
@@ -152,7 +152,7 @@ public class ResonatingObjectController : MonoBehaviour
         if (exposureTimer >= maxExposureTime)
         {
             //Stop sounds
-            soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            soundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             soundEvent.release();
             isSoundPlaying = false;
 
@@ -184,7 +184,7 @@ public class ResonatingObjectController : MonoBehaviour
             ringSize = 0;
 
             //Stop the sound
-            soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            soundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             soundEvent.release();
             isSoundPlaying = false;
         }
@@ -207,7 +207,7 @@ public class ResonatingObjectController : MonoBehaviour
     void OnDestroy()
     {
         //Stop the sound
-        soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        soundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         soundEvent.release();
         isSoundPlaying = false;
     }
@@ -228,7 +228,7 @@ public class ResonatingObjectController : MonoBehaviour
         else if (isSoundPlaying)
         {
             //Stop the sound
-            soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            soundEvent.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             isSoundPlaying = false;
         }
     }
