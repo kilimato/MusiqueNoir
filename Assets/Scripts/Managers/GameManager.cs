@@ -112,6 +112,11 @@ public class GameManager : MonoBehaviour
         ResetEnemies();
         ResetCheckpoints();
 
+        foreach (GameObject breakableObject in breakableObjects)
+        {
+            breakableObject.SetActive(true);
+        }
+
         Time.timeScale = 1;
     }
 
@@ -158,7 +163,6 @@ public class GameManager : MonoBehaviour
     {
         foreach (GameObject breakableObject in breakableObjects)
         {
-            breakableObject.SetActive(true);
             breakableObject.GetComponent<ResonatingObjectController>().ResetObject();
         }
     }

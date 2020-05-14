@@ -43,6 +43,14 @@ public class ParticleScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (mainCanvas.enabled || pauseCanvas.enabled)
+        {
+            if (Input.anyKey)
+            {
+                return;
+            }
+        }
+
         if (playerController.isVisible == false)
         {
             CancelInvoke();
