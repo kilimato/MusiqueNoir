@@ -19,6 +19,7 @@ public class ParticleScript : MonoBehaviour
     private float ringStep = 0.5f;
 
     private bool isResonating = false;
+    private int collidersize = 6;
     public CircleCollider2D particleCollider;
 
     public PlayerController playerController;
@@ -66,7 +67,7 @@ public class ParticleScript : MonoBehaviour
     {
         if (isResonating || IsInvoking("EmitFadingParticles") && playerController.isVisible)
         {
-            particleCollider.radius = ringSize / 8;
+            particleCollider.radius = ringSize / collidersize;
         }
         else
         {
@@ -156,5 +157,13 @@ public class ParticleScript : MonoBehaviour
     public bool GetPlayerResonating()
     {
         return isResonating;
+    }
+
+    public void ResetResonator()
+    {
+        CancelInvoke();
+        isResonating = false;
+        particleCollider.radius = 0.0001f;
+        ringSize = 0.0001f;
     }
 }

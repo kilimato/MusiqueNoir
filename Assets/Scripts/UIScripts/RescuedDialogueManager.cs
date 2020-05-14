@@ -9,6 +9,7 @@ public class RescuedDialogueManager : MonoBehaviour
 {
     private JsonData dialogue;
     public TextMeshProUGUI textDisplay;
+    public Canvas dialogueCanvas;
 
     private int index;
     private string speaker;
@@ -41,7 +42,7 @@ public class RescuedDialogueManager : MonoBehaviour
     public bool PrintLine()
     {
         if (finishedDialogue) return false;
-
+        dialogueCanvas.enabled = true;
         if (inDialogue)
         {
             JsonData line = dialogue[index];
@@ -50,6 +51,8 @@ public class RescuedDialogueManager : MonoBehaviour
                 inDialogue = false;
                 textDisplay.text = "";
                 finishedDialogue = true;
+
+                dialogueCanvas.enabled = false;
                 return false;
             }
             // every line has exactly one key (the speaker) so this always gives us the correct speaker

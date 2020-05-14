@@ -12,4 +12,10 @@ public class TriggerEndText : MonoBehaviour
             endController.ShowEndText();
         }
     }
+
+
+    public void ShowEndText()
+    {
+
+    }
 }

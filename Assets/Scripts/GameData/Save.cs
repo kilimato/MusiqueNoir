@@ -7,8 +7,9 @@ using UnityEngine;
 [System.Serializable]
 public class Save
 {
-
     public bool finishedStartingConversation;
+    public List<bool> finishedRescuedConversations = new List<bool>();
+    public List<bool> enteringRescuedDialogues = new List<bool>();
     public bool enteringDialogue;
 
     public List<bool> tilemapsActive = new List<bool>();

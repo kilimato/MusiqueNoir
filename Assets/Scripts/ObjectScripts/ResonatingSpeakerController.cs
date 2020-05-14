@@ -136,8 +136,8 @@ public class ResonatingSpeakerController : MonoBehaviour
      * Note: Trigger events are only sent if one of the Colliders also has a Rigidbody2D attached. Trigger events are sent to disabled MonoBehaviours, to allow enabling Behaviours in response to collisions.*/
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Resonator") &&  speakerActive) return;
-     
+        if (other.gameObject.CompareTag("Resonator") && speakerActive) return;
+
         if (other.gameObject.CompareTag("Resonator") && (!IsInvoking("EmitParticles")))
         {
             InvokeRepeating("EmitParticles", 0, 0.5f);
@@ -167,7 +167,8 @@ public class ResonatingSpeakerController : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other)
     {
         if (speakerActive) return;
-        if (other.gameObject.CompareTag("Resonator")) {
+        if (other.gameObject.CompareTag("Resonator"))
+        {
 
             if (exposureTimer >= maxExposureTime)
             {
@@ -286,5 +287,17 @@ public class ResonatingSpeakerController : MonoBehaviour
             soundEvent.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             isSoundPlaying = false;
         }
+    }
+
+    public void ResetSpeaker()
+    {
+        CancelInvoke();
+
+        exposureTimer = 0;
+        exitTimer = 0;
+        exposureTimerActive = false;
+        exitCollisionTimerActive = false;
+
+        speakerActive = false;
     }
 }

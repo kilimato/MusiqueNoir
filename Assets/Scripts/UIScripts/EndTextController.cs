@@ -31,7 +31,7 @@ public class EndTextController : MonoBehaviour
             StartCoroutine(FadeToBlack());
         }
         */
-        if (Input.GetKey(KeyCode.Space) && endCanvas.enabled)
+        if (Input.GetKey(KeyCode.T) && endCanvas.enabled)
         {
             StartCoroutine(FadeToBlack(false));
             mainCanvas.enabled = true;

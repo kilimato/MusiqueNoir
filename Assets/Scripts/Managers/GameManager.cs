@@ -14,13 +14,17 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
 
     public GameObject player;
+    public GameObject resonator;
 
     public GameObject dialogueManager;
     public GameObject dialogueTrigger;
     public Canvas dialogueCanvas;
     public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI rescuedText;
     public GameObject introTextController;
     public GameObject[] rescuedDialogueTriggers;
+    public GameObject[] rescuedDialogueManagers;
+    public Canvas rescuedCanvas;
     public GameObject endDialogueTrigger;
 
     [SerializeField]
@@ -36,6 +40,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     public GameObject[] breakableObjects;
+    [SerializeField]
+    public GameObject[] speakers;
 
     [SerializeField]
     public Vector3 lastCheckpointPos;
@@ -73,7 +79,7 @@ public class GameManager : MonoBehaviour
         FileStream file = File.Create(Application.persistentDataPath + "/gamesave.save");
         bf.Serialize(file, save);
         file.Close();
-        
+
         /*
         // 3: resetting the game so that everything is in a default state
         ResetTilemaps();
@@ -86,12 +92,12 @@ public class GameManager : MonoBehaviour
 
     public void NewGame()
     {
-        
+
         if (Input.GetKey(KeyCode.Space))
         {
             return;
         }
-        
+
 
         //File.Delete(Application.persistentDataPath + "/gamesave.save");
 
@@ -99,7 +105,9 @@ public class GameManager : MonoBehaviour
         ResetDialogues();
         ResetPlayerPosition();
         ResetPlayer();
+        ResetResonator();
         ResetPeasants();
+        ResetSpeakers();
         ResetObjects();
         ResetEnemies();
         ResetCheckpoints();
@@ -115,6 +123,11 @@ public class GameManager : MonoBehaviour
         player.GetComponent<PlayerController>().isVisible = true;
     }
 
+    private void ResetResonator()
+    {
+        resonator.GetComponent<ParticleScript>().ResetResonator();
+    }
+
     private void ResetEnemies()
     {
         foreach (GameObject enemy in enemies)
@@ -122,7 +135,7 @@ public class GameManager : MonoBehaviour
             enemy.transform.position = enemy.GetComponent<EnemyController>().GetStartingPos();
             sm = enemy.GetComponent<EnemyController>().stateMachine;
             sm.ChangeState(new PatrolState(enemy.GetComponent<EnemyController>()));
-           // enemy.GetComponent<EnemyController>().startingDirection = -transform.localScale.x / Mathf.Abs(transform.localScale.x);
+            // enemy.GetComponent<EnemyController>().startingDirection = -transform.localScale.x / Mathf.Abs(transform.localScale.x);
         }
     }
     private void ResetPeasants()
@@ -133,11 +146,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void ResetSpeakers()
+    {
+        foreach (GameObject speaker in speakers)
+        {
+            speaker.GetComponent<ResonatingSpeakerController>().ResetSpeaker();
+        }
+    }
+
     private void ResetObjects()
     {
         foreach (GameObject breakableObject in breakableObjects)
         {
             breakableObject.SetActive(true);
+            breakableObject.GetComponent<ResonatingObjectController>().ResetObject();
         }
     }
 
@@ -149,7 +171,7 @@ public class GameManager : MonoBehaviour
     private void ResetTilemaps()
     {
         changingVisibilityAreas[0].SetActive(false);
-        changingVisibilityAreas[1].SetActive(true); 
+        changingVisibilityAreas[1].SetActive(true);
         changingVisibilityAreas[2].SetActive(false);
         changingVisibilityAreas[3].SetActive(true);
     }
@@ -158,6 +180,7 @@ public class GameManager : MonoBehaviour
     {
         dialogueManager.SetActive(true);
         finishedStartingConversation = false;
+
         dialogueManager.GetComponent<DialogueManager>().inDialogue = false;
         dialogueManager.GetComponent<DialogueManager>().finishedDialogue = false;
         dialogueCanvas.enabled = false;
@@ -170,13 +193,28 @@ public class GameManager : MonoBehaviour
         dialogueText.text = "";
 
         endDialogueTrigger.SetActive(true);
-        endDialogueTrigger.GetComponent<DialogueTrigger>().firstTime = true;
-        endDialogueTrigger.GetComponent<DialogueTrigger>().inTrigger = false;
-        endDialogueTrigger.GetComponent<DialogueTrigger>().dialogueLoaded = false;
+        endDialogueTrigger.GetComponent<EndDialogueTrigger>().firstTime = true;
+        endDialogueTrigger.GetComponent<EndDialogueTrigger>().inTrigger = false;
+        endDialogueTrigger.GetComponent<EndDialogueTrigger>().dialogueLoaded = false;
+
+        foreach (GameObject manager in rescuedDialogueManagers)
+        {
+            manager.GetComponent<RescuedDialogueManager>().finishedDialogue = false;
+            manager.GetComponent<RescuedDialogueManager>().inDialogue = false;
+        }
         //dialogueCanvas.enabled = true;
         //endDialogueText.text = "";
 
         introTextController.GetComponent<IntroTextController>().isAlreadySeen = false;
+
+        foreach (GameObject trigger in rescuedDialogueTriggers)
+        {
+            trigger.GetComponent<RescuedTrigger>().firstTime = true;
+            trigger.GetComponent<RescuedTrigger>().inTrigger = false;
+            trigger.GetComponent<RescuedTrigger>().dialogueLoaded = false;
+            //rescuedText.text = "";
+        }
+        rescuedCanvas.enabled = false;
     }
     private void ResetCheckpoints()
     {
@@ -210,6 +248,12 @@ public class GameManager : MonoBehaviour
             save.brokenWalls.Add(wall.activeSelf);
         }
 
+        save.finishedRescuedConversations.Add(rescuedDialogueManagers[0].GetComponent<RescuedDialogueManager>().finishedDialogue);
+        save.finishedRescuedConversations.Add(rescuedDialogueManagers[1].GetComponent<RescuedDialogueManager>().finishedDialogue);
+
+        save.enteringRescuedDialogues.Add(rescuedDialogueTriggers[0].GetComponent<RescuedTrigger>().firstTime);
+        save.enteringRescuedDialogues.Add(rescuedDialogueTriggers[1].GetComponent<RescuedTrigger>().firstTime);
+
         save.finishedStartingConversation = dialogueManager.GetComponent<DialogueManager>().FinishedDialogue();
         save.enteringDialogue = dialogueTrigger.GetComponent<DialogueTrigger>().firstTime;
 
@@ -227,19 +271,21 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
-       
-    // 1
+
+        // 1
         if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
         {
             ResetTilemaps(); // CHECK!
             ResetDialogues();
             ResetPlayerPosition(); // CHECK!
             ResetPlayer();
+            ResetResonator();
             ResetCheckpoints();   // CHECK!
             ResetPeasants();
             ResetObjects();
+            ResetSpeakers();
             ResetEnemies();
-            
+
 
             // 2
             BinaryFormatter bf = new BinaryFormatter();
@@ -248,16 +294,24 @@ public class GameManager : MonoBehaviour
             file.Close();
 
             changingVisibilityAreas[0].SetActive(save.tilemapsActive[0]);
-            changingVisibilityAreas[1].SetActive(save.tilemapsActive[1]); 
+            changingVisibilityAreas[1].SetActive(save.tilemapsActive[1]);
             changingVisibilityAreas[2].SetActive(save.tilemapsActive[2]);
             changingVisibilityAreas[3].SetActive(save.tilemapsActive[3]);
 
             dialogueManager.GetComponent<DialogueManager>().finishedDialogue = save.finishedStartingConversation;
             if (save.finishedStartingConversation)
             {
-               // dialogueManager.SetActive(false);
+                // dialogueManager.SetActive(false);
             }
             dialogueTrigger.GetComponent<DialogueTrigger>().firstTime = save.enteringDialogue;
+
+
+            rescuedDialogueManagers[0].GetComponent<RescuedDialogueManager>().finishedDialogue = save.finishedRescuedConversations[0];
+            rescuedDialogueManagers[1].GetComponent<RescuedDialogueManager>().finishedDialogue = save.finishedRescuedConversations[1];
+            
+            rescuedDialogueTriggers[0].GetComponent<RescuedTrigger>().firstTime = save.enteringRescuedDialogues[0];
+            rescuedDialogueTriggers[1].GetComponent<RescuedTrigger>().firstTime = save.enteringRescuedDialogues[1];
+
 
             lastCheckpointPos.x = save.checkpoint[0];
             lastCheckpointPos.y = save.checkpoint[1];
@@ -279,6 +333,13 @@ public class GameManager : MonoBehaviour
                 breakableObjects[i].SetActive(save.brokenWalls[i]);
             }
 
+
+            rescuedDialogueManagers[0].GetComponent<RescuedDialogueManager>().finishedDialogue = save.finishedRescuedConversations[0];
+            rescuedDialogueManagers[1].GetComponent<RescuedDialogueManager>().finishedDialogue = save.finishedRescuedConversations[1];
+
+            ResetObjects();
+            ResetSpeakers();
+            ResetResonator();
             Debug.Log("Game Loaded");
         }
         else
