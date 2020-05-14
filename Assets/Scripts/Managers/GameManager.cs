@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public Canvas dialogueCanvas;
     public TextMeshProUGUI dialogueText;
     public GameObject introTextController;
+    public GameObject[] rescuedDialogueTriggers;
 
     [SerializeField]
     public GameObject[] changingVisibilityAreas;
@@ -127,7 +128,7 @@ public class GameManager : MonoBehaviour
     {
         foreach (GameObject peasant in peasants)
         {
-            peasant.GetComponent<ResonatingNPCController>().saved = false;
+            peasant.GetComponent<ResonatingNPCController>().SetBrainwashedState();
         }
     }
 
@@ -213,8 +214,7 @@ public class GameManager : MonoBehaviour
 
     public void LoadGame(GameObject caller)
     {
-        // current problem: if we check for enemy hitting player and loading then, for some reason loading game does 
-        // not change timescale from 0 to 1
+        //
         if (Input.GetKey(KeyCode.Space) && caller.tag != "Enemy")
         {
             return;

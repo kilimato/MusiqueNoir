@@ -10,6 +10,7 @@ public class DeathTransitionController : MonoBehaviour
     public EndTextController endTextController;
     GameObject manager;
     public GameObject player;
+    public GameObject resonator;
 
     // Update is called once per frame
     private void Start()
@@ -19,13 +20,15 @@ public class DeathTransitionController : MonoBehaviour
         manager = GameObject.FindGameObjectWithTag("GameManager");
     }
 
-    public void DeathTransitionToBlack()
+    public void DeathTransitionToBlack(GameObject caller)
     {
         player.GetComponent<PlayerController>().enabled = false;
+        resonator.GetComponent<ParticleScript>().ringSize = resonator.GetComponent<ParticleScript>().ringMinSize;
+        resonator.SetActive(false);
         player.GetComponent<Animator>().SetFloat("Speed", 0.0f);
         endCanvas.enabled = true;
         endTextController.enabled = false;
-        StartCoroutine(FadeLoadAndFadeAgain());
+        StartCoroutine(FadeLoadAndFadeAgain(caller));
     }
 
     public IEnumerator FadeToBlack(bool fadeToBlack = true, int fadeSpeed = 2)
@@ -57,10 +60,11 @@ public class DeathTransitionController : MonoBehaviour
         }
     }
 
-    public IEnumerator FadeLoadAndFadeAgain()
+    public IEnumerator FadeLoadAndFadeAgain(GameObject caller)
     {
         yield return StartCoroutine(FadeToBlack());
-        manager.GetComponent<GameManager>().LoadGame(gameObject);
+        Debug.Log("Caller of loadGame() is: " + gameObject);
+        manager.GetComponent<GameManager>().LoadGame(caller);
         StartCoroutine(FadeAgain());
     }
 
@@ -71,5 +75,6 @@ public class DeathTransitionController : MonoBehaviour
         endTextController.enabled = true;
         endCanvas.enabled = false;
         player.GetComponent<PlayerController>().enabled = true;
+        resonator.SetActive(true);
     }
 }

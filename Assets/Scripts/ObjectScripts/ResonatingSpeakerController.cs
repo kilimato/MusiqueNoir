@@ -92,13 +92,11 @@ public class ResonatingSpeakerController : MonoBehaviour
                 speakerActive = true;
                 ActivateSpeaker();
             }
-            Debug.Log(exposureTimer);
         }
 
         if (exitCollisionTimerActive)
         {
             exitTimer += Time.deltaTime;
-            Debug.Log(exitTimer);
 
             //Changing FMOD intensity parameter
             changeSoundIntensity();
@@ -139,7 +137,6 @@ public class ResonatingSpeakerController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Resonator") &&  speakerActive) return;
-        Debug.Log("Entering");
      
         if (other.gameObject.CompareTag("Resonator") && (!IsInvoking("EmitParticles")))
         {
@@ -171,7 +168,6 @@ public class ResonatingSpeakerController : MonoBehaviour
     {
         if (speakerActive) return;
         if (other.gameObject.CompareTag("Resonator")) {
-            Debug.Log("Staying");
 
             if (exposureTimer >= maxExposureTime)
             {
@@ -191,7 +187,6 @@ public class ResonatingSpeakerController : MonoBehaviour
 
         if (other.gameObject.CompareTag("Resonator"))
         {
-            Debug.Log("Exiting");
             exposureTimerActive = false;
             exposureTimer = 0;
             //waves = false;
@@ -205,7 +200,6 @@ public class ResonatingSpeakerController : MonoBehaviour
     {
         if (!coroutineRunning)
         {
-            Debug.Log("Activated speaker");
             coroutineRunning = true;
             //StartCoroutine(EmitActivationSignal());
 
@@ -231,7 +225,6 @@ public class ResonatingSpeakerController : MonoBehaviour
         if (exitTimer >= minExitTime)
         {
             CancelInvoke("EmitParticles");
-            Debug.Log("Stopped emitting after cooldown");
 
             exitCollisionTimerActive = false;
             exitTimer = 0;

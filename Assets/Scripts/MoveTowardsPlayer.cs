@@ -51,7 +51,7 @@ public class MoveTowardsPlayer : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && player.IsVisible())
         {
-            deathController.DeathTransitionToBlack();
+            deathController.DeathTransitionToBlack(gameObject);
         }
     }
 }

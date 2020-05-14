@@ -207,7 +207,6 @@ public class Settings : MonoBehaviour
     void OnDestroy()
     {
         ActivateGameSounds();
-
     }
 
     public void SaveSoundSettings()

@@ -18,13 +18,13 @@ public class MainMenu : MonoBehaviour
         //SceneManager.LoadScene(0);
         canvas.enabled = false;
     }
-
+    */
     public void QuitGame()
     {
         Debug.Log("Quit");
         Application.Quit();
     }
-    */
+    
 
     private void Update()
     {

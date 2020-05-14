@@ -50,10 +50,7 @@ public class ResonatingNPCController : MonoBehaviour
 
         if (!saved)
         {
-            spriteRenderer.color = new Color32(70, 70, 70, 255);
-            enlightenedColor = new Color32(70, 70, 70, 255);
-            transform.localScale = new Vector3(1f, 1f, 1f);
-            pointLight.enabled = false;
+            SetBrainwashedState();
         }
         if (saved)
         {
@@ -88,6 +85,15 @@ public class ResonatingNPCController : MonoBehaviour
         saved = true;
     }
 
+    public void SetBrainwashedState()
+    {
+        spriteRenderer.color = new Color32(70, 70, 70, 255);
+        enlightenedColor = new Color32(70, 70, 70, 255);
+        transform.localScale = new Vector3(1f, 1f, 1f);
+        pointLight.enabled = false;
+        saved = false;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -107,13 +113,11 @@ public class ResonatingNPCController : MonoBehaviour
                 isSoundPlaying = false;
                 //Destroy(gameObject);
             }
-            Debug.Log(exposureTimer);
         }
 
         if (exitCollisionTimerActive)
         {
             exitTimer += Time.deltaTime;
-            Debug.Log(exitTimer);
 
             //Changing FMOD intensity parameter
             changeSoundIntensity();
@@ -129,6 +133,14 @@ public class ResonatingNPCController : MonoBehaviour
         if (other.gameObject.CompareTag("Resonator") && resonator.GetComponent<ParticleScript>().GetPlayerResonating() && (!IsInvoking("EmitParticles")))
         {
             StartCoroutine(Coloring());
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Resonator"))
+        {
+            StopAllCoroutines();
         }
     }
 

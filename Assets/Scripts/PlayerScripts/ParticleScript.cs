@@ -12,7 +12,7 @@ public class ParticleScript : MonoBehaviour
 
     ParticleSystem.MainModule psMain;
 
-    private float ringMinSize = 1.5f;
+    public float ringMinSize = 1.5f;
     public float ringSize = 1.5f;
     public float ringMaxSize = 5f;
     [SerializeField]

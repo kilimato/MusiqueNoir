@@ -117,6 +117,8 @@ GameObject:
   - component: {fileID: 2811210499820842878}
   - component: {fileID: 8724763504864280598}
   - component: {fileID: 2722798292968060436}
+  - component: {fileID: 3138682877469579275}
+  - component: {fileID: 7017837041598945121}
   m_Layer: 0
   m_Name: ElevatorPosB
   m_TagString: ElevatorPosB
@@ -156,7 +158,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 000425bed41a04244a400d6b3b0fcdcc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -222,6 +224,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEvent1: event:/SFX/Elevator/elevator door opens
   soundEvent2: event:/SFX/Elevator/elevator door closes
+--- !u!114 &3138682877469579275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5845744330659520447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a7aea7c80ae76448af31726330e61bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &7017837041598945121
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5845744330659520447}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.6875}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.27083334}
+    oldSize: {x: 2, y: 3}
+    newSize: {x: 2, y: 3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 3}
+  m_EdgeRadius: 0
 --- !u!1 &6371486047802486675
 GameObject:
   m_ObjectHideFlags: 0
@@ -234,6 +274,8 @@ GameObject:
   - component: {fileID: 7001771514768101183}
   - component: {fileID: 8423330962730599743}
   - component: {fileID: 1620713260070992366}
+  - component: {fileID: 1777644877122529439}
+  - component: {fileID: 1279230876636827398}
   m_Layer: 0
   m_Name: ElevatorPosA
   m_TagString: ElevatorPosA
@@ -273,7 +315,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 000425bed41a04244a400d6b3b0fcdcc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -339,3 +381,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEvent1: event:/SFX/Elevator/elevator door opens
   soundEvent2: event:/SFX/Elevator/elevator door closes
+--- !u!114 &1777644877122529439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6371486047802486675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a7aea7c80ae76448af31726330e61bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &1279230876636827398
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6371486047802486675}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.6875}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.27083334}
+    oldSize: {x: 2, y: 3}
+    newSize: {x: 2, y: 3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2, y: 3}
+  m_EdgeRadius: 0

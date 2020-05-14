@@ -51,10 +51,10 @@ public class RescuedTrigger : MonoBehaviour
     {
         if (firstTime)
         {
-            if (!dialogueLoaded)
-            {
-                dialogueLoaded = dialogueManager.LoadDialogue(dialoguePath);
-            }
+            //          if (!dialogueLoaded)
+            //          {
+            dialogueLoaded = dialogueManager.LoadDialogue(dialoguePath);
+            //         }
             if (dialogueLoaded)
             {
                 dialogueManager.PrintLine();
@@ -89,14 +89,14 @@ public class RescuedTrigger : MonoBehaviour
             StartCoroutine(WaitTime());
             //canvasText.SetActive(false);
         }
-        
+
         if (!firstTime)
         {
             // here we start dialogue when we are in collision area of the NPC and press E
             // could be anything else tp trigger the dialogue
             RunDialogue(Input.GetKeyDown(KeyCode.E));
         }
-        
+
     }
 
     IEnumerator WaitTime()

@@ -18,11 +18,6 @@ public class OutlineController : MonoBehaviour
         mat.SetFloat("_OutlineThickness", 0);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -30,7 +25,7 @@ public class OutlineController : MonoBehaviour
         {
             if (CompareTag("Door"))
             {
-                mat.SetFloat("_OutlineThickness", 1f);
+                mat.SetFloat("_OutlineThickness", 2f);
             }
             else
             {
