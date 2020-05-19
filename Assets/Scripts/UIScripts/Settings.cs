@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen & Jethro Liukku
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -6,6 +7,8 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using System.Linq;
 
+// handles saving quality and resolution values when player clicks on the dropdowns, sets the fullscreen toggle
+// values are stored to playerprefs
 public class Settings : MonoBehaviour
 {
     FMOD.Studio.Bus MenuMusic;
@@ -97,23 +100,17 @@ public class Settings : MonoBehaviour
     private void Start()
     {
         qualityDropdown.value = PlayerPrefs.GetInt(prefName, 2);
-
         resolutions = Screen.resolutions;
-
         resolutionDropdown.ClearOptions();
 
         List<string> options = new List<string>();
 
         int currentResolutionIndex = 0;
-
         for (int i = 0; i < resolutions.Length; i++)
         {
             string option = resolutions[i].width + " x " + resolutions[i].height;
-
             Debug.Log(option);
             options.Add(option);
-
-
             if (resolutions[i].width == Screen.width && resolutions[i].height == Screen.height)
             {
                 // another way: resolutions[i].width == Screen.currentResolution.width etc.

@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// handles death transition: UI first fading to black and back to transparent and player respawning to a previous checkpoint
 public class DeathTransitionController : MonoBehaviour
 {
     Canvas endCanvas;
@@ -16,10 +18,11 @@ public class DeathTransitionController : MonoBehaviour
     private void Start()
     {
         endCanvas = GetComponent<Canvas>();
-
         manager = GameObject.FindGameObjectWithTag("GameManager");
     }
 
+    // this is called from enemy script
+    // this does coroutine inside a coroutine, so the transitions happen in order and not at the same time
     public void DeathTransitionToBlack(GameObject caller)
     {
         player.GetComponent<PlayerController>().enabled = false;
@@ -63,7 +66,6 @@ public class DeathTransitionController : MonoBehaviour
     public IEnumerator FadeLoadAndFadeAgain(GameObject caller)
     {
         yield return StartCoroutine(FadeToBlack());
-        Debug.Log("Caller of loadGame() is: " + gameObject);
         manager.GetComponent<GameManager>().LoadGame(caller);
         StartCoroutine(FadeAgain());
     }

@@ -1,15 +1,16 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 using TMPro;
 
+// handles settings for the main menu, such as resolution, quality and volume
 public class SettingsMenu : MonoBehaviour
 {
     public AudioMixer audioMixer;
     Resolution[] resolutions;
-
     public TMPro.TMP_Dropdown resolutionDropdown;
 
     private void Start()
@@ -33,7 +34,6 @@ public class SettingsMenu : MonoBehaviour
                 currentResolutionIndex = i;
             }
         }
-
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         // we need to refresh to show the value

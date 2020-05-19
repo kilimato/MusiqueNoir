@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// handles pausing the game and setting timescale to 0 when paused
 public class PauseMenuController : MonoBehaviour
 {
     public Canvas mainCanvas;

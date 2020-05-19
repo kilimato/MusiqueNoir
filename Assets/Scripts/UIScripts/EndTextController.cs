@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+// handles UI fading to black endscreen when game is over after end dialogue
 public class EndTextController : MonoBehaviour
 {
     Canvas endCanvas;
@@ -24,13 +26,6 @@ public class EndTextController : MonoBehaviour
 
     public void Update()
     {
-
-        /*
-        if (Input.GetKey(KeyCode.Q))
-        {
-            StartCoroutine(FadeToBlack());
-        }
-        */
         if (Input.GetKey(KeyCode.T) && endCanvas.enabled)
         {
             StartCoroutine(FadeToBlack(false));
@@ -38,12 +33,10 @@ public class EndTextController : MonoBehaviour
             endCanvas.enabled = false;
             Time.timeScale = 0;
         }
-
     }
 
     public IEnumerator FadeToBlack(bool fadeToBlack = true, int fadeSpeed = 2)
     {
-
         Color imageColor = fadeImage.GetComponent<Image>().color;
         Color textColor = fadeText.GetComponent<TextMeshProUGUI>().color;
         float fadeAmount;

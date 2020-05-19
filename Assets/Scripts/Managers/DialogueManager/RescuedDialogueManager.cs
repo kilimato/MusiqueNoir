@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using LitJson;
 using TMPro;
 
+// handles showing dialogue for the two NPCs when rescued
 public class RescuedDialogueManager : MonoBehaviour
 {
     private JsonData dialogue;
@@ -62,10 +64,7 @@ public class RescuedDialogueManager : MonoBehaviour
             }
 
             dialoguePart = speaker.Substring(0, speaker.Length-1) + ": " + line[0].ToString();
-
-            Debug.Log(dialoguePart);
             textDisplay.text = TextColorToHex(speaker) + dialoguePart;
-
             index++;
         }
         return true;

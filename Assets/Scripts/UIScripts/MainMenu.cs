@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
+// handles just quitting the game
 public class MainMenu : MonoBehaviour
 {
     private Canvas canvas;
@@ -11,21 +12,13 @@ public class MainMenu : MonoBehaviour
     {
         canvas = GetComponent<Canvas>();
     }
-    /*
-    public void PlayGame()
-    {
-        Time.timeScale = 1;
-        //SceneManager.LoadScene(0);
-        canvas.enabled = false;
-    }
-    */
+
     public void QuitGame()
     {
         Debug.Log("Quit");
         Application.Quit();
     }
     
-
     private void Update()
     {
         if (Input.anyKey)
