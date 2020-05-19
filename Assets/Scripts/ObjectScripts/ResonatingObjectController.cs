@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// script for handling resonator's effects on objects in the game such as particle emitting 
 public class ResonatingObjectController : MonoBehaviour
 {
     private ParticleSystem particles;
@@ -20,10 +22,7 @@ public class ResonatingObjectController : MonoBehaviour
     private float ringStep = 1f;
 
     private bool waves = false;
-
-    Renderer rend;
     private Material mat;
-
     float waveAmount = 0f;
 
 
@@ -38,16 +37,12 @@ public class ResonatingObjectController : MonoBehaviour
 
     FMOD.Studio.PARAMETER_ID soundParameterId;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
         particles = GetComponentInChildren<ParticleSystem>();
         psMain = particles.main;
-
         mat = GetComponent<Renderer>().material;
-
 
         //FMOD sound event
         //manually starting sound event
@@ -55,7 +50,6 @@ public class ResonatingObjectController : MonoBehaviour
         resonanceIntensity = resonanceStartingIntensity;
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEvent, GetComponent<Transform>(), GetComponent<Rigidbody>());
-
 
         FMOD.Studio.EventDescription resonanceEventDescription;
         soundEvent.getDescription(out resonanceEventDescription);
@@ -69,7 +63,7 @@ public class ResonatingObjectController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        UpdateMaterial();
+        //UpdateMaterial();
 
         if (exposureTimerActive)
         {
@@ -88,7 +82,6 @@ public class ResonatingObjectController : MonoBehaviour
 
                 //Destroy(gameObject);
                 gameObject.SetActive(false);
-
             }
             Debug.Log(exposureTimer);
         }
@@ -103,12 +96,13 @@ public class ResonatingObjectController : MonoBehaviour
         }
     }
 
+    // in earlier versions object started "resonating", making wavy effect when player used resonator,
+    // was later switched to outline shader instead
     private void UpdateMaterial()
     {
         if (waves && waveAmount < 20)
         {
             waveAmount += 0.1f;
-            //mat.SetFloat("_RadialPush", testCount);
             mat.SetFloat("_SineFrequency", waveAmount);
             mat.SetFloat("_SineSpeed", waveAmount);
             mat.SetFloat("_SineAmplitude", waveAmount);
@@ -116,17 +110,14 @@ public class ResonatingObjectController : MonoBehaviour
         if (!waves && waveAmount > 0)
         {
             waveAmount -= 0.1f;
-            //mat.SetFloat("_RadialPush", testCount);
             mat.SetFloat("_SineFrequency", waveAmount);
             mat.SetFloat("_SineSpeed", waveAmount);
             mat.SetFloat("_SineAmplitude", waveAmount);
         }
     }
 
-
-    /* Sent when another object enters a trigger collider attached to this object (2D physics only).
-     * This message is sent to the trigger Collider2D and the Rigidbody2D (if any) that the trigger Collider2D belongs to, and to the Rigidbody2D (or the Collider2D if there is no Rigidbody2D) that touches the trigger.
-     * Note: Trigger events are only sent if one of the Colliders also has a Rigidbody2D attached. Trigger events are sent to disabled MonoBehaviours, to allow enabling Behaviours in response to collisions.*/
+    // we check if resonating collider is touching edge collider in the middle of the object
+    // -> otherwise would start emitting particles too easily
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.IsTouching(GetComponent<EdgeCollider2D>()))
@@ -177,8 +168,6 @@ public class ResonatingObjectController : MonoBehaviour
         if (exitTimer >= minExitTime)
         {
             CancelInvoke("EmitParticles");
-            Debug.Log("Stopped emitting after cooldown");
-
             exitCollisionTimerActive = false;
             exitTimer = 0;
             ringSize = 0;
@@ -198,7 +187,6 @@ public class ResonatingObjectController : MonoBehaviour
             {
                 ringSize += ringStep;
             }
-
             psMain.startSize = ringSize;
             particles.Emit(1);
         }
@@ -233,7 +221,7 @@ public class ResonatingObjectController : MonoBehaviour
         }
     }
 
-
+    // we reset object for saving purposes
     public void ResetObject()
     {
         CancelInvoke();

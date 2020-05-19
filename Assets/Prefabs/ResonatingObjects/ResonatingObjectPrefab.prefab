@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2300155673908010244}
   - component: {fileID: 2300155673908010267}
   - component: {fileID: 2197066657584498850}
-  - component: {fileID: 1807481478600938963}
+  - component: {fileID: 4131425860389077965}
   m_Layer: 0
   m_Name: ResonatingObjectPrefab
   m_TagString: Object
@@ -188,7 +188,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.5000004
---- !u!114 &1807481478600938963
+--- !u!114 &4131425860389077965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

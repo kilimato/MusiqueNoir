@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿// @author Jethro Liukku
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +10,6 @@ public class PlaySound : MonoBehaviour
 
     [FMODUnity.EventRef]
     public string soundEvent2 = "";
-
 
     public void play1()
     {

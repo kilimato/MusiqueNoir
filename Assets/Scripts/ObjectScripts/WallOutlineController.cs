@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// small change to basic outlinecontroller, since wall obstacles have different structure
 public class WallOutlineController : MonoBehaviour
 {
     private Material mat;

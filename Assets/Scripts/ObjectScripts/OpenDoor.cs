@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// handles opening doors and updating tilemaps accordingly
 public class OpenDoor : MonoBehaviour
 {
-
     public bool canEnter = false;
     public GameObject insideTilemaps;
     public GameObject buildingExterior;
@@ -40,7 +41,6 @@ public class OpenDoor : MonoBehaviour
 
     private void ChangeBetweenTilemaps()
     {
-
         buildingExterior.SetActive(!buildingExterior.activeSelf);
         insideTilemaps.SetActive(!insideTilemaps.activeSelf);
     }

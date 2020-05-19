@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿// @author Tapio Mylläri
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
 public class StunnedState : IState
 {
-
     EnemyController enemy;
     private float stunTime;
 
@@ -32,7 +32,6 @@ public class StunnedState : IState
 
     public void Execute()
     {
-
         if (stunTime > Mathf.Epsilon)
         {
             stunTime -= Time.deltaTime;
@@ -41,16 +40,13 @@ public class StunnedState : IState
         {
             enemy.stateMachine.ChangeState(new ReturnState(enemy));
         }
-
     }
 
     public void Exit()
     {
-
         //exit animation
         enemy.GetComponent<Animator>().SetBool("Stunned", false);
         enemy.GetComponent<Light2D>().enabled = true;
         enemy.rb2D.simulated = true;
-
     }
 }

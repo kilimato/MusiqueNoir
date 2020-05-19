@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ChangeBetweenTilemaps : MonoBehaviour
 {
-
     public GameObject insideTilemaps;
     public GameObject buildingExterior;
     public bool activateInterior = true;

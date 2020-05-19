@@ -1,4 +1,5 @@
-﻿public class StateMachine
+﻿// @author Tapio Mylläri
+public class StateMachine
 {
     IState currentState;
 

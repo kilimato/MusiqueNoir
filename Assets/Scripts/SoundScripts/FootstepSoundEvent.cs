@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿// @author Jethro Liukku
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 

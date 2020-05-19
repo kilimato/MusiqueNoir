@@ -1,9 +1,10 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
-// Handles that checkpoint is updated to manager when player collides with it
+// Handles that checkpoint is updated to game manager when player collides with it
 public class Checkpoint : MonoBehaviour
 {
     private GameManager manager;
@@ -14,14 +15,12 @@ public class Checkpoint : MonoBehaviour
 
     public List<GameObject> checkpoints;
     private GameObject[] points;
-
     public int orderNumber;
-
 
     void Start()
     {
         manager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
-        //checkpointLight = GetComponent<Light2D>();
+
         checkpoints.Add(GameObject.FindGameObjectWithTag("StartingPoint"));
         points = (GameObject.FindGameObjectsWithTag("Checkpoint"));
         foreach (GameObject point in points)
@@ -30,6 +29,8 @@ public class Checkpoint : MonoBehaviour
         }
     }
 
+    // updates checkpoint to be the one with the highest order number, so player always returns to the checkpoint that is 
+    // furthest in terms of level progression
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")

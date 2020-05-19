@@ -1,35 +1,30 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
+// script for brainwashed NPCs to control exposure to resonator and rescued state
 public class ResonatingNPCController : MonoBehaviour
 {
     private float maxExposureTime = 5f;
-
     private float exposureTimer = 0;
     private float exitTimer = 0;
     bool exposureTimerActive = false;
     bool exitCollisionTimerActive = false;
 
-    Renderer rend;
     private Material mat;
-
     public Color32 enlightenedColor;
     public SpriteRenderer spriteRenderer;
     public Light2D pointLight;
 
     public bool saved = false;
     public bool startDialogue = false;
+
     public GameObject resonator;
     public Animator animator;
-
     public GameObject dialogueTrigger;
-    /*
-     Billboard particle systemin asetuksissa:
-     default partikkeli ei ole pallo, vaikka näyttää siltä, vaan neliö, johon on piirretty ympyrä
-     billboarding kääntää partikkelin aina kameraa kohti, jolloin näyttää että se olisi pyöreä
-         */
+
     // FMOD event
     [FMODUnity.EventRef]
     public string ResonanceEvent = "event:/SFX/resonating";
@@ -40,7 +35,6 @@ public class ResonatingNPCController : MonoBehaviour
     private bool isSoundPlaying = false;
 
     FMOD.Studio.PARAMETER_ID soundParameterId;
-
 
     // Start is called before the first frame update
     void Start()
@@ -123,10 +117,7 @@ public class ResonatingNPCController : MonoBehaviour
         }
     }
 
-
-    /* Sent when another object enters a trigger collider attached to this object (2D physics only).
-     * This message is sent to the trigger Collider2D and the Rigidbody2D (if any) that the trigger Collider2D belongs to, and to the Rigidbody2D (or the Collider2D if there is no Rigidbody2D) that touches the trigger.
-     * Note: Trigger events are only sent if one of the Colliders also has a Rigidbody2D attached. Trigger events are sent to disabled MonoBehaviours, to allow enabling Behaviours in response to collisions.*/
+    // brainwashed NPC starts to gain some color while player is using resonator next to NPC -> is rescued
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Resonator") && resonator.GetComponent<ParticleScript>().GetPlayerResonating() && (!IsInvoking("EmitParticles")))
@@ -165,7 +156,6 @@ public class ResonatingNPCController : MonoBehaviour
             yield return new WaitForSeconds(0.015f);
         }
     }
-
 
     void OnDestroy()
     {

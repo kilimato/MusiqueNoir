@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿// @author Tapio Mylläri
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
 public class ChaseState : IState
 {
-
     private Seeker seeker;
     private AIPath aiPath;
     private AIDestinationSetter destSetter;
@@ -28,7 +28,6 @@ public class ChaseState : IState
 
     public void Enter()
     {
-
         Debug.Log("Entering Chase State");
 
         seeker = enemy.GetComponent<Seeker>();
@@ -50,9 +49,6 @@ public class ChaseState : IState
 
     public void Execute()
     {
-
-        //Debug.Log("Executing Chase State");
-        //alertSign.SetActive(true);
         chaseTime -= Time.deltaTime;
         destSetter.target = target.transform;
 
@@ -80,7 +76,5 @@ public class ChaseState : IState
         enemy.GetComponent<Animator>().SetBool("Alerted", false);
 
         enemy.ReturnToStartingPos();
-        //Debug.Log("Exiting Chase State");
-
     }
 }

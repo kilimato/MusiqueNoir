@@ -1,7 +1,11 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// script for handling speaker resonating when player uses resonator:
+// after resonating for a while, speaker enters active state, and stuns enemy when they enter speaker's trigger area
 public class ResonatingSpeakerController : MonoBehaviour
 {
     private ParticleSystem particles;
@@ -24,9 +28,7 @@ public class ResonatingSpeakerController : MonoBehaviour
     public bool speakerActive = false;
     private bool coroutineRunning = false;
 
-    Renderer rend;
     private Material mat;
-
     float waveAmount = 0f;
 
 
@@ -41,16 +43,12 @@ public class ResonatingSpeakerController : MonoBehaviour
 
     FMOD.Studio.PARAMETER_ID soundParameterId;
 
-
-
     // Start is called before the first frame update
     void Start()
     {
         particles = GetComponentInChildren<ParticleSystem>();
         psMain = particles.main;
-
         mat = GetComponent<Renderer>().material;
-
 
         //FMOD sound event
         //manually starting sound event
@@ -59,45 +57,37 @@ public class ResonatingSpeakerController : MonoBehaviour
 
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(soundEvent, GetComponent<Transform>(), GetComponent<Rigidbody>());
 
-
         FMOD.Studio.EventDescription resonanceEventDescription;
         soundEvent.getDescription(out resonanceEventDescription);
         FMOD.Studio.PARAMETER_DESCRIPTION resonanceParameterDescription;
         resonanceEventDescription.getParameterDescriptionByName("ResoIntensity", out resonanceParameterDescription);
         soundParameterId = resonanceParameterDescription.id;
 
-
         soundEvent.setParameterByID(soundParameterId, resonanceIntensity);
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        //UpdateMaterial();
-
         if (exposureTimerActive)
         {
             exposureTimer += Time.deltaTime;
-
             //Changing FMOD intensity parameter
             changeSoundIntensity();
 
             //Setting new
             if (exposureTimer > maxExposureTime)
             {
-                //Destroy(gameObject);
-                //gameObject.SetActive(false);
                 CancelInvoke("EmitParticles");
                 StopTimers();
                 speakerActive = true;
                 ActivateSpeaker();
             }
         }
-
         if (exitCollisionTimerActive)
         {
             exitTimer += Time.deltaTime;
-
             //Changing FMOD intensity parameter
             changeSoundIntensity();
         }
@@ -110,30 +100,8 @@ public class ResonatingSpeakerController : MonoBehaviour
         exposureTimer = 0;
         exitTimer = 0;
     }
-    private void UpdateMaterial()
-    {
-        if (waves && waveAmount < 20)
-        {
-            waveAmount += 0.1f;
-            //mat.SetFloat("_RadialPush", testCount);
-            mat.SetFloat("_SineFrequency", waveAmount);
-            mat.SetFloat("_SineSpeed", waveAmount);
-            mat.SetFloat("_SineAmplitude", waveAmount);
-        }
-        if (!waves && waveAmount > 0)
-        {
-            waveAmount -= 0.1f;
-            //mat.SetFloat("_RadialPush", testCount);
-            mat.SetFloat("_SineFrequency", waveAmount);
-            mat.SetFloat("_SineSpeed", waveAmount);
-            mat.SetFloat("_SineAmplitude", waveAmount);
-        }
-    }
 
-
-    /* Sent when another object enters a trigger collider attached to this object (2D physics only).
-     * This message is sent to the trigger Collider2D and the Rigidbody2D (if any) that the trigger Collider2D belongs to, and to the Rigidbody2D (or the Collider2D if there is no Rigidbody2D) that touches the trigger.
-     * Note: Trigger events are only sent if one of the Colliders also has a Rigidbody2D attached. Trigger events are sent to disabled MonoBehaviours, to allow enabling Behaviours in response to collisions.*/
+    // speaker either resonates or stuns enemy (if speaker is in active state) when OnTriggerEnter is called
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Resonator") && speakerActive) return;
@@ -143,9 +111,7 @@ public class ResonatingSpeakerController : MonoBehaviour
             InvokeRepeating("EmitParticles", 0, 0.5f);
             exitCollisionTimerActive = false;
             exitTimer = 0;
-
             exposureTimerActive = true;
-            //waves = true;
         }
 
         if (other.gameObject.CompareTag("Enemy") && speakerActive)
@@ -159,9 +125,7 @@ public class ResonatingSpeakerController : MonoBehaviour
             speakerActive = false;
             EnemyController enemy = other.GetComponent<EnemyController>();
             enemy.stateMachine.ChangeState(new StunnedState(enemy));
-            Debug.Log("Stunned enemy");
         }
-
     }
 
     private void OnTriggerStay2D(Collider2D other)
@@ -169,11 +133,8 @@ public class ResonatingSpeakerController : MonoBehaviour
         if (speakerActive) return;
         if (other.gameObject.CompareTag("Resonator"))
         {
-
             if (exposureTimer >= maxExposureTime)
             {
-                //Destroy(gameObject);
-                //gameObject.SetActive(false);
                 CancelInvoke("EmitParticles");
                 StopTimers();
                 speakerActive = true;
@@ -190,35 +151,20 @@ public class ResonatingSpeakerController : MonoBehaviour
         {
             exposureTimerActive = false;
             exposureTimer = 0;
-            //waves = false;
-
             exitCollisionTimerActive = true;
             exitTimer = 0;
         }
     }
 
+
+    // speaker starts to emit certain sized particles when active, compared to growing/shrinking particle size when resonating
     private void ActivateSpeaker()
     {
         if (!coroutineRunning)
         {
             coroutineRunning = true;
-            //StartCoroutine(EmitActivationSignal());
-
             StartCoroutine(EmitActivatedParticles());
         }
-    }
-
-    public IEnumerator EmitActivationSignal()
-    {
-        int i = 0;
-        while (i < 5)
-        {
-            colorModule.color = Color.white;
-            particles.Emit(1);
-            yield return new WaitForSeconds(0.3f);
-        }
-
-        //colorModule.color = Color.blue;
     }
 
     public void EmitParticles()
@@ -226,7 +172,6 @@ public class ResonatingSpeakerController : MonoBehaviour
         if (exitTimer >= minExitTime)
         {
             CancelInvoke("EmitParticles");
-
             exitCollisionTimerActive = false;
             exitTimer = 0;
             ringSize = 0;
@@ -245,7 +190,6 @@ public class ResonatingSpeakerController : MonoBehaviour
             {
                 ringSize += ringStep;
             }
-
             psMain.startSize = ringSize;
             particles.Emit(1);
         }
@@ -289,6 +233,8 @@ public class ResonatingSpeakerController : MonoBehaviour
         }
     }
 
+
+    // we reset speaker for saving purposes
     public void ResetSpeaker()
     {
         CancelInvoke();

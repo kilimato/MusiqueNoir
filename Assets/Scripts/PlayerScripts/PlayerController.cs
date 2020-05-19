@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen & Tapio Mylläri
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// handles player movement, animations and restrictions to movement
 public class PlayerController : MonoBehaviour
 {
     public float speed = 5.0f;
@@ -14,15 +16,12 @@ public class PlayerController : MonoBehaviour
     private Vector3 minSize = new Vector3(0.01f, 0.01f, 1);
     private SpriteRenderer sr;
 
-    public HidePlayer hideplayerScript;
     public bool canHide = false;
     public bool isVisible = true;
     public bool usingElevator = false;
 
     private Rigidbody2D rb;
-
     private Vector3 movement = Vector3.zero;
-
     public DialogueManager dialogueManager;
 
     [FMODUnity.EventRef]
@@ -33,7 +32,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        hideplayerScript = GetComponent<HidePlayer>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -52,7 +50,7 @@ public class PlayerController : MonoBehaviour
         rb.MovePosition(transform.position + movement);
     }
 
-    // eli: jos pelaaja on alueella (canHide = true) ja painanut E:tä -> muututaan näkymättömäksi, painaessaan uudestaan -> muuttuu näkyväksi
+    // player toggles hide button to hide and appear again
     private void CanPlayerHide()
     {
         if (canHide && isVisible && Input.GetKeyDown(KeyCode.E))
@@ -101,7 +99,6 @@ public class PlayerController : MonoBehaviour
 
         horizontalInput = Input.GetAxis("Horizontal");
         animator.SetFloat("Speed", Mathf.Abs(horizontalInput));
-
         verticalInput = Input.GetAxis("Vertical");
 
         // player run animation trigger
@@ -114,27 +111,12 @@ public class PlayerController : MonoBehaviour
         {
             animator.SetBool("IsRunning", false);
         }
-
-
-
         // flips the player sprite to face to the right direction
         if (movement.x != 0)
         {
             sr.flipX = movement.x > 0f ? true : false;
         }
-
-        //if (movement.x >= 0.01f)
-        //{
-        //    transform.localScale = new Vector3(2f, 2.5f, 1f);
-        //}
-        //else if (movement.x <= -0.01f)
-        //{
-        //    transform.localScale = new Vector3(-2f, 2.5f, 1f);
-        //}
-
     }
-
-
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

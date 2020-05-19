@@ -1,10 +1,10 @@
-﻿using System.Collections;
+﻿// @author Tapio Mylläri
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class ReturnState : IState
 {
-
     readonly EnemyController enemy;
 
     public ReturnState(EnemyController enemy)
@@ -31,6 +31,4 @@ public class ReturnState : IState
     {
         //throw new System.NotImplementedException();
     }
-
-    // Start is called before the first frame update
 }

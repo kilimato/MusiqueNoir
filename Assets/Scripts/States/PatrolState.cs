@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+﻿// @author Tapio Mylläri
+using UnityEngine;
 
 public class PatrolState : IState
 {
-
     readonly EnemyController enemy;
 
     public float patrolDirection;
@@ -23,9 +23,7 @@ public class PatrolState : IState
 
         if (enemy.patrolMovementTime <= 0f)
         {
-
             enemy.animator.SetFloat("Speed", 0);
-
             enemy.patrolTurnTime -= Time.deltaTime;
             if (enemy.patrolTurnTime <= 0f)
             {
@@ -33,15 +31,12 @@ public class PatrolState : IState
                 enemy.patrolMovementTime = enemy.startPatrolMovementTime;
                 enemy.patrolTurnTime = enemy.startPatrolTurnTime;
             }
-
         }
         else
         {
-
             enemy.patrolMovementTime -= Time.deltaTime;
             enemy.Move(enemy.patrolSpeed, new Vector2(patrolDirection, 0));
             enemy.animator.SetFloat("Speed", enemy.patrolSpeed);
-
         }
     }
 
@@ -49,5 +44,4 @@ public class PatrolState : IState
     {
         //Debug.Log("Exiting Patrol State");
     }
-
 }

@@ -1,15 +1,12 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// handles player's resonator device: emits a ring around the player and a trigger collider that corresponds to ring size
 public class ParticleScript : MonoBehaviour
 {
     public ParticleSystem particles;
-    public ParticleSystem collisionParticles;
-
-    List<ParticleCollisionEvent> collisionEvents;
-    public Gradient particleColorGradient;
-
     ParticleSystem.MainModule psMain;
 
     public float ringMinSize = 1.5f;
@@ -20,29 +17,24 @@ public class ParticleScript : MonoBehaviour
 
     private bool isResonating = false;
     private int collidersize = 6;
-    public CircleCollider2D particleCollider;
 
+    public CircleCollider2D particleCollider;
     public PlayerController playerController;
 
     public Canvas mainCanvas;
     public Canvas pauseCanvas;
 
-    /*
-     Billboard particle systemin asetuksissa:
-     default partikkeli ei ole pallo, vaikka näyttää siltä, vaan neliö, johon on piirretty ympyrä
-     billboarding kääntää partikkelin aina kameraa kohti, jolloin näyttää että se olisi pyöreä
-         */
-
     // Start is called before the first frame update
     void Start()
     {
-        collisionEvents = new List<ParticleCollisionEvent>();
         particleCollider.radius = 0.0001f;
     }
 
     // Update is called once per frame
     void Update()
     {
+        psMain = particles.main;
+
         if (mainCanvas.enabled || pauseCanvas.enabled)
         {
             if (Input.anyKey)
@@ -59,13 +51,12 @@ public class ParticleScript : MonoBehaviour
 
         CanPlayerResonate();
 
-        psMain = particles.main;
-
         UpdateColliderSize();
 
         UpdateFadingCircle();
     }
 
+    // cancels emitting of ring particles if under minsize
     void UpdateFadingCircle()
     {
         if (ringSize <= ringMinSize && IsInvoking("EmitFadingParticles"))
@@ -87,27 +78,7 @@ public class ParticleScript : MonoBehaviour
     }
 
 
-    void OnParticleCollision(GameObject other)
-    {
-        ParticlePhysicsExtensions.GetCollisionEvents(particles, other, collisionEvents);
-        for (int i = 0; i < collisionEvents.Count; i++)
-        {
-            Debug.Log("Collision events: " + collisionEvents[i].colliderComponent.gameObject.ToString());
-        }
-    }
-
-    private void EmitAtLocation(ParticleCollisionEvent collisionEvent)
-    {
-        // no need to change emit location here in our implementation (if particlesystem is always child of parent)
-        // 2 lines below move particles to emit to where the collision took place, and particles emit towards where the collision came from
-        // i.e. if we shoot a wall, the particles forming from the impact go where the shot was fired
-        //collisionParticles.transform.position = collisionEvent.intersection;
-        //collisionParticles.transform.rotation = Quaternion.LookRotation(collisionEvent.normal);
-        collisionParticles.Emit(1);
-    }
-
-
-    // when player holds space, waves are created, when space is released, waves stop
+    // when player holds space, particle rings are emitted, when space is released, emitting shrinks and stops
     private void CanPlayerResonate()
     {
         if (!playerController.isVisible) return;
@@ -121,15 +92,14 @@ public class ParticleScript : MonoBehaviour
             isResonating = true;
             InvokeRepeating("EmitParticles", 0, 0.4f);
         }
+
         if (Input.GetKeyUp(KeyCode.Space))
         {
             CancelInvoke("EmitParticles");
-
             InvokeRepeating("EmitFadingParticles", 0, 0.4f);
             isResonating = false;
         }
     }
-
 
     private void EmitParticles()
     {
@@ -148,10 +118,8 @@ public class ParticleScript : MonoBehaviour
         }
 
         psMain.startSize = ringSize;
-
         particles.Emit(1);
     }
-
 
     private void EmitFadingParticles()
     {
@@ -159,9 +127,7 @@ public class ParticleScript : MonoBehaviour
         {
             ringSize -= ringStep * 2;
         }
-
         psMain.startSize = ringSize;
-
         particles.Emit(1);
     }
 
@@ -170,6 +136,7 @@ public class ParticleScript : MonoBehaviour
         return isResonating;
     }
 
+    // resets resonator for saving purposes
     public void ResetResonator()
     {
         CancelInvoke();
