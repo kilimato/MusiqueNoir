@@ -1,8 +1,10 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+//  trigger for activating NPC-dialogue after NPC is rescued
 public class RescuedTrigger : MonoBehaviour
 {
     public RescuedDialogueManager dialogueManager;
@@ -14,7 +16,6 @@ public class RescuedTrigger : MonoBehaviour
 
     public bool inTrigger = false;
     public bool dialogueLoaded = false;
-
     public bool firstTime = true;
 
     // Start is called before the first frame update
@@ -46,15 +47,11 @@ public class RescuedTrigger : MonoBehaviour
         }
     }
 
-
     private void RunDialogue(bool keyTrigger)
     {
         if (firstTime)
         {
-            //          if (!dialogueLoaded)
-            //          {
             dialogueLoaded = dialogueManager.LoadDialogue(dialoguePath);
-            //         }
             if (dialogueLoaded)
             {
                 dialogueManager.PrintLine();
@@ -74,6 +71,7 @@ public class RescuedTrigger : MonoBehaviour
         }
     }
 
+
     // Update is called once per frame
     void Update()
     {
@@ -82,12 +80,8 @@ public class RescuedTrigger : MonoBehaviour
             dialogueManager.finishedDialogue = false;
             rescued.GetComponent<ResonatingNPCController>().startDialogue = false;
 
-            // we trigger the dialog for the first time, then press e to continue dialog
-
-            //canvasText.SetActive(true);
             RunDialogue(firstTime);
             StartCoroutine(WaitTime());
-            //canvasText.SetActive(false);
         }
 
         if (!firstTime)
@@ -96,7 +90,6 @@ public class RescuedTrigger : MonoBehaviour
             // could be anything else tp trigger the dialogue
             RunDialogue(Input.GetKeyDown(KeyCode.E));
         }
-
     }
 
     IEnumerator WaitTime()

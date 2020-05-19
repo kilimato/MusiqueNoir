@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// script for triggering dialogue when player is close enough of an NPC
 public class DialogueTrigger : MonoBehaviour
 {
     public DialogueManager dialogueManager;
@@ -10,7 +12,6 @@ public class DialogueTrigger : MonoBehaviour
 
     public bool inTrigger = false;
     public bool dialogueLoaded = false;
-
     public bool firstTime = true;
 
     // Start is called before the first frame update
@@ -84,13 +85,11 @@ public class DialogueTrigger : MonoBehaviour
         if (!firstTime)
         {
             // here we continue dialogue when we are in collision area of the NPC and press E
-            // could be anything else to trigger the dialogue
             RunDialogue(Input.GetKeyDown(KeyCode.E));
         }
 
         if (dialogueManager.finishedDialogue)
         {
-            // korjaa täältä, tee joku tsekki ton tokan dialogin suhteen
             gameObject.SetActive(false);
         }
     }

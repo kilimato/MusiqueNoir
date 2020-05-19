@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using LitJson;
 using TMPro;
 
+// script for managing shown dialogue for several propaganda speakers in the game
 public class PropagandaDialogueManager : MonoBehaviour
 {
     private JsonData dialogue;
@@ -23,18 +25,13 @@ public class PropagandaDialogueManager : MonoBehaviour
     {
         currentDialoguePath = path;
         Debug.Log("Manager: " + currentDialoguePath);
-        // we don't load a dialogue if we're already in one
-        //**if (inDialogue)
-       //** {
+        // we load a dialogue here --even if we're currently "in" one (passed previous speaker)--
+        // since we need to switch to the dialogue file that corresponds to the current speaker
             index = sentenceIndex;
             var jsonTextFile = Resources.Load<TextAsset>("Dialogues/" + path);
             dialogue = JsonMapper.ToObject(jsonTextFile.text);
             inDialogue = true;
             return true;
-       //** }
-        // purkkaratkaisu: changed from original, since don't know yet how to stop dialogue in the middle and change to another
-        //return false;
-       //** return true;
     }
 
     // we need to know which dialogTrigger instance needs to know when it ends
@@ -65,18 +62,8 @@ public class PropagandaDialogueManager : MonoBehaviour
         return true;
     }
 
-
     IEnumerator TypeDialogue(string dialoguePart)
     {
-        /*
-        textDisplay.text = "";
-        foreach (char letter in dialoguePart.ToCharArray())
-        {
-            textDisplay.text += letter;
-            yield return new WaitForSeconds(0.02f);
-        }
-        */
-
         string currentlyShowingText = "";
         string notVisibleText = "";
 
@@ -87,7 +74,6 @@ public class PropagandaDialogueManager : MonoBehaviour
             currentlyShowingText = dialoguePart.Substring(0, revealedCharIndex);
             notVisibleText = dialoguePart.Substring(revealedCharIndex, dialoguePart.Length - revealedCharIndex);
             textDisplay.text = "<#00FF16>" + currentlyShowingText + "<#00000000>" + notVisibleText;
-            //DialogueTextColor(speaker);
 
             yield return new WaitForSeconds(0.02f);
         }

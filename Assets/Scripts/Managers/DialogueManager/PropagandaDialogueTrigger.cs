@@ -1,9 +1,11 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using LitJson;
 
+// script for managing dialogue triggering when player is in range of a speaker
 public class PropagandaDialogueTrigger : MonoBehaviour
 {
     public PropagandaDialogueManager dialogueManager;
@@ -17,13 +19,10 @@ public class PropagandaDialogueTrigger : MonoBehaviour
 
     public bool inTrigger = false;
     public bool dialogueLoaded = false;
-
     public bool firstTime = true;
 
     public int sentenceIndex = 0;
-
     private Transform childTextElement;
-
     //how many sentences are in the dialogue file
     public int sentenceAmount;
 
@@ -44,10 +43,10 @@ public class PropagandaDialogueTrigger : MonoBehaviour
         dialogue = JsonMapper.ToObject(jsonTextFile.text);
         sentenceAmount = dialogue.Count - 1;
 
-
         childTextElement = speaker.transform.Find("TextElement");
     }
 
+    // we load correct dialogue when player enters the trigger area, and activate the text element to show dialogue
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject == player)
@@ -68,38 +67,30 @@ public class PropagandaDialogueTrigger : MonoBehaviour
         }
     }
 
+
+    // here we loop through the dialogue sentences and start from the beginnning after going through all of them so 
+    // the speakers always have dialogue to print to screen when player is in range
     private void RunDialogue()
     {
         if (!dialogueLoaded)
         {
             dialogueLoaded = dialogueManager.LoadDialogue(dialoguePath, sentenceIndex);
-            Debug.Log("Dialogue loaded: " + dialoguePath + " " + sentenceIndex);
         }
-        /*   else if (dialogueLoaded && dialogueManager.GetCurrentDialoguePath() != dialoguePath)
-           {
-               Debug.Log("Wrong dialogue: " + dialogueManager.GetCurrentDialoguePath());
-               dialogueLoaded = dialogueManager.LoadDialogue(dialoguePath);
 
-               Debug.Log("Dialogue changed: " + dialogueManager.GetCurrentDialoguePath());
-           }*/
         else if (dialogueLoaded)
         {
-            Debug.Log("Dialogue correct: " + dialoguePath);
             dialogueManager.PrintLine();
 
             //Plays sound and gives it's duration as float seconds
             //wait = PlayOneShotAndGetDuration(sentenceIndex);
             PlayOneShotAndGetDuration(sentenceIndex);
-
             sentenceIndex++;
-
             if (sentenceIndex >= sentenceAmount)
             {
                 sentenceIndex = 0;
                 dialogueManager.LoadDialogue(dialoguePath, sentenceIndex);
             }
         }
-
     }
 
     //Plays FMOD sound (now hardcoded as propagande event) as a one shot and gives it's duration in float in seconds
@@ -121,14 +112,11 @@ public class PropagandaDialogueTrigger : MonoBehaviour
     {
         if (inTrigger)
         {
-            // here we start dialogue when we are in collision area of the NPC and press C
-            // could be anything else tp trigger the dialogue
             if (!IsInvoking("RunDialogue"))
             {
                 propagandaCanvas.enabled = true;
                 InvokeRepeating("RunDialogue", 0, wait);
             }
-            // RunDialogue(Input.GetKeyDown(KeyCode.C));
         }
         if (!inTrigger)
         {

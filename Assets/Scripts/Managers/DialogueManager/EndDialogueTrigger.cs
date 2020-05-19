@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// script for triggering end dialogue
 public class EndDialogueTrigger : MonoBehaviour
 {
     public EndDialogueManager dialogueManager;
@@ -10,7 +12,6 @@ public class EndDialogueTrigger : MonoBehaviour
 
     public bool inTrigger = false;
     public bool dialogueLoaded = false;
-
     public bool firstTime = true;
 
     // Start is called before the first frame update
@@ -90,7 +91,6 @@ public class EndDialogueTrigger : MonoBehaviour
 
         if (dialogueManager.finishedDialogue)
         {
-            // korjaa täältä, tee joku tsekki ton tokan dialogin suhteen
             gameObject.SetActive(false);
         }
     }

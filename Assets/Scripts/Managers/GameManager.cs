@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,7 +9,7 @@ using UnityEngine.Tilemaps;
 using System.IO;
 using TMPro;
 
-// GameManager that manages the state of our game
+// GameManager that manages the state of our game and saving/loading
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
@@ -80,26 +81,15 @@ public class GameManager : MonoBehaviour
         bf.Serialize(file, save);
         file.Close();
 
-        /*
-        // 3: resetting the game so that everything is in a default state
-        ResetTilemaps();
-        // ResetCheckpoints();
-        //currentCheckpoint = startingCheckpoint;
-        finishedStartingConversation = false;
-        */
         Debug.Log("Game Saved");
     }
 
     public void NewGame()
     {
-
         if (Input.GetKey(KeyCode.Space))
         {
             return;
         }
-
-
-        //File.Delete(Application.persistentDataPath + "/gamesave.save");
 
         ResetTilemaps();
         ResetDialogues();
@@ -143,6 +133,7 @@ public class GameManager : MonoBehaviour
             // enemy.GetComponent<EnemyController>().startingDirection = -transform.localScale.x / Mathf.Abs(transform.localScale.x);
         }
     }
+
     private void ResetPeasants()
     {
         foreach (GameObject peasant in peasants)
@@ -193,7 +184,6 @@ public class GameManager : MonoBehaviour
         dialogueTrigger.GetComponent<DialogueTrigger>().firstTime = true;
         dialogueTrigger.GetComponent<DialogueTrigger>().inTrigger = false;
         dialogueTrigger.GetComponent<DialogueTrigger>().dialogueLoaded = false;
-        //dialogueCanvas.enabled = true;
         dialogueText.text = "";
 
         endDialogueTrigger.SetActive(true);
@@ -206,8 +196,6 @@ public class GameManager : MonoBehaviour
             manager.GetComponent<RescuedDialogueManager>().finishedDialogue = false;
             manager.GetComponent<RescuedDialogueManager>().inDialogue = false;
         }
-        //dialogueCanvas.enabled = true;
-        //endDialogueText.text = "";
 
         introTextController.GetComponent<IntroTextController>().isAlreadySeen = false;
 
@@ -216,13 +204,13 @@ public class GameManager : MonoBehaviour
             trigger.GetComponent<RescuedTrigger>().firstTime = true;
             trigger.GetComponent<RescuedTrigger>().inTrigger = false;
             trigger.GetComponent<RescuedTrigger>().dialogueLoaded = false;
-            //rescuedText.text = "";
         }
         rescuedCanvas.enabled = false;
     }
+
     private void ResetCheckpoints()
     {
-        // resettaa valotkin
+        // also resets the checkpoint lights
         lastCheckpointPos = startingPoint.transform.position;
         lastCheckpoint = startingPoint;
 
@@ -232,11 +220,10 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
     private Save CreateSaveGameObject()
     {
         Save save = new Save();
-        //int i = 0;
+
         foreach (GameObject tilemapGameObject in changingVisibilityAreas)
         {
             save.tilemapsActive.Add(tilemapGameObject.activeSelf);
@@ -270,28 +257,24 @@ public class GameManager : MonoBehaviour
 
     public void LoadGame(GameObject caller)
     {
-        //
         if (Input.GetKey(KeyCode.Space) && caller.tag != "Enemy")
         {
             return;
         }
 
-        // 1
         if (File.Exists(Application.persistentDataPath + "/gamesave.save"))
         {
-            ResetTilemaps(); // CHECK!
+            ResetTilemaps();
             ResetDialogues();
-            ResetPlayerPosition(); // CHECK!
+            ResetPlayerPosition(); 
             ResetPlayer();
             ResetResonator();
-            ResetCheckpoints();   // CHECK!
+            ResetCheckpoints();
             ResetPeasants();
             ResetObjects();
             ResetSpeakers();
             ResetEnemies();
 
-
-            // 2
             BinaryFormatter bf = new BinaryFormatter();
             FileStream file = File.Open(Application.persistentDataPath + "/gamesave.save", FileMode.Open);
             Save save = (Save)bf.Deserialize(file);
@@ -303,10 +286,6 @@ public class GameManager : MonoBehaviour
             changingVisibilityAreas[3].SetActive(save.tilemapsActive[3]);
 
             dialogueManager.GetComponent<DialogueManager>().finishedDialogue = save.finishedStartingConversation;
-            if (save.finishedStartingConversation)
-            {
-                // dialogueManager.SetActive(false);
-            }
             dialogueTrigger.GetComponent<DialogueTrigger>().firstTime = save.enteringDialogue;
 
 
@@ -344,6 +323,7 @@ public class GameManager : MonoBehaviour
             ResetObjects();
             ResetSpeakers();
             ResetResonator();
+
             Debug.Log("Game Loaded");
         }
         else
@@ -352,15 +332,5 @@ public class GameManager : MonoBehaviour
         }
 
         Time.timeScale = 1;
-    }
-
-    private void Update()
-    {
-        /*
-        if (Input.GetKey(KeyCode.Space))
-        {
-            return;
-        }
-        */
     }
 }

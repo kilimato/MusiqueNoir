@@ -1,10 +1,13 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using LitJson;
 using TMPro;
 
+// script for managing starting dialogue in the game: loading and displaying the correct dialogue with dialoguecolor
+// and character image
 public class DialogueManager : MonoBehaviour
 {
     private JsonData dialogue;
@@ -17,11 +20,9 @@ public class DialogueManager : MonoBehaviour
     private string dialoguePart;
 
     public bool coroutineRunning;
-
     // true when a dialog is loaded and a sentence can be printed,
     // false if dialog hasn't finished loading and if we've reached EOD
     public bool inDialogue;
-
     public bool finishedDialogue = false;
 
     [FMODUnity.EventRef]
@@ -30,9 +31,6 @@ public class DialogueManager : MonoBehaviour
     public string smashingEvent = "";
 
     private bool play = true;
-
-
-
 
     // dialogTrigger needs to know whether it's own dialogue has loaded (not just any dialogue)
     // so we return bool to indicate that state
@@ -83,18 +81,6 @@ public class DialogueManager : MonoBehaviour
             dialoguePart = speaker + ": " + line[0].ToString();
 
             Debug.Log(dialoguePart);
-
-
-            /* if (coroutineRunning)
-             {
-                 StopAllCoroutines();
-                 textDisplay.text = dialogue[index - 1].Keys +": " + dialogue[index-1][0].ToString();
-                 return true;
-             }
-             */
-            //textDisplay.text = dialoguePart;
-
-            // DialogueTextColor(speaker);
             DialogueImage(speaker);
             StartCoroutine(TypeDialogue(dialoguePart));
             index++;
@@ -105,17 +91,13 @@ public class DialogueManager : MonoBehaviour
     public void PrintEntireLine()
     {
         textDisplay.text = TextColorToHex(speaker) + dialoguePart;
-
         //play sound
         FMODUnity.RuntimeManager.PlayOneShot(smashingEvent);
     }
 
-
     IEnumerator TypeDialogue(string dialoguePart)
     {
-        // ADDED COLOR TAG TO ENABLE FURTHER DIALOGUE IMPROVEMENT
         coroutineRunning = true;
-        //textDisplay.text = dialoguePart;
 
         string currentlyShowingText = "";
         string notVisibleText = "";
@@ -127,7 +109,6 @@ public class DialogueManager : MonoBehaviour
             currentlyShowingText = dialoguePart.Substring(0, revealedCharIndex);
             notVisibleText = dialoguePart.Substring(revealedCharIndex, dialoguePart.Length - revealedCharIndex);
             textDisplay.text = TextColorToHex(speaker) + currentlyShowingText + "<#00000000>" + notVisibleText;
-            //DialogueTextColor(speaker);
 
             //play sound
             if (play) FMODUnity.RuntimeManager.PlayOneShot(typingEvent);
@@ -136,9 +117,7 @@ public class DialogueManager : MonoBehaviour
             yield return new WaitForSeconds(0.02f);
         }
         coroutineRunning = false;
-
     }
-
 
     private void DialogueImage(string character)
     {

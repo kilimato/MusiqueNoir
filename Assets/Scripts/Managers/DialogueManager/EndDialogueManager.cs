@@ -1,10 +1,12 @@
-﻿using System.Collections;
+﻿// @author Eeva Tolonen
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using LitJson;
 using TMPro;
 
+// script for managing end dialogue and showing end text when dialogue is finished
 public class EndDialogueManager : MonoBehaviour
 {
     private JsonData dialogue;
@@ -17,7 +19,6 @@ public class EndDialogueManager : MonoBehaviour
     private string dialoguePart;
 
     public bool coroutineRunning;
-
     // true when a dialog is loaded and a sentence can be printed,
     // false if dialog hasn't finished loading and if we've reached EOD
     public bool inDialogue;
@@ -30,9 +31,7 @@ public class EndDialogueManager : MonoBehaviour
     public string smashingEvent = "";
 
     private bool play = true;
-
     public EndTextController endTextController;
-
 
     // dialogTrigger needs to know whether it's own dialogue has loaded (not just any dialogue)
     // so we return bool to indicate that state
@@ -49,6 +48,7 @@ public class EndDialogueManager : MonoBehaviour
         }
         return false;
     }
+
 
     // we need to know which dialogTrigger instance needs to know when it ends
     // this returns true when we still have lines to print, and false when we have hit our last line EOD
@@ -84,18 +84,6 @@ public class EndDialogueManager : MonoBehaviour
             dialoguePart = speaker + ": " + line[0].ToString();
 
             Debug.Log(dialoguePart);
-
-
-            /* if (coroutineRunning)
-             {
-                 StopAllCoroutines();
-                 textDisplay.text = dialogue[index - 1].Keys +": " + dialogue[index-1][0].ToString();
-                 return true;
-             }
-             */
-            //textDisplay.text = dialoguePart;
-
-            // DialogueTextColor(speaker);
             DialogueImage(speaker);
             StartCoroutine(TypeDialogue(dialoguePart));
             index++;
@@ -111,12 +99,9 @@ public class EndDialogueManager : MonoBehaviour
         FMODUnity.RuntimeManager.PlayOneShot(smashingEvent);
     }
 
-
     IEnumerator TypeDialogue(string dialoguePart)
     {
-        // ADDED COLOR TAG TO ENABLE FURTHER DIALOGUE IMPROVEMENT
         coroutineRunning = true;
-        //textDisplay.text = dialoguePart;
 
         string currentlyShowingText = "";
         string notVisibleText = "";
@@ -128,7 +113,6 @@ public class EndDialogueManager : MonoBehaviour
             currentlyShowingText = dialoguePart.Substring(0, revealedCharIndex);
             notVisibleText = dialoguePart.Substring(revealedCharIndex, dialoguePart.Length - revealedCharIndex);
             textDisplay.text = TextColorToHex(speaker) + currentlyShowingText + "<#00000000>" + notVisibleText;
-            //DialogueTextColor(speaker);
 
             //play sound
             if (play) FMODUnity.RuntimeManager.PlayOneShot(typingEvent);
@@ -139,7 +123,6 @@ public class EndDialogueManager : MonoBehaviour
         coroutineRunning = false;
 
     }
-
 
     private void DialogueImage(string character)
     {
