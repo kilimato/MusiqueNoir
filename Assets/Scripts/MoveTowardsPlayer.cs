@@ -5,6 +5,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Pathfinding;
 
+/// <summary>
+/// Old script for handling enemy movement when they see the player.
+/// For the most part replaced by a separate ChaseState-class.
+/// </summary>
 public class MoveTowardsPlayer : MonoBehaviour
 {
     public Seeker seeker;
@@ -19,7 +23,6 @@ public class MoveTowardsPlayer : MonoBehaviour
     public StateMachine sm;
 
     public Animator animator;
-
 
     // Start is called before the first frame update
     void Start()

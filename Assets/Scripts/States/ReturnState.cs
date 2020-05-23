@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//Return state for enemies. Makes an enemy return to its starting position.
 public class ReturnState : IState
 {
     readonly EnemyController enemy;

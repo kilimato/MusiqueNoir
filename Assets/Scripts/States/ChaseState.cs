@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
+/// <summary>
+/// Chasing state for enemies. Enemies chase the player during this state.
+/// </summary>
 public class ChaseState : IState
 {
     private Seeker seeker;

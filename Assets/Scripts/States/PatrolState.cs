@@ -1,6 +1,9 @@
 ﻿// @author Tapio Mylläri
 using UnityEngine;
 
+/// <summary>
+/// Patrol state for enemies. Enemies go back and forth periodically during this state.
+/// </summary>
 public class PatrolState : IState
 {
     readonly EnemyController enemy;

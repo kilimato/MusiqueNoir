@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Handles movement and animations and interactions regarding elevators.
+/// </summary>
 public class ElevatorMovement : MonoBehaviour
 {
 
@@ -16,10 +19,10 @@ public class ElevatorMovement : MonoBehaviour
 
     private Vector3 tempPos;
     private float t;
-    private bool isTeleportingEnabled;
+    private bool isTeleportingEnabled; 
     private Vector3 startingPos;
     private Vector3 leavingPos;
-    private bool usingElevator;
+    private bool usingElevator; // essentially equal to isTeleportingEnabled
 
     [FMODUnity.EventRef]
     public string ElevMovingEvent = "event:/SFX/Elevator/elevator moves";
@@ -60,12 +63,12 @@ public class ElevatorMovement : MonoBehaviour
 
     }
 
+    //Coroutine for moving player smoothly between two objects.
     IEnumerator SmoothMovement(GameObject movableObject, Vector3 startingPos)
     {
         usingElevator = true;
         isTeleportingEnabled = false;
         movableObject.SetActive(false);
-
 
         //Vähän ruma tällai tarkastella, mutten tähän hätään keksi miten vaihtaa clamp-tarkistusta, 
         //t:n arvoa ja sen summauksen ja vähentämisen riippuvuutta t:n lähtöarvosta siistimmin.

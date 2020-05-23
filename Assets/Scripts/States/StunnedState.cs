@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.Rendering.Universal;
 
+/// <summary>
+/// Stun state for enemies.
+/// </summary>
 public class StunnedState : IState
 {
     EnemyController enemy;

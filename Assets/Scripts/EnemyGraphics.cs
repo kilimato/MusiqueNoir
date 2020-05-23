@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
+/// <summary>
+/// Makes sure that the enemy sprite is facing the right way, if the enemy has some velocity.
+/// </summary>
 public class EnemyGraphics : MonoBehaviour
 {
     private Rigidbody2D rb2D;
